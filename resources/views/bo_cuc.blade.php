@@ -7,13 +7,13 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Home | E-Shopper</title>
-	<link href="{{asset('public/giao_dien/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{asset('public/giao_dien/css/font-awesome.min.css')}}" rel="stylesheet">
-	<link href="{{asset('public/giao_dien/css/prettyPhoto.css')}}" rel="stylesheet">
-	<link href="{{asset('public/giao_dien/css/price-range.css')}}" rel="stylesheet">
-	<link href="{{asset('public/giao_dien/css/animate.css')}}" rel="stylesheet">
-	<link href="{{asset('public/giao_dien/css/main.css')}}" rel="stylesheet">
-	<link href="{{asset('public/giao_dien/css/responsive.css')}}" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/bootstrap.min.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/font-awesome.min.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/prettyPhoto.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/price-range.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/animate.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/main.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/responsive.css')}}" >
 	<!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
@@ -95,8 +95,8 @@
 								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="{{URL::to('/qtv_dang_nhap')}}"><i class="fa fa-lock"></i>Đăng Nhập 1</a></li>
+								<li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<li><a href="{{ URL::to('/qtv_dang_nhap') }}"><i class="fa fa-lock"></i>Đăng Nhập 1</a></li>
 							</ul>
 						</div>
 					</div>
