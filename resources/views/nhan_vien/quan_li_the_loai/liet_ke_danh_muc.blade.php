@@ -1,9 +1,9 @@
-@extends('nhan_vien_bo_cuc')
+@extends('nhan_vien.bo_cuc_nhan_vien')
 @section('nhan_vien_noi_dung')
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Danh sách danh mục
+            Danh Sách Bộ Sưu Tập
         </div>
         <?php
         use Illuminate\Support\Facades\Session;
@@ -38,39 +38,24 @@
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th style="width:20px;">
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </th>
                         <th>Tên Bộ Sưu Tập</th>
                         <th>Mô Tả</th>
-                        <th>Hiển thị / Ẩn</th>
-                        <th style="width:30px;"></th>
+                        <th>Trạng Thái</th>
+                        <th style="width:50px;"></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($liet_ke_danh_muc as $chia_khoa => $danh_muc)
                     <tr>
-                        <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                        <td>{{$danh_muc->dm_ten}}</td>
-                        <td>{{$danh_muc->dm_mo_ta}}</td>
-                        <td><span class="text-ellipsis">
-                                <?php
-                                if ($danh_muc->dm_trang_thai == 0) {
-                                    echo 'Ẩn';
-                                } else {
-                                    echo 'Hiển thị';
-                                }
-                                ?>
-                            </span></td>
-                        <td>
-                            <a href="{{URL::to('/sua_danh_muc/'.$danh_muc->dm_id)}}" class="active" ui-toggle-class="">
+                        <td>{{$danh_muc->TEN}}</td>
+                        <td>{{$danh_muc->MO_TA}}</td>
+                        <td>{{$danh_muc->TRANG_THAI}}</td>
+                        <td><a href="{{URL::to('/sua_danh_muc/'.$danh_muc->ID_THE_LOAI)}}" class="active" ui-toggle-class="">
                                 Sửa
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                             </a>
                             <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                            href="{{URL::to('/xoa_danh_muc/'.$danh_muc->dm_id)}}" class="active" ui-toggle-class="">
+                            href="{{URL::to('/xoa_danh_muc/'.$danh_muc->ID_THE_LOAI)}}" class="active" ui-toggle-class="">
                                 Xóa
                                 <!-- <i class="fa fa-times text-danger text"></i> -->
                             </a>
