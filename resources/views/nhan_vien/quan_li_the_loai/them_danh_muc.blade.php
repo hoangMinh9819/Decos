@@ -1,5 +1,5 @@
-@extends('qtv_bo_cuc')
-@section('qtv_noi_dung')
+@extends('nhan_vien.bo_cuc_nhan_vien')
+@section('nhan_vien_noi_dung')
 <div class="row">
     <div class="col-lg-12">
         <section class="panel">
@@ -21,8 +21,8 @@
                         <div class="form-group">
                             <label>Hiển thị / Ẩn</label>
                             <select name="trang_thai_danh_muc" class="form-control input-sm m-bot15">
-                                <option value="0">Ẩn</option>
-                                <option value="1">Hiển thị</option>
+                                <option value="Ẩn">Ẩn</option>
+                                <option value="Hiện">Hiển thị</option>
                             </select>
                         </div>
                         <button type="submit" name="them_danh_muc" class="btn btn-info">Thêm Danh Mục</button>

@@ -1,5 +1,5 @@
-@extends('qtv_bo_cuc')
-@section('qtv_noi_dung')
+@extends('nhan_vien_bo_cuc')
+@section('nhan_vien_noi_dung')
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -43,7 +43,7 @@
                                 <input type="checkbox"><i></i>
                             </label>
                         </th>
-                        <th>Tên Danh Mục</th>
+                        <th>Tên Bộ Sưu Tập</th>
                         <th>Mô Tả</th>
                         <th>Hiển thị / Ẩn</th>
                         <th style="width:30px;"></th>

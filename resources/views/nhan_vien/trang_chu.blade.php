@@ -1,11 +1,9 @@
-@extends('qtv_bo_cuc')
-@section('qtv_noi_dung')
+@extends('nhan_vien.bo_cuc_nhan_vien')
+@section('nhan_vien_noi_dung')
 <h1>Xin chào
     <?php
-
     use Illuminate\Support\Facades\Session;
-
-    $ten = Session::get('qtv_ten');
+    $ten = Session::get('ten');
     if ($ten) {
         echo $ten;
     }

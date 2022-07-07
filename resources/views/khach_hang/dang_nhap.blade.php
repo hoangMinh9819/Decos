@@ -34,8 +34,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	?>
 		<form action="{{URL::to('/kiem_tra_dang_nhap')}}" method="post">
 			{{csrf_field()}}
-			<input type="text" class="ggg" name="qtv_email" placeholder="Tài khoản / e-mail" required="">
-			<input type="password" class="ggg" name="qtv_mat_khau" placeholder="Mật khẩu" required="">
+			<input type="text" class="ggg" name="email" placeholder="Tài khoản / e-mail" required="">
+			<input type="password" class="ggg" name="mat_khau" placeholder="Mật khẩu" required="">
 			<span><input type="checkbox" /> Ghi nhớ</span>
 			<h6><a href="#">Quên mật khẩu?</a></h6>
 				<div class="clearfix"></div>

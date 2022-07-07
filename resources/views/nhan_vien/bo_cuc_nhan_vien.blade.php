@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Trang Quản Trị</title>
+    <title>Nhân Viên</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">Quản Lý</a>
+                <a href="index.html" class="logo">Nhân Viên</a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
                 </div>
@@ -61,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <span class="username">
                                 <?php
                                 use Illuminate\Support\Facades\Session;
-                                $ten = Session::get('qtv_ten');
+                                $ten = Session::get('ten');
                                 if ($ten) {
                                     echo $ten;
                                 }
@@ -72,7 +72,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <ul class="dropdown-menu extended logout">
                             <li><a href="#"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
-                            <li><a href="{{URL::to('/qtv_dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                            <li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -89,7 +89,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a class="active" href="{{URL::to('/qtv_trang_chu')}}">
+                            <a class="active" href="{{URL::to('/nhan_vien_trang_chu')}}">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Tổng Quan</span>
                             </a>
@@ -102,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             </a>
                             <ul class="sub">
                                 <li><a href="{{URL::to('them_danh_muc')}}">Thêm Bộ Sưu Tập</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê Bô Sưu Tập</a></li>
+                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê Bộ Sưu Tập</a></li>
                             </ul>
                         </li><li class="sub-menu">
                             <a href="javascript:;">
@@ -117,21 +117,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Nhân Viên</span>
-                            </a>
-                            <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm thương hiệu sản phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê danh mục sản phẩm</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fa fa-book"></i>
                                 <span>Đơn Hàng</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm thương hiệu sản phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('liet_ke_don_hang')}}">Liệt kê Đơn Hàng</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -140,38 +129,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Khách Hàng</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm thương hiệu sản phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt Kê Khách Hàng</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Doanh Thu</span>
+                                <span>Tin Tức</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm thương hiệu sản phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('them_bai_viet')}}">Thêm Tin Tức</a></li>
+                                <li><a href="{{URL::to('liet_ke_bai_viet')}}">Liệt Kê Bài Viết</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
-                                <span>Hóa Đơn</span>
+                                <span>Slide</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm thương hiệu sản phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê danh mục sản phẩm</a></li>
-                            </ul>
-                        </li>
-                        <li class="sub-menu">
-                            <a href="javascript:;">
-                                <i class="fa fa-book"></i>
-                                <span>Bài Viết</span>
-                            </a>
-                            <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm thương hiệu sản phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê danh mục sản phẩm</a></li>
+                                <li><a href="{{URL::to('them_bai_viet')}}">Thêm Slide</a></li>
+                                <li><a href="{{URL::to('liet_ke_bai_viet')}}">Liệt Kê Slide</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -183,7 +161,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                @yield('qtv_noi_dung')
+                @yield('nhan_vien_noi_dung')
             </section>
             <!-- footer -->
             <div class="footer">

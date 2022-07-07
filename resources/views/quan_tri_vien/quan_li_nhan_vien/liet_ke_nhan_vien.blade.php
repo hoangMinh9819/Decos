@@ -1,9 +1,9 @@
-@extends('qtv_bo_cuc')
+@extends('quan_tri_vien.bo_cuc_quan_tri_vien')
 @section('qtv_noi_dung')
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Danh sách danh mục
+            Danh sách nhân viên
         </div>
         <?php
         use Illuminate\Support\Facades\Session;
@@ -38,41 +38,38 @@
             <table class="table table-striped b-t b-light">
                 <thead>
                     <tr>
-                        <th style="width:20px;">
-                            <label class="i-checks m-b-none">
-                                <input type="checkbox"><i></i>
-                            </label>
-                        </th>
-                        <th>Tên Danh Mục</th>
-                        <th>Mô Tả</th>
-                        <th>Hiển thị / Ẩn</th>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Nhân Viên</th>
+                        <th>Mật Khẩu</th>
+                        <th>Địa Chỉ</th>
+                        <th>Email</th>
+                        <th>Điện Thoại</th>
+                        <th>Trạng Thái</th>
                         <th style="width:30px;"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($liet_ke_danh_muc as $chia_khoa => $danh_muc)
+                    @foreach($liet_ke_nhan_vien as $chia_khoa => $nhan_vien)
                     <tr>
-                        <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-                        <td>{{$danh_muc->dm_ten}}</td>
-                        <td>{{$danh_muc->dm_mo_ta}}</td>
+                        <td><img src="{{URL::to('public/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100">                        </td>
+                        <td>{{$nhan_vien->HO_TEN}}</td>
+                        <td>{{$nhan_vien->MAT_KHAU}}</td>
+                        <td>{{$nhan_vien->DIA_CHI}}</td>
+                        <td>{{$nhan_vien->EMAIL}}</td>
+                        <td>{{$nhan_vien->DIEN_THOAI}}</td>
                         <td><span class="text-ellipsis">
                                 <?php
-                                if ($danh_muc->dm_trang_thai == 0) {
-                                    echo 'Ẩn';
+                                if ($nhan_vien->TRANG_THAI === 'bi_chan') {
+                                    echo 'Bị Chặn';
                                 } else {
-                                    echo 'Hiển thị';
+                                    echo 'Hoạt Động';
                                 }
                                 ?>
                             </span></td>
                         <td>
-                            <a href="{{URL::to('/sua_danh_muc/'.$danh_muc->dm_id)}}" class="active" ui-toggle-class="">
+                            <a href="{{URL::to('/sua_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
                                 Sửa
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
-                            </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                            href="{{URL::to('/xoa_danh_muc/'.$danh_muc->dm_id)}}" class="active" ui-toggle-class="">
-                                Xóa
-                                <!-- <i class="fa fa-times text-danger text"></i> -->
                             </a>
                         </td>
                     </tr>
