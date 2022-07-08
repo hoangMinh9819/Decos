@@ -21,7 +21,7 @@ class TrangChuController extends Controller
     public function dang_nhap(){
         return view('khach_hang.dang_nhap');
     }
-    public function qtv_dang_xuat(){
+    public function dang_xuat(){
         Session::put('ten',null);
         Session::put('id',null);
         return Redirect::to('/trang_chu');
@@ -36,6 +36,7 @@ class TrangChuController extends Controller
         if($result){
             Session::put('ten',$result->HO_TEN);
             Session::put('id',$result->ID_NGUOI_DUNG);
+            Session::put('hinh_anh',$result->HINH_ANH);
             $quyen = $result->PHAN_QUYEN;
             if($quyen === 'quan_tri_vien'){
                 return Redirect::to('/quan_tri_vien_trang_chu');
