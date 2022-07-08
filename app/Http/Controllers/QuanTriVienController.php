@@ -11,7 +11,12 @@ session_start();
 class QuanTriVienController extends Controller
 {
     public function quan_tri_vien_trang_chu(){
-        return view('quan_tri_vien.trang_chu');
+        $id = Session::get('id');
+        $quan_tri_vien = DB::table('nguoi_dung')
+        ->where('PHAN_QUYEN','quan_tri_vien')
+        ->where('ID_NGUOI_DUNG',$id)
+        ->first();
+        return View('quan_tri_vien.trang_chu')->with('quan_tri_vien',$quan_tri_vien);
     }
     public function them_nhan_vien(){
         return view('quan_tri_vien.quan_li_nhan_vien.them_nhan_vien');

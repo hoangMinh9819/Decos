@@ -7,22 +7,22 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Home | E-Shopper</title>
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/bootstrap.min.css')}}" >
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/font-awesome.min.css')}}" >
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/prettyPhoto.css')}}" >
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/price-range.css')}}" >
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/animate.css')}}" >
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/main.css')}}" >
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/responsive.css')}}" >
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/bootstrap.min.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/font-awesome.min.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/prettyPhoto.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/price-range.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/animate.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/main.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/responsive.css')}}">
 	<!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-	<link rel="shortcut icon" href="images/ico/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="shortcut icon" href="/public/giao_dien/images/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/giao_dien/images/ico/apple-touch-icon-144-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/giao_dien/images/ico/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/giao_dien/images/ico/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/public/giao_dien/images/ico/apple-touch-icon-57-precomposed.png">
 </head>
 <!--/head-->
 
@@ -63,7 +63,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="public/giao_dien/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -157,18 +157,19 @@
 		<!--slider-->
 		<div class="container">
 			<div class="row">
-				<div >
+				<div>
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
-							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
-							<li data-target="#slider-carousel" data-slide-to="1"></li>
-							<li data-target="#slider-carousel" data-slide-to="2"></li>
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>							
+							@foreach($liet_ke_slide as $slide => $gia_tri)
+							<li data-target="#slider-carousel" data-slide-to="{{$gia_tri->ID_SLIDE}}"></li>
+							@endforeach
 						</ol>
 
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-9">
-								<img src="" class="girl img-responsive" alt="" />
+									<img src="public/uploads/slide/minhanh.png" class="girl img-responsive" alt=""/>
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -177,13 +178,27 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 							</div>
+
+							@foreach($liet_ke_slide as $slide => $gia_tri)
+							<div class="item">
+								<div class="col-sm-9">
+									<img src="{{asset('public/uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt="" />
+								</div>
+								<div class="col-sm-3">
+									<h1><span>DECOS</span></h1>
+									<h2>Free E-Commerce Template</h2>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+									<button type="button" class="btn btn-default get">Get it now</button>
+								</div>
+							</div>
+							@endforeach
 						</div>
 
 						<a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
 							<i class="fa fa-angle-left"></i>
 						</a>
 						<a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
-						<i class="fa fa-angle-right"></i>
+							<i class="fa fa-angle-right"></i>
 						</a>
 					</div>
 
@@ -217,7 +232,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe1.png" alt="" />
+										<img src="public/giao_dien/images/home/iframe1.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -232,7 +247,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe2.png" alt="" />
+										<img src="public/giao_dien/images/home/iframe2.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -247,7 +262,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe3.png" alt="" />
+										<img src="public/giao_dien/images/home/iframe3.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -262,7 +277,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="images/home/iframe4.png" alt="" />
+										<img src="public/giao_dien/images/home/iframe4.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -275,7 +290,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="images/home/map.png" alt="" />
+							<img src="public/giao_dien/images/home/map.png" alt="" />
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>

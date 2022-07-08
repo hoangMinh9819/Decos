@@ -57,16 +57,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="public/van_hanh/images/2.png">
-                            <span class="username">
-                                <?php
-                                use Illuminate\Support\Facades\Session;
-                                $ten = Session::get('qtv_ten');
-                                if ($ten) {
-                                    echo $ten;
-                                }
-                                ?>
-                                </span>
+                            <img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$quan_tri_vien->HINH_ANH)}}">
+                            <span class="username">{{$quan_tri_vien->HO_TEN}}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">

@@ -15,8 +15,14 @@ class TrangChuController extends Controller
     public function trang_chu()
     {
         $tat_ca_the_loai = DB::table('the_loai')->get();
-        $quan_ly_the_loai = view('khach_hang.trang_chu')->with('liet_ke_the_loai',$tat_ca_the_loai);
-        return View('khach_hang.bo_cuc_khach_hang')->with('khach_hang.liet_ke_the_loai',$quan_ly_the_loai);
+        $tat_ca_san_pham = DB::table('san_pham')->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $quan_ly = view('khach_hang.trang_chu')
+        ->with('liet_ke_the_loai',$tat_ca_the_loai)
+        ->with('liet_ke_san_pham',$tat_ca_san_pham)
+        ->with('liet_ke_slide',$tat_ca_slide);
+        //return View('khach_hang.bo_cuc_khach_hang')->with('khach_hang.liet_ke_the_loai',$quan_ly);
+        return $quan_ly;
     }    
     public function dang_nhap(){
         return view('khach_hang.dang_nhap');
@@ -34,9 +40,7 @@ class TrangChuController extends Controller
         ->where('mat_khau',$mat_khau)
         ->first();
         if($result){
-            Session::put('ten',$result->HO_TEN);
             Session::put('id',$result->ID_NGUOI_DUNG);
-            Session::put('hinh_anh',$result->HINH_ANH);
             $quyen = $result->PHAN_QUYEN;
             if($quyen === 'quan_tri_vien'){
                 return Redirect::to('/quan_tri_vien_trang_chu');

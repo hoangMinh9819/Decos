@@ -20,19 +20,22 @@
 	<div class="features_items">
 		<!--features_items-->
 		<h2 class="title text-center">Trang Phục Mới</h2>
+		@foreach($liet_ke_san_pham as $san_pham => $gia_tri)
+		@if($gia_tri->MOI==true)
 		<div class="col-sm-4">
 			<div class="product-image-wrapper">
 				<div class="single-products">
 					<div class="productinfo text-center">
-						<img src="images/home/product6.jpg" alt="" />
-						<h2>$56</h2>
-						<p>Easy Polo Black Edition</p>
+						<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
+						<h2>{{$gia_tri->GIA}} VND</h2>
+						<p>{{$gia_tri->TEN}}</p>
 						<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 					</div>
 					<div class="product-overlay">
 						<div class="overlay-content">
-							<h2>$56</h2>
-							<p>Easy Polo Black Edition</p>
+							<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" />
+							<h2>{{$gia_tri->GIA}} VND</h2>
+							<p>{{$gia_tri->TEN}}</p>
 							<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 						</div>
 					</div>
@@ -45,6 +48,8 @@
 								</div> -->
 			</div>
 		</div>
+		@endif
+		@endforeach
 	</div>
 	<!--features_items-->
 	<div class="recommended_items">
@@ -53,32 +58,40 @@
 		<div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
 			<div class="carousel-inner">
 				<div class="item active">
+					@foreach($liet_ke_san_pham as $san_pham => $gia_tri)
+					@if($gia_tri->BAN_CHAY==true)
 					<div class="col-sm-4">
 						<div class="product-image-wrapper">
 							<div class="single-products">
 								<div class="productinfo text-center">
-									<img src="images/home/recommend3.jpg" alt="" />
-									<h2>$56</h2>
-									<p>Easy Polo Black Edition</p>
+									<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
+									<h2>{{$gia_tri->GIA}} VND</h2>
+									<p>{{$gia_tri->TEN}}</p>
 									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 								</div>
 							</div>
 						</div>
 					</div>
+					@endif
+					@endforeach
 				</div>
 				<div class="item">
+					@foreach($liet_ke_san_pham as $san_pham => $gia_tri)
+					@if($gia_tri->BAN_CHAY==true)
 					<div class="col-sm-4">
 						<div class="product-image-wrapper">
 							<div class="single-products">
 								<div class="productinfo text-center">
-									<img src="images/home/recommend3.jpg" alt="" />
-									<h2>$56</h2>
-									<p>Easy Polo Black Edition</p>
+									<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" />
+									<h2>{{$gia_tri->GIA}} VND</h2>
+									<p>{{$gia_tri->TEN}}</p>
 									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 								</div>
 							</div>
 						</div>
 					</div>
+					@endif
+					@endforeach
 				</div>
 			</div>
 			<a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
@@ -90,23 +103,26 @@
 		</div>
 	</div>
 	<!--/recommended_items-->
-	
+
 	<div class="features_items">
 		<!--features_items-->
 		<h2 class="title text-center">Trang Phục Đặc Sắc</h2>
+		@foreach($liet_ke_san_pham as $san_pham => $gia_tri)
+		@if($gia_tri->DAC_SAC==true)
 		<div class="col-sm-4">
 			<div class="product-image-wrapper">
 				<div class="single-products">
 					<div class="productinfo text-center">
-						<img src="images/home/product6.jpg" alt="" />
-						<h2>$56</h2>
-						<p>Easy Polo Black Edition</p>
+						<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
+						<h2>{{$gia_tri->GIA}}VND</h2>
+						<p>{{$gia_tri->TEN}}</p>
 						<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 					</div>
 					<div class="product-overlay">
 						<div class="overlay-content">
-							<h2>$56</h2>
-							<p>Easy Polo Black Edition</p>
+							<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" />
+							<h2>{{$gia_tri->GIA}} VND</h2>
+							<p>{{$gia_tri->TEN}}</p>
 							<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
 						</div>
 					</div>
@@ -119,6 +135,8 @@
 								</div> -->
 			</div>
 		</div>
+		@endif
+		@endforeach
 	</div>
 </div>
 @endsection
