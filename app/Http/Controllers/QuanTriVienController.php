@@ -50,9 +50,8 @@ class QuanTriVienController extends Controller
     }
     
     public function sua_nhan_vien($id){
-        $sua_nhan_vien = DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->get();
-        $quan_ly_nhan_vien = view('quan_tri_vien.quan_li_nhan_vien.sua_nhan_vien')->with('sua_nhan_vien',$sua_nhan_vien);
-        return view('quan_tri_vien.bo_cuc_quan_tri_vien')->with('quan_tri_vien.quan_li_nhan_vien.sua_nhan_vien',$quan_ly_nhan_vien);        
+        $nhan_vien = DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->first();
+        return view('quan_tri_vien.quan_li_nhan_vien.sua_nhan_vien')->with('nhan_vien',$nhan_vien);        
     }
     public function cap_nhat_nhan_vien(Request $request, $id){
         $chuoi = array();
