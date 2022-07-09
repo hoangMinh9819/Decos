@@ -7,17 +7,16 @@ use App\Http\Controllers\DanhMucSanPhamController;
 use App\Http\Controllers\NhanVienController;
 
 //Khach Hang
-Route::get('/', [TrangChuController::class, 'trang_chu']);
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
 Route::get('/dang_xuat',[TrangChuController::class, 'dang_xuat']);
 Route::get('/dang_nhap',[TrangChuController::class, 'dang_nhap']);
 Route::post('/kiem_tra_dang_nhap',[TrangChuController::class, 'kiem_tra_dang_nhap']);
 
 //Nhan Vien
-Route::get('/nhan_vien_trang_chu',[NhanVienController::class, 'nhan_vien_trang_chu']);
+Route::get('/ho_so_nhan_vien',[NhanVienController::class, 'ho_so_nhan_vien']);
 
 //Quan Tri Vien
-Route::get('/quan_tri_vien_trang_chu',[QuanTriVienController::class, 'quan_tri_vien_trang_chu']);
+Route::get('/ho_so_quan_tri_vien',[QuanTriVienController::class, 'ho_so_quan_tri_vien']);
 Route::get('/them_nhan_vien',[QuanTriVienController::class, 'them_nhan_vien']);
 Route::post('/luu_nhan_vien',[QuanTriVienController::class, 'luu_nhan_vien']);
 Route::get('/sua_nhan_vien/{id}',[QuanTriVienController::class, 'sua_nhan_vien']);

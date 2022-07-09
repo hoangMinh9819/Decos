@@ -1,3 +1,8 @@
+<?php
+use Illuminate\Support\Facades\Session;
+    $ten = Session::get('ten');
+    $hinh = Session::get('hinh');
+?>
 <!DOCTYPE html>
 
 <head>
@@ -57,12 +62,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$quan_tri_vien->HINH_ANH)}}">
-                            <span class="username">{{$quan_tri_vien->HO_TEN}}</span>
+                            <img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$hinh)}}">
+                            <span class="username">{{$ten}}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="#"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
+                            <li><a href="ho_so_quan_tri_vien"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
                             <li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
                         </ul>
@@ -114,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--main content start-->
         <section id="main-content">
             <section class="wrapper">
-                @yield('qtv_noi_dung')
+                @yield('quan_tri_vien_noi_dung')
             </section>
             <!-- footer -->
             <div class="footer">

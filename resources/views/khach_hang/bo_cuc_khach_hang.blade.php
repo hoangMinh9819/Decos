@@ -1,3 +1,9 @@
+<?php
+use Illuminate\Support\Facades\Session;
+	$id = Session::get('id');
+    $ten = Session::get('ten');
+    $hinh = Session::get('hinh');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,7 +102,12 @@
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i>Đăng Nhập</a></li>
+								<?php if($ten == null) { ?>
+								<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
+								<?php } else { ?>
+								<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
+								<li><img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>

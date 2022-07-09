@@ -1,3 +1,8 @@
+<?php
+use Illuminate\Support\Facades\Session;
+    $ten = Session::get('ten');
+    $hinh = Session::get('hinh');
+?>
 <!DOCTYPE html>
 
 <head>
@@ -57,12 +62,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}">
-                            <span class="username">{{$nhan_vien->HO_TEN}}</span>
+                            <img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$hinh)}}">
+                            <span class="username">{{$ten}}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="#"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
+                            <li><a href="{{URL::to('/ho_so_nhan_vien')}}"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
                             <li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
                         </ul>

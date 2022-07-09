@@ -10,12 +10,11 @@ session_start();
 
 class NhanVienController extends Controller
 {
-    public function nhan_vien_trang_chu(){      
+    public function ho_so_nhan_vien(){      
         $id = Session::get('id');
         $nhan_vien = DB::table('nguoi_dung')
-        ->where('PHAN_QUYEN','nhan_vien')
         ->where('ID_NGUOI_DUNG',$id)
         ->first();
-        return View('nhan_vien.trang_chu')->with('nhan_vien',$nhan_vien);
+        return View('nhan_vien.quan_li_ho_so.ho_so_nhan_vien')->with('nhan_vien',$nhan_vien);
     }
 }

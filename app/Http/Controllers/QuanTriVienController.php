@@ -10,21 +10,19 @@ session_start();
 
 class QuanTriVienController extends Controller
 {
-    public function quan_tri_vien_trang_chu(){
+    public function ho_so_quan_tri_vien(){      
         $id = Session::get('id');
         $quan_tri_vien = DB::table('nguoi_dung')
-        ->where('PHAN_QUYEN','quan_tri_vien')
         ->where('ID_NGUOI_DUNG',$id)
         ->first();
-        return View('quan_tri_vien.trang_chu')->with('quan_tri_vien',$quan_tri_vien);
+        return View('quan_tri_vien.quan_li_ho_so.ho_so_quan_tri_vien')->with('quan_tri_vien',$quan_tri_vien);
     }
     public function them_nhan_vien(){
         return view('quan_tri_vien.quan_li_nhan_vien.them_nhan_vien');
     }
     public function liet_ke_nhan_vien(){
         $tat_ca_nhan_vien = DB::table('nguoi_dung')->where('PHAN_QUYEN','nhan_vien')->get();
-        $quan_ly_nhan_vien = view('quan_tri_vien.quan_li_nhan_vien.liet_ke_nhan_vien')->with('liet_ke_nhan_vien',$tat_ca_nhan_vien);
-        return view('quan_tri_vien.bo_cuc_quan_tri_vien')->with('quan_tri_vien.quan_li_nhan_vien.liet_ke_nhan_vien',$quan_ly_nhan_vien);  
+        return view('quan_tri_vien.quan_li_nhan_vien.liet_ke_nhan_vien')->with('liet_ke_nhan_vien',$tat_ca_nhan_vien);
     }
     public function xem_doanh_thu(){
         return view('quan_tri_vien.quan_li_doanh_thu.xem_doanh_thu');

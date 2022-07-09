@@ -1,5 +1,5 @@
 @extends('quan_tri_vien.bo_cuc_quan_tri_vien')
-@section('qtv_noi_dung')
+@section('quan_tri_vien_noi_dung')
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
@@ -40,7 +40,6 @@
                     <tr>
                         <th>Hình Ảnh</th>
                         <th>Tên Nhân Viên</th>
-                        <th>Mật Khẩu</th>
                         <th>Địa Chỉ</th>
                         <th>Email</th>
                         <th>Điện Thoại</th>
@@ -53,7 +52,6 @@
                     <tr>
                         <td><img src="{{URL::to('public/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100"></td>
                         <td>{{$nhan_vien->HO_TEN}}</td>
-                        <td>{{$nhan_vien->MAT_KHAU}}</td>
                         <td>{{$nhan_vien->DIA_CHI}}</td>
                         <td>{{$nhan_vien->EMAIL}}</td>
                         <td>{{$nhan_vien->DIEN_THOAI}}</td>
