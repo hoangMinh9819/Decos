@@ -20,6 +20,7 @@ Route::get('/ho_so_quan_tri_vien',[QuanTriVienController::class, 'ho_so_quan_tri
 Route::get('/them_nhan_vien',[QuanTriVienController::class, 'them_nhan_vien']);
 Route::post('/luu_nhan_vien',[QuanTriVienController::class, 'luu_nhan_vien']);
 Route::get('/sua_nhan_vien/{id}',[QuanTriVienController::class, 'sua_nhan_vien']);
+Route::get('/xoa_nhan_vien/{id}',[QuanTriVienController::class, 'xoa_nhan_vien']);
 Route::post('/cap_nhat_nhan_vien/{id}',[QuanTriVienController::class, 'cap_nhat_nhan_vien']);
 Route::get('/liet_ke_nhan_vien',[QuanTriVienController::class, 'liet_ke_nhan_vien']);
 Route::get('/xem_doanh_thu',[QuanTriVienController::class, 'xem_doanh_thu']);

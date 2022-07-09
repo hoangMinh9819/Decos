@@ -69,6 +69,11 @@
                                 Sửa
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                             </a>
+                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
+                            href="{{URL::to('/xoa_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
+                                Xóa
+                                <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
+                            </a>
                         </td>
                     </tr>
                     @endforeach

@@ -72,4 +72,10 @@ class QuanTriVienController extends Controller
         Session::put('tin_nhan','Cập nhật thành công!');
         return Redirect::to('liet_ke_nhan_vien');
     }
+    
+    public function xoa_nhan_vien($id){       
+        $sua_danh_muc = DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->delete(); 
+        Session::put('tin_nhan','Xóa thành công!');
+        return Redirect::to('liet_ke_nhan_vien');
+    }
 }
