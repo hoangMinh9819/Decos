@@ -67,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="ho_so_quan_tri_vien"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
+                            <li><a href="{{URL::to('/ho_so_quan_tri_vien')}}"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
                             <li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
                         </ul>
