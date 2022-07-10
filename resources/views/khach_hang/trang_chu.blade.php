@@ -8,7 +8,7 @@
 			@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h4 class="panel-title"><a href="">{{$gia_tri->TEN}}</a></h4>
+					<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}">{{$gia_tri->TEN}}</a></h4>
 				</div>
 			</div>
 			@endforeach
@@ -19,7 +19,7 @@
 <div class="col-sm-10 padding-right">
 	<div class="features_items">
 		<!--features_items-->
-		<h2 class="title text-center">Trang Phục Mới</h2>
+		<h2 class="title text-center">Trang Phục Mới Nhất</h2>
 		<?php
 		$count = 0;
 		foreach ($liet_ke_san_pham as $san_pham => $gia_tri) {
@@ -31,16 +31,16 @@
 						<div class="single-products">
 							<div class="productinfo text-center">
 								<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
-								<h2>{{$gia_tri->GIA}} VND</h2>
+								<h2>{{number_format($gia_tri->GIA)}} VND</h2>
 								<p>{{$gia_tri->TEN}}</p>
-								<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+								<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
 							</div>
 							<div class="product-overlay">
 								<div class="overlay-content">
 									<img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" />
 									<h2>{{$gia_tri->GIA}} VND</h2>
 									<p>{{$gia_tri->TEN}}</p>
-									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+									<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
 								</div>
 							</div>
 						</div>

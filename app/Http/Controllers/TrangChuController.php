@@ -15,14 +15,14 @@ class TrangChuController extends Controller
 {
     public function trang_chu()
     {
-        $tat_ca_the_loai = DB::table('the_loai')->get();
+        $tat_ca_the_loai = DB::table('the_loai')
+        ->where('TRANG_THAI','Hiển Thị')->get();
         $tat_ca_san_pham = DB::table('san_pham')->get();
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $quan_ly = view('khach_hang.trang_chu')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
             ->with('liet_ke_san_pham', $tat_ca_san_pham)
-            ->with('liet_ke_slide', $tat_ca_slide);
-        //return View('khach_hang.bo_cuc_khach_hang')->with('khach_hang.liet_ke_the_loai',$quan_ly);
+            ->with('liet_ke_slide', $tat_ca_slide);        
         return $quan_ly;
     }
     public function dang_nhap()
@@ -64,5 +64,18 @@ class TrangChuController extends Controller
             Session::put('tin_nhan', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại');
             return Redirect::to('/dang_nhap');
         }
+    }
+    
+    public function the_loai_san_pham($id)
+    {
+        $tat_ca_the_loai = DB::table('the_loai')
+        ->where('TRANG_THAI','Hiển Thị')->get();
+        $tat_ca_san_pham = DB::table('san_pham')->where('ID_THE_LOAI',$id)->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $quan_ly = view('khach_hang.the_loai_san_pham')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_san_pham', $tat_ca_san_pham)
+            ->with('liet_ke_slide', $tat_ca_slide);        
+        return $quan_ly;
     }
 }

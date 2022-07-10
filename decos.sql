@@ -164,7 +164,7 @@ create table SAN_PHAM
    MA_SAN_PHAM          varchar(20),
    TEN                  varchar(70),
    GIA                  float,
-   TRANG_THAI           smallint,
+   TRANG_THAI           varchar(50),
    KICH_THUOC           varchar(2),
    MAU_SAC              varchar(10),
    MO_TA                text,
@@ -262,10 +262,10 @@ insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, DIA_CHI,
 ('Quốc Thái', 'thaikhachhang@gmail.com', 'quocthai', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'quocthai.png');
 
 
-insert into the_loai(TEN, HINH_ANH, MO_TA) VALUES
-('Mùa Xuân','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg','Bộ Sưu Tập Mùa Xuân'),
-('Mùa Hạ','z3513568016587_7fe3393e3aa955677e14d245ba4ba91e.jpg','Bộ Sưu Tập Mùa Hạ'),
-('Mùa Đông','z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg','Bộ Sưu Tập Mùa Đông');
+insert into the_loai(TEN, HINH_ANH, MO_TA, TRANG_THAI) VALUES
+('Mùa Xuân','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg','Bộ Sưu Tập Mùa Xuân' ,'Hiển Thị'),
+('Mùa Hạ','z3513568016587_7fe3393e3aa955677e14d245ba4ba91e.jpg','Bộ Sưu Tập Mùa Hạ' ,'Ẩn'),
+('Mùa Đông','z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg','Bộ Sưu Tập Mùa Đông' ,'Hiển Thị');
 
 
 insert into san_pham(ID_THE_LOAI, TEN, GIA, MO_TA, HINH_ANH_HAI, TRANG_THAI, HINH_ANH, MOI, BAN_CHAY, DAC_SAC, MO_TA_NGAN) VALUES
