@@ -26,18 +26,18 @@
                 <!--/product-information-->
                 <img src="images/product-details/new.jpg" class="newarrival" alt="" />
                 <h2>{{$san_pham->TEN_SP}}</h2>
-                <p>Mã ID: {{$san_pham->MA_SAN_PHAM}}</p>
+                <p>Mã ID: {{$san_pham->ID_SAN_PHAM}}</p>
                 <img src="images/product-details/rating.png" alt="" />
                 <span>
                     <span>{{number_format($san_pham->GIA)}} VND</span>
-                    <label>Quantity:</label>
-                    <input type="text" value="3" />
+                    <label>Số lượng: </label>
+                    <input type="number" min="1" value="1" />
                     <button type="button" class="btn btn-fefault cart">
                         <i class="fa fa-shopping-cart"></i>
                         Thêm giỏ hàng
                     </button>
                 </span>
-                <p><b>Availability:</b> In Stock</p>
+                <p><b>Tình trạng: </b>{{$san_pham->TRANG_THAI_SP}}</p>
                 <p><b>Condition:</b> New</p>
                 <p><b>Bộ Sưu Tập:</b> {{$san_pham->TEN_TL}}</p>
                 <p><b>Mô tả ngắn: </b>{{$san_pham->MO_TA_NGAN}}</p>

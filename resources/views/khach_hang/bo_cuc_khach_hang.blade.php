@@ -14,7 +14,7 @@ $hinh = Session::get('hinh');
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>Home | E-Shopper</title>
+	<title>Home | DECOS</title>
 	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/bootstrap.min.css')}}">
 	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/font-awesome.min.css')}}">
 	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/prettyPhoto.css')}}">
@@ -44,19 +44,19 @@ $hinh = Session::get('hinh');
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+								<!-- <li><a href=""><i class="fa fa-phone"></i> 0902252846</a></li> -->
+								<!-- <li><a href="#"><i class="fa fa-envelope"></i> mynameisminh191998@gmail.com</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-6">
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								<li><a href="https://www.facebook.com/decosoriginal"><i class="fa fa-facebook"></i></a></li>
+								<!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+								<!-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> -->
+								<!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li> -->
+								<!-- <li><a href="#"><i class="fa fa-google-plus"></i></a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -71,10 +71,10 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="{{asset('public/giao_dien/images/home/logo.png')}}" alt="" /></a>
+							<!-- <a href="index.html"><img src="{{asset('public/giao_dien/images/home/logo.png')}}" alt="" /></a> -->
 						</div>
 						<div class="btn-group pull-right">
-							<div class="btn-group">
+							<!-- <div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
 									USA
 									<span class="caret"></span>
@@ -83,9 +83,9 @@ $hinh = Session::get('hinh');
 									<li><a href="#">Canada</a></li>
 									<li><a href="#">UK</a></li>
 								</ul>
-							</div>
+							</div> -->
 
-							<div class="btn-group">
+							<!-- <div class="btn-group">
 								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
 									DOLLAR
 									<span class="caret"></span>
@@ -94,16 +94,16 @@ $hinh = Session::get('hinh');
 									<li><a href="#">Canadian Dollar</a></li>
 									<li><a href="#">Pound</a></li>
 								</ul>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-								<li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+								<!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li> -->
+								<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
+								<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
+								<!-- <li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
 								<?php if ($ten == null) { ?>
 									<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
@@ -136,18 +136,18 @@ $hinh = Session::get('hinh');
 								<li><a href="{{URL::to('/trang_chu')}}" class="active">Trang Chủ</a></li>
 								<li class="dropdown"><a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
-										<li><a href="shop.html">Products</a></li>
+										<li><a href="{{URL::to('/tat_ca_san_pham')}}">Tất Cả Sản Phẩm</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="#">Tin Tức</i></a></li>
-								<li><a href="404.html">Giỏ Hàng</a></li>
-								<li><a href="contact-us.html">Liên Hệ</a></li>
+								<!-- <li class="dropdown"><a href="#">Tin Tức</i></a></li> -->
+								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
+								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<input type="text" placeholder="Search" />
+							<!-- <input type="text" placeholder="Search" /> -->
 						</div>
 					</div>
 				</div>
@@ -173,13 +173,15 @@ $hinh = Session::get('hinh');
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-9">
-									<img src="{{asset('public/uploads/slide/minhanh.png')}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('public/uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h2>Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
+									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018 
+										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang 
+										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
+									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
 							</div>
 
@@ -190,9 +192,11 @@ $hinh = Session::get('hinh');
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
-									<h2>Free E-Commerce Template</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-									<button type="button" class="btn btn-default get">Get it now</button>
+									<h2>Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
+									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018 
+										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang 
+										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
+									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
 							</div>
 							@endforeach
@@ -223,7 +227,7 @@ $hinh = Session::get('hinh');
 							@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
 							<div class="panel panel-default">
 								<div class="panel-heading">
-									<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}">{{$gia_tri->TEN_TL}}</a></h4>
+									<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}" style="color: purple;">{{$gia_tri->TEN_TL}}</a></h4>
 								</div>
 							</div>
 							@endforeach

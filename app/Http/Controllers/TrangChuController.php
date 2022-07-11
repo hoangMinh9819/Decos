@@ -19,11 +19,11 @@ class TrangChuController extends Controller
         ->where('TRANG_THAI','Hiển Thị')->get();
         $tat_ca_san_pham = DB::table('san_pham')->get();
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
-        $quan_ly = view('khach_hang.trang_chu')
+        $view = view('khach_hang.trang_chu')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
             ->with('liet_ke_san_pham', $tat_ca_san_pham)
             ->with('liet_ke_slide', $tat_ca_slide);        
-        return $quan_ly;
+        return $view;
     }
     public function dang_nhap()
     {
@@ -77,12 +77,12 @@ class TrangChuController extends Controller
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $ten_the_loai = DB::table('the_loai')
         ->where('ID_THE_LOAI',$id)->first();
-        $quan_ly = view('khach_hang.the_loai_san_pham')
+        $view = view('khach_hang.the_loai_san_pham')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
             ->with('liet_ke_san_pham', $tat_ca_san_pham)
             ->with('liet_ke_slide', $tat_ca_slide) 
             ->with('ten_the_loai', $ten_the_loai);         
-        return $quan_ly;
+        return $view;
     }
     public function chi_tiet_san_pham($id)
     {
@@ -93,11 +93,26 @@ class TrangChuController extends Controller
         ->where('ID_SAN_PHAM',$id)->first();
         $san_pham_dac_sac = DB::table('san_pham')->where('DAC_SAC',true)->get();
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
-        $quan_ly = view('khach_hang.chi_tiet_san_pham')
+        $view = view('khach_hang.chi_tiet_san_pham')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
             ->with('san_pham', $san_pham)
             ->with('san_pham_dac_sac', $san_pham_dac_sac)
             ->with('liet_ke_slide', $tat_ca_slide);    
-        return $quan_ly;
+        return $view;
+    }
+    
+    public function tat_ca_san_pham()
+    {
+        $tat_ca_the_loai = DB::table('the_loai')
+        ->where('TRANG_THAI','Hiển Thị')->get();
+        $tat_ca_san_pham = DB::table('san_pham')
+        ->join('the_loai','the_loai.ID_THE_LOAI','=','san_pham.ID_THE_LOAI')
+        ->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.tat_ca_san_pham')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_san_pham', $tat_ca_san_pham)
+            ->with('liet_ke_slide', $tat_ca_slide);         
+        return $view;
     }
 }

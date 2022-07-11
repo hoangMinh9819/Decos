@@ -101,7 +101,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{URL::to('them_danh_muc')}}">Thêm Bộ Sưu Tập</a></li>
                                 <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê Bộ Sưu Tập</a></li>
                             </ul>
-                        </li><li class="sub-menu">
+                        </li>
+                        <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
                                 <span>Sản Phẩm</span>
