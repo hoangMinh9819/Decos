@@ -38,7 +38,6 @@
                     </button>
                 </span>
                 <p><b>Tình trạng: </b>{{$san_pham->TRANG_THAI_SP}}</p>
-                <p><b>Condition:</b> New</p>
                 <p><b>Bộ Sưu Tập:</b> {{$san_pham->TEN_TL}}</p>
                 <p><b>Mô tả ngắn: </b>{{$san_pham->MO_TA_NGAN}}</p>
                 <a href=""><img src="images/product-details/share.png" class="share img-responsive" alt="" /></a>
