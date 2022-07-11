@@ -1,8 +1,10 @@
 <?php
+
 use Illuminate\Support\Facades\Session;
-	$id = Session::get('id');
-    $ten = Session::get('ten');
-    $hinh = Session::get('hinh');
+
+$id = Session::get('id');
+$ten = Session::get('ten');
+$hinh = Session::get('hinh');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +27,10 @@ use Illuminate\Support\Facades\Session;
     <script src="js/respond.min.js"></script>
     <![endif]-->
 	<link rel="shortcut icon" href="/public/giao_dien/images/ico/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/giao_dien/images/ico/apple-touch-icon-144-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/giao_dien/images/ico/apple-touch-icon-114-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/giao_dien/images/ico/apple-touch-icon-72-precomposed.png">
-	<link rel="apple-touch-icon-precomposed" href="/public/giao_dien/images/ico/apple-touch-icon-57-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/giao_dien/images/ico/apple-touch-icon-144-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/giao_dien/images/ico/apple-touch-icon-114-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/giao_dien/images/ico/apple-touch-icon-72-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" href="/public/giao_dien/images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head>
 <!--/head-->
 
@@ -69,7 +71,7 @@ use Illuminate\Support\Facades\Session;
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="public/giao_dien/images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="{{asset('public/giao_dien/images/home/logo.png')}}" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -102,11 +104,11 @@ use Illuminate\Support\Facades\Session;
 								<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 								<li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
 								<li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-								<?php if($ten == null) { ?>
-								<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
+								<?php if ($ten == null) { ?>
+									<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
-								<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
-								<li><img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
+									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
+									<li><img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -162,7 +164,7 @@ use Illuminate\Support\Facades\Session;
 				<div>
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
-							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>							
+							<li data-target="#slider-carousel" data-slide-to="0" class="active"></li>
 							@foreach($liet_ke_slide as $slide => $gia_tri)
 							<li data-target="#slider-carousel" data-slide-to="{{$gia_tri->ID_SLIDE}}"></li>
 							@endforeach
@@ -171,7 +173,7 @@ use Illuminate\Support\Facades\Session;
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-9">
-									<img src="public/uploads/slide/minhanh.png" class="girl img-responsive" alt=""/>
+									<img src="{{asset('public/uploads/slide/minhanh.png')}}" class="girl img-responsive" alt="" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -213,6 +215,21 @@ use Illuminate\Support\Facades\Session;
 	<section>
 		<div class="container">
 			<div class="row">
+				<div class="col-sm-2">
+					<div class="left-sidebar">
+						<h2>Bộ Sưu Tập</h2>
+						<div class="panel-group category-products" id="accordian">
+							<!--category-productsr-->
+							@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}">{{$gia_tri->TEN_TL}}</a></h4>
+								</div>
+							</div>
+							@endforeach
+						</div>
+					</div>
+				</div>
 				@yield('noi_dung')
 			</div>
 		</div>
@@ -234,7 +251,7 @@ use Illuminate\Support\Facades\Session;
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="public/giao_dien/images/home/iframe1.png" alt="" />
+										<img src="{{asset('public/giao_dien/images/home/iframe1.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -249,7 +266,7 @@ use Illuminate\Support\Facades\Session;
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="public/giao_dien/images/home/iframe2.png" alt="" />
+										<img src="{{asset('public/giao_dien/images/home/iframe2.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -264,7 +281,7 @@ use Illuminate\Support\Facades\Session;
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="public/giao_dien/images/home/iframe3.png" alt="" />
+										<img src="{{asset('public/giao_dien/images/home/iframe3.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -279,7 +296,7 @@ use Illuminate\Support\Facades\Session;
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="public/giao_dien/images/home/iframe4.png" alt="" />
+										<img src="{{asset('public/giao_dien/images/home/iframe4.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -292,7 +309,7 @@ use Illuminate\Support\Facades\Session;
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="public/giao_dien/images/home/map.png" alt="" />
+							<img src="{{asset('public/giao_dien/images/home/map.png')}}" alt="" />
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>

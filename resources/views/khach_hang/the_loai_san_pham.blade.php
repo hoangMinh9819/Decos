@@ -1,25 +1,9 @@
 @extends('khach_hang.bo_cuc_khach_hang')
 @section('noi_dung')
-<div class="col-sm-2">
-    <div class="left-sidebar">
-        <h2>Bộ Sưu Tập</h2>
-        <div class="panel-group category-products" id="accordian">
-            <!--category-productsr-->
-            @foreach($liet_ke_the_loai as $the_loai => $gia_tri)
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}">{{$gia_tri->TEN}}</a></h4>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</div>
-
 <div class="col-sm-10 padding-right">
     <div class="features_items">
         <!--features_items-->
-        <h2 class="title text-center">Bộ Sưu Tập . . . </h2>
+        <h2 class="title text-center">Bộ Sưu Tập <span style="color: purple;">{{$ten_the_loai->TEN_TL}}</span></h2>
         <?php
         $count = 0;
         foreach ($liet_ke_san_pham as $san_pham => $gia_tri) {
@@ -31,14 +15,15 @@
                         <div class="productinfo text-center">
                             <img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
                             <h2>{{number_format($gia_tri->GIA)}} VND</h2>
-                            <p>{{$gia_tri->TEN}}</p>
+                            <p>{{$gia_tri->TEN_SP}}</p>
                             <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                         </div>
                         <div class="product-overlay">
                             <div class="overlay-content">
-                                <img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" />
-                                <h2>{{$gia_tri->GIA}} VND</h2>
-                                <p>{{$gia_tri->TEN}}</p>
+                                <a href="{{URL::to('/chi_tiet_san_pham/'.$gia_tri->ID_SAN_PHAM)}}">
+                                <img src={{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" /></a>
+                                <h2>{{number_format($gia_tri->GIA)}} VND</h2>
+                                <p>{{$gia_tri->TEN_SP}}</p>
                                 <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
                             </div>
                         </div>
@@ -52,7 +37,7 @@
                 </div>
             </div>
         <?php
-            if ($count == 20) break;
+            if ($count == 4) break;
         }
         ?>
     </div>

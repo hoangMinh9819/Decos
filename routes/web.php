@@ -13,6 +13,8 @@ Route::get('/dang_nhap',[TrangChuController::class, 'dang_nhap']);
 Route::post('/kiem_tra_dang_nhap',[TrangChuController::class, 'kiem_tra_dang_nhap']);
 //Hiển thị các sản phẩm thuộc danh mục.
 Route::get('/the_loai_san_pham/{id}',[TrangChuController::class, 'the_loai_san_pham']);
+//Hiển thị chi tiết sản phẩm.
+Route::get('/chi_tiet_san_pham/{id}',[TrangChuController::class, 'chi_tiet_san_pham']);
 
 //Nhan Vien
 Route::get('/ho_so_nhan_vien',[NhanVienController::class, 'ho_so_nhan_vien']);

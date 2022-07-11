@@ -162,7 +162,7 @@ create table SAN_PHAM
    ID_SAN_PHAM          int not null auto_increment,
    ID_THE_LOAI          int not null,
    MA_SAN_PHAM          varchar(20),
-   TEN                  varchar(70),
+   TEN_SP               varchar(70),
    GIA                  float,
    TRANG_THAI           varchar(50),
    KICH_THUOC           varchar(2),
@@ -189,9 +189,9 @@ create table SAN_PHAM
 create table THE_LOAI
 (
    ID_THE_LOAI          int not null auto_increment,
-   TEN                  varchar(70),
+   TEN_TL                  varchar(70),
    MO_TA                text,
-   HINH_ANH             varchar(100),
+   HINH_ANH_TL          varchar(100),
    SLUG                 varchar(100),
    NGAY_TAO             datetime,
    NGAY_CAP_NHAT        datetime,
@@ -262,13 +262,13 @@ insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, DIA_CHI,
 ('Quốc Thái', 'thaikhachhang@gmail.com', 'quocthai', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'quocthai.png');
 
 
-insert into the_loai(TEN, HINH_ANH, MO_TA, TRANG_THAI) VALUES
+insert into the_loai(TEN_TL, HINH_ANH_TL, MO_TA, TRANG_THAI) VALUES
 ('Mùa Xuân','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg','Bộ Sưu Tập Mùa Xuân' ,'Hiển Thị'),
 ('Mùa Hạ','z3513568016587_7fe3393e3aa955677e14d245ba4ba91e.jpg','Bộ Sưu Tập Mùa Hạ' ,'Ẩn'),
 ('Mùa Đông','z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg','Bộ Sưu Tập Mùa Đông' ,'Hiển Thị');
 
 
-insert into san_pham(ID_THE_LOAI, TEN, GIA, MO_TA, HINH_ANH_HAI, TRANG_THAI, HINH_ANH, MOI, BAN_CHAY, DAC_SAC, MO_TA_NGAN) VALUES
+insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA, HINH_ANH_HAI, TRANG_THAI, HINH_ANH, MOI, BAN_CHAY, DAC_SAC, MO_TA_NGAN) VALUES
 (1,'Aaaaa',500000,'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa','z3513554982861_80e02a8c77658a238a3946c826e8b7c9.jpg','Còn Hàng','z3513554996026_52ba01e74c0312245c00b7c25401f23b.jpg', true, false, true,'Đây là trang phục sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao'),
 (3,'bbbbb',500000,'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa','z3513554982861_80e02a8c77658a238a3946c826e8b7c9.jpg','Hết Hàng','z3513554996026_52ba01e74c0312245c00b7c25401f23b.jpg', true, true, true,'Đây là trang phục sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao'),
 (1,'ccccc',500000,'aaaaaaaaaaaaaaaaaaaaaaaaaaaaa','z3513554982861_80e02a8c77658a238a3946c826e8b7c9.jpg','Hết Hàng','z3513554996026_52ba01e74c0312245c00b7c25401f23b.jpg', false, false, true,'Đây là trang phục sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao sao'),
