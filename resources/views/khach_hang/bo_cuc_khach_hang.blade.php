@@ -15,22 +15,22 @@ $hinh = Session::get('hinh');
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Home | DECOS</title>
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/bootstrap.min.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/font-awesome.min.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/prettyPhoto.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/price-range.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/animate.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/main.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{asset('giao_dien/css/responsive.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/bootstrap.min.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/font-awesome.min.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/prettyPhoto.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/price-range.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/animate.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/main.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/responsive.css')}}">
 	<!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-	<link rel="shortcut icon" href="/giao_dien/images/ico/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/giao_dien/images/ico/apple-touch-icon-144-precomposed.png')}}">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/giao_dien/images/ico/apple-touch-icon-114-precomposed.png')}}">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/giao_dien/images/ico/apple-touch-icon-72-precomposed.png')}}">
-	<link rel="apple-touch-icon-precomposed" href="/giao_dien/images/ico/apple-touch-icon-57-precomposed.png')}}">
+	<link rel="shortcut icon" href="/khach_hang/images/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/khach_hang/images/ico/apple-touch-icon-144-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/khach_hang/images/ico/apple-touch-icon-114-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/khach_hang/images/ico/apple-touch-icon-72-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" href="/khach_hang/images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head>
 <!--/head-->
 
@@ -71,7 +71,7 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="{{URL::to('/trang_chu')}}"><img src="{{asset('giao_dien/images/home/logo2.jpg')}}" width="150" alt="" /></a>
+							<a href="{{URL::to('/trang_chu')}}"><img src="{{asset('khach_hang/images/home/logo2.jpg')}}" width="150" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<!-- <div class="btn-group">
@@ -255,7 +255,7 @@ $hinh = Session::get('hinh');
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="{{asset('giao_dien/images/home/iframe1.png')}}" alt="" />
+										<img src="{{asset('khach_hang/images/home/iframe1.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -270,7 +270,7 @@ $hinh = Session::get('hinh');
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="{{asset('giao_dien/images/home/iframe2.png')}}" alt="" />
+										<img src="{{asset('khach_hang/images/home/iframe2.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -285,7 +285,7 @@ $hinh = Session::get('hinh');
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="{{asset('giao_dien/images/home/iframe3.png')}}" alt="" />
+										<img src="{{asset('khach_hang/images/home/iframe3.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -300,7 +300,7 @@ $hinh = Session::get('hinh');
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="{{asset('giao_dien/images/home/iframe4.png')}}" alt="" />
+										<img src="{{asset('khach_hang/images/home/iframe4.png')}}" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -313,7 +313,7 @@ $hinh = Session::get('hinh');
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="{{asset('giao_dien/images/home/map.png')}}" alt="" />
+							<img src="{{asset('khach_hang/images/home/map.png')}}" alt="" />
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>
@@ -401,12 +401,12 @@ $hinh = Session::get('hinh');
 
 
 
-	<script src="{{asset('giao_dien/js/jquery.js')}}"></script>
-	<script src="{{asset('giao_dien/js/bootstrap.min.js')}}"></script>
-	<script src="{{asset('giao_dien/js/jquery.scrollUp.min.js')}}"></script>
-	<script src="{{asset('giao_dien/js/price-range.js')}}"></script>
-	<script src="{{asset('giao_dien/js/jquery.prettyPhoto.js')}}"></script>
-	<script src="{{asset('giao_dien/js/main.js')}}"></script>
+	<script src="{{asset('khach_hang/js/jquery.js')}}"></script>
+	<script src="{{asset('khach_hang/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('khach_hang/js/jquery.scrollUp.min.js')}}"></script>
+	<script src="{{asset('khach_hang/js/price-range.js')}}"></script>
+	<script src="{{asset('khach_hang/js/jquery.prettyPhoto.js')}}"></script>
+	<script src="{{asset('khach_hang/js/main.js')}}"></script>
 </body>
 
 </html>

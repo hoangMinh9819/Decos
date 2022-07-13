@@ -13,9 +13,9 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <a href=""><img src="{{asset('giao_dien/images/product-details/similar1.jpg')}}" alt=""></a>
-                        <a href=""><img src="{{asset('giao_dien/images/product-details/similar2.jpg')}}" alt=""></a>
-                        <a href=""><img src="{{asset('giao_dien/images/product-details/similar3.jpg')}}" alt=""></a>
+                        <a href=""><img src="{{asset('khach_hang/images/product-details/similar1.jpg')}}" alt=""></a>
+                        <a href=""><img src="{{asset('khach_hang/images/product-details/similar2.jpg')}}" alt=""></a>
+                        <a href=""><img src="{{asset('khach_hang/images/product-details/similar3.jpg')}}" alt=""></a>
                     </div>
                 </div>
             </div>

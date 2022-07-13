@@ -10,6 +10,7 @@ use App\Http\Controllers\NhanVienController;
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
 Route::get('/dang_xuat',[TrangChuController::class, 'dang_xuat']);
 Route::get('/dang_nhap',[TrangChuController::class, 'dang_nhap']);
+Route::get('/dang_ky',[TrangChuController::class, 'dang_ky']);
 Route::post('/kiem_tra_dang_nhap',[TrangChuController::class, 'kiem_tra_dang_nhap']);
 //Hiển thị các sản phẩm thuộc danh mục.
 Route::get('/the_loai_san_pham/{id}',[TrangChuController::class, 'the_loai_san_pham']);

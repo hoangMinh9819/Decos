@@ -47,8 +47,8 @@ class TrangChuController extends Controller
         $email = $request->email;
         $mat_khau = $request->mat_khau;
         $result = DB::table('nguoi_dung')
-            ->where('email', $email)
-            ->where('mat_khau', $mat_khau)
+            ->where('EMAIL', $email)
+            ->where('MAT_KHAU', $mat_khau)
             ->first();
         if ($result) {
             if ($result->TRANG_THAI === 'bi_chan') {
@@ -64,7 +64,7 @@ class TrangChuController extends Controller
             } elseif ($quyen === 'nhan_vien') {
                 return Redirect::to('/ho_so_nhan_vien');
             } else {
-                return Redirect::to('/trang_chu');
+                return Redirect::to('/dang_nhap');
             }
         } else {
             Session::put('tin_nhan', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại');
