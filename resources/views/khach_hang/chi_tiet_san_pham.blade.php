@@ -5,7 +5,7 @@
         <!--product-details-->
         <div class="col-sm-5">
             <div class="view-product">
-                <img src="{{asset('public/uploads/san_pham/'.$san_pham->HINH_ANH)}}" alt="" style="height:auto;width:100%;">
+                <img src="{{asset('uploads/san_pham/'.$san_pham->HINH_ANH)}}" alt="" style="height:auto;width:100%;">
                 <h3>ZOOM</h3>
             </div>
             <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -13,9 +13,9 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active">
-                        <a href=""><img src="{{asset('public/giao_dien/images/product-details/similar1.jpg')}}" alt=""></a>
-                        <a href=""><img src="{{asset('public/giao_dien/images/product-details/similar2.jpg')}}" alt=""></a>
-                        <a href=""><img src="{{asset('public/giao_dien/images/product-details/similar3.jpg')}}" alt=""></a>
+                        <a href=""><img src="{{asset('giao_dien/images/product-details/similar1.jpg')}}" alt=""></a>
+                        <a href=""><img src="{{asset('giao_dien/images/product-details/similar2.jpg')}}" alt=""></a>
+                        <a href=""><img src="{{asset('giao_dien/images/product-details/similar3.jpg')}}" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -228,7 +228,7 @@
                             <div class="product-image-wrapper">
                                 <div class="single-products">
                                     <div class="productinfo text-center">
-                                        <img src="{{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}}" alt="" />
+                                        <img src="{{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}}" alt="" />
                                         <h2>{{number_format($gia_tri->GIA)}} VND</h2>
                                         <p>{{$gia_tri->TEN_SP}}</p>
                                         <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button>
@@ -252,7 +252,7 @@
                                 <div class="product-image-wrapper">
                                     <div class="single-products">
                                         <div class="productinfo text-center">
-                                            <img src="{{asset('public/uploads/san_pham/'.$gia_tri->HINH_ANH)}}" alt="" />
+                                            <img src="{{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}}" alt="" />
                                             <h2>{{number_format($gia_tri->GIA)}} VND</h2>
                                             <p>{{$gia_tri->TEN_SP}}</p>
                                             <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button>

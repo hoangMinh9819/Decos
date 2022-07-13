@@ -50,7 +50,7 @@
                 <tbody>
                     @foreach($liet_ke_nhan_vien as $chia_khoa => $nhan_vien)
                     <tr>
-                        <td><img src="{{URL::to('public/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100"></td>
+                        <td><img src="{{URL::to('uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100"></td>
                         <td>{{$nhan_vien->HO_TEN}}</td>
                         <td>{{$nhan_vien->DIA_CHI}}</td>
                         <td>{{$nhan_vien->EMAIL}}</td>

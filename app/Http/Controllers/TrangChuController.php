@@ -27,7 +27,13 @@ class TrangChuController extends Controller
     }
     public function dang_nhap()
     {
-        return view('khach_hang.dang_nhap');
+        $tat_ca_the_loai = DB::table('the_loai')
+        ->where('TRANG_THAI','Hiển Thị')->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.dang_nhap')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_slide', $tat_ca_slide);        
+        return $view;
     }
     public function dang_xuat()
     {
