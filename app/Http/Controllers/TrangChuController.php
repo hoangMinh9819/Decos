@@ -64,7 +64,7 @@ class TrangChuController extends Controller
             } elseif ($quyen === 'nhan_vien') {
                 return Redirect::to('/ho_so_nhan_vien');
             } else {
-                return Redirect::to('/dang_nhap');
+                return Redirect::to('/trang_chu');
             }
         } else {
             Session::put('tin_nhan', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại');
@@ -120,5 +120,18 @@ class TrangChuController extends Controller
             ->with('liet_ke_san_pham', $tat_ca_san_pham)
             ->with('liet_ke_slide', $tat_ca_slide);         
         return $view;
+    }
+    
+    public function dang_ky(Request $request){
+        $data['HO_TEN'] = $request->ten;
+        $data['EMAIL'] = $request->email;
+        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['DIEN_THOAI'] = $request->dien_thoai;
+        $data['DIA_CHI'] = $request->dia_chi;
+        $data['PHAN_QUYEN'] = 'khach_hang';
+        $data['NGAY_TAO'] = date('y/m/d H:i:s');
+        DB::table('nguoi_dung')->insert($data);
+        Session::put('tin_nhan_dang_ky','Đăng ký thành công! Vui lòng đăng nhập');
+        return Redirect::to('dang_nhap');
     }
 }

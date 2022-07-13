@@ -107,6 +107,7 @@ $hinh = Session::get('hinh');
 								<?php if ($ten == null) { ?>
 									<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
+									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
 									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
 								<?php } ?>
@@ -326,7 +327,7 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Service</h2>
+							<h2>Dịch Vụ</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Online Help</a></li>
 								<li><a href="#">Contact Us</a></li>
@@ -338,7 +339,7 @@ $hinh = Session::get('hinh');
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Quock Shop</h2>
+							<h2>Bộ Sưu Tập</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">T-Shirt</a></li>
 								<li><a href="#">Mens</a></li>
@@ -350,7 +351,7 @@ $hinh = Session::get('hinh');
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Policies</h2>
+							<h2>Chính Sách</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Terms of Use</a></li>
 								<li><a href="#">Privecy Policy</a></li>
@@ -362,7 +363,7 @@ $hinh = Session::get('hinh');
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Về Chúng Tôi</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Company Information</a></li>
 								<li><a href="#">Careers</a></li>
@@ -390,8 +391,8 @@ $hinh = Session::get('hinh');
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+					<p class="pull-left">Bản quyền © 2022 DECOS Inc. Chưa đăng ký bản quyền</p>
+					<p class="pull-right">Thiết kế bởi nhóm 2 Decos Store.</p>
 				</div>
 			</div>
 		</div>

@@ -164,7 +164,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <!-- footer -->
             <div class="footer">
                 <div class="wthree-copyright">
-                    <p>© 2022 . Đã đăng ký bản quyền | Thiết kế bởi <a href="http://w3layouts.com">Nhóm 2</a></p>
+                    <p>© 2022 . Chưa đăng ký bản quyền | Thiết kế bởi <a href="http://w3layouts.com">Nhóm 2</a></p>
                 </div>
             </div>
             <!-- / footer -->
