@@ -54,9 +54,9 @@
                 <tbody>
                     @foreach($liet_ke_san_pham as $chia_khoa => $san_pham)
                     <tr>
-                        <td>{{$san_pham->TEN}}</td>
+                        <td>{{$san_pham->TEN_TL}}</td>
                         <td>{{$san_pham->MA_SAN_PHAM}}</td>
-                        <td>{{$san_pham->TEN}}</td>
+                        <td>{{$san_pham->TEN_SP}}</td>
                         <td>{{$san_pham->GIA}}</td>
                         <td>{{$san_pham->MO_TA}}</td>
                         <td>{{$san_pham->NGAY_TAO}}</td>
@@ -66,7 +66,7 @@
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                             </a>
                             <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                            href="{{URL::to('/xoa_san_pham/'.$san_pham->ID_THE_LOAI)}}" class="active" ui-toggle-class="">
+                            href="{{URL::to('/xoa_san_pham/'.$san_pham->ID_SAN_PHAM)}}" class="active" ui-toggle-class="">
                                 Xóa
                                 <!-- <i class="fa fa-times text-danger text"></i> -->
                             </a>

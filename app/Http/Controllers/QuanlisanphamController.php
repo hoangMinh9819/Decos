@@ -24,10 +24,10 @@ class QuanlisanphamController extends Controller
     }
 
     public function luu_san_pham(Request $request){
-        $chuoi = array();
+        $data = array();
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
-        $data['TEN'] = $request->TEN;
+        $data['TEN_SP'] = $request->TEN_SP;
         $data['GIA'] = $request->GIA;
         $data['MO_TA'] = $request->MO_TA;
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
@@ -46,7 +46,7 @@ class QuanlisanphamController extends Controller
         $data = array();
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
-        $data['TEN'] = $request->TEN;
+        $data['TEN_SP'] = $request->TEN_SP;
         $data['GIA'] = $request->GIA;
         $data['MO_TA'] = $request->MO_TA;
         $data['NGAY_CAP_NHAT'] = date('y/m/d H:i:s');
@@ -55,7 +55,7 @@ class QuanlisanphamController extends Controller
         return Redirect::to('liet_ke_san_pham');
     }
     public function xoa_san_pham($id){
-        $sua_san_pham = DB::table('san_pham')->where('ID_THE_LOAI',$id)->delete();
+        $sua_san_pham = DB::table('san_pham')->where('ID_SAN_PHAM',$id)->delete();
         Session::put('tin_nhan','Xóa thành công!');
         return Redirect::to('liet_ke_san_pham');
     }
