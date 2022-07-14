@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
     <title>Nhân Viên</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function() {
@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
- 
+
                 </ul>
                 <!--search & user info end-->
             </div>
@@ -136,8 +136,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Tin Tức</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_bai_viet')}}">Thêm Tin Tức</a></li>
-                                <li><a href="{{URL::to('liet_ke_bai_viet')}}">Liệt Kê Bài Viết</a></li>
+                                <li><a href="{{URL::to('them_tin_tuc')}}">Thêm Tin Tức</a></li>
+                                <li><a href="{{URL::to('liet_ke_tin_tuc')}}">Liệt Kê Bài Viết</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -146,8 +146,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Slide</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_bai_viet')}}">Thêm Slide</a></li>
-                                <li><a href="{{URL::to('liet_ke_bai_viet')}}">Liệt Kê Slide</a></li>
+                                <li><a href="{{URL::to('them_slide')}}">Thêm Slide</a></li>
+                                <li><a href="{{URL::to('liet_ke_slide')}}">Liệt Kê Slide</a></li>
                             </ul>
                         </li>
                     </ul>

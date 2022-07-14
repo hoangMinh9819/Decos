@@ -5,6 +5,11 @@ use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\QuanTriVienController;
 use App\Http\Controllers\DanhMucSanPhamController;
 use App\Http\Controllers\NhanVienController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\SlideController;
+use App\Http\Controllers\QuanlisanphamController;
+
+
 
 //Khach Hang
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
@@ -38,3 +43,29 @@ Route::get('/xoa_nhan_vien/{id}',[QuanTriVienController::class, 'xoa_nhan_vien']
 Route::post('/cap_nhat_nhan_vien/{id}',[QuanTriVienController::class, 'cap_nhat_nhan_vien']);
 Route::get('/liet_ke_nhan_vien',[QuanTriVienController::class, 'liet_ke_nhan_vien']);
 Route::get('/xem_doanh_thu',[QuanTriVienController::class, 'xem_doanh_thu']);
+
+//Quản Lí Tin Tức
+Route::get('/them_tin_tuc', [NewsController::class, 'them_tin_tuc']);
+Route::get('/sua_tin_tuc/{id}', [NewsController::class, 'sua_tin_tuc']);
+Route::get('/xoa_tin_tuc/{id}', [NewsController::class, 'xoa_tin_tuc']);
+Route::get('/liet_ke_tin_tuc', [NewsController::class, 'liet_ke_tin_tuc']);
+Route::post('/luu_tin_tuc', [NewsController::class, 'luu_tin_tuc']);
+Route::post('/cap_nhat_tin_tuc/{id}', [NewsController::class, 'cap_nhat_tin_tuc']);
+
+
+//Quản lí slide
+
+Route::get('/them_slide', [SlideController::class, 'them_slide']);
+Route::get('/sua_slide/{id}', [SlideController::class, 'sua_slide']);
+Route::get('/xoa_slide/{id}', [SlideController::class, 'xoa_slide']);
+Route::get('/liet_ke_slide', [SlideController::class, 'liet_ke_slide']);
+Route::post('/luu_slide', [SlideController::class, 'luu_slide']);
+Route::post('/cap_nhat_slide/{id}', [SlideController::class, 'cap_nhat_slide']);
+ //quan li sản phẩm
+
+ Route::get('/them_san_pham', [QuanlisanphamController::class, 'them_san_pham']);
+Route::get('/sua_san_pham/{id}', [QuanlisanphamController::class, 'sua_san_pham']);
+Route::get('/xoa_san_pham/{id}', [QuanlisanphamController::class, 'xoa_san_pham']);
+Route::get('/liet_ke_san_pham', [QuanlisanphamController::class, 'liet_ke_san_pham']);
+Route::post('/luu_san_pham', [QuanlisanphamController::class, 'luu_san_pham']);
+Route::post('/cap_nhat_san_pham/{id}', [QuanlisanphamController::class, 'cap_nhat_san_pham']);
