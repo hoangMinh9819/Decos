@@ -5,6 +5,9 @@ use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\QuanTriVienController;
 use App\Http\Controllers\DanhMucSanPhamController;
 use App\Http\Controllers\NhanVienController;
+use App\Http\Controllers\QuanlisanphamController;
+use App\Http\Controllers\KhachhangController;
+
 
 //Khach Hang
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
@@ -31,3 +34,22 @@ Route::get('/xoa_danh_muc/{id}',[DanhMucSanPhamController::class, 'xoa_danh_muc'
 Route::get('/liet_ke_danh_muc',[DanhMucSanPhamController::class, 'liet_ke_danh_muc']);
 Route::post('/luu_danh_muc',[DanhMucSanPhamController::class, 'luu_danh_muc']);
 Route::post('/cap_nhat_danh_muc/{id}',[DanhMucSanPhamController::class, 'cap_nhat_danh_muc']);
+
+//Quan li san pham
+Route::get('/liet_ke_san_pham',[QuanlisanphamController::class, 'liet_ke_san_pham']);
+Route::get('/them_san_pham',[QuanlisanphamController::class, 'them_san_pham']);
+Route::get('/xoa_san_pham/{id}',[QuanlisanphamController::class, 'xoa_san_pham']);
+Route::get('/sua_san_pham/{id}',[QuanlisanphamController::class, 'sua_san_pham']);
+Route::post('/luu_san_pham',[QuanlisanphamController::class, 'luu_san_pham']);
+Route::post('/cap_nhat_san_pham/{id}',[QuanlisanphamController::class, 'cap_nhat_san_pham']);
+
+//Danh Mục Khách Hàng
+Route::get('/sua_khach_hang/{id}',[KhachhangController::class, 'sua_khach_hang']);
+Route::get('/xoa_khach_hang/{id}',[KhachhangController::class, 'xoa_khach_hang']);
+Route::get('/liet_ke_khach_hang',[KhachhangController::class, 'liet_ke_khach_hang']);
+Route::post('/luu_khach_hang',[KhachhangController::class, 'luu_khach_hang']);
+Route::post('/cap_nhat_khach_hang/{id}',[KhachhangController::class, 'cap_nhat_khach_hang']);
+
+
+
+

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Session;
     <title>Nhân Viên</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function() {
@@ -73,7 +73,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
- 
+
                 </ul>
                 <!--search & user info end-->
             </div>
@@ -126,7 +126,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Khách Hàng</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt Kê Khách Hàng</a></li>
+                                <li><a href="{{URL::to('liet_ke_khach_hang')}}">Liệt Kê Khách Hàng</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
