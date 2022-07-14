@@ -1,55 +1,64 @@
-<!DOCTYPE html>
-<head>
-<title>Trang Đăng Nhập</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link rel="stylesheet" href="css/bootstrap.min.css" >
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="public/van_hanh/css/style.css" rel='stylesheet' type='text/css' />
-<link href="public/van_hanh/css/style-responsive.css" rel="stylesheet"/>
-<!-- font CSS -->
-<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="public/van_hanh/css/font.css" type="text/css"/>
-<link href="public/van_hanh/css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<script src="public/van_hanh/js/jquery2.0.3.min.js"></script>
-</head>
-<body>
-<div class="log-w3">
-<div class="w3layouts-main">
-	<h2>Đăng Nhập</h2>
-	<?php 
-	use Illuminate\Support\Facades\Session;
-	$tin_nhan = Session::get('tin_nhan');
-	if($tin_nhan){
-		echo '<span class="text-alert">'.$tin_nhan.'</span>';
-		Session::put('tin_nhan',null);
-	}
-	?>
-		<form action="{{URL::to('/kiem_tra_dang_nhap')}}" method="post">
-			{{csrf_field()}}
-			<input type="text" class="ggg" name="email" placeholder="Tài khoản / e-mail" required="">
-			<input type="password" class="ggg" name="mat_khau" placeholder="Mật khẩu" required="">
-			<span><input type="checkbox" /> Ghi nhớ</span>
-			<h6><a href="#">Quên mật khẩu?</a></h6>
-				<div class="clearfix"></div>
-				<input type="submit" value="Sign In" name="login">
-		</form>
-		<p>Chưa có tài khoản?<a href="registration.html">Đăng ký</a></p>
-</div>
-</div>
-<script src="public/van_hanh/js/bootstrap.js"></script>
-<script src="public/van_hanh/js/jquery.dcjqaccordion.2.7.js"></script>
-<script src="public/van_hanh/js/scripts.js"></script>
-<script src="public/van_hanh/js/jquery.slimscroll.js"></script>
-<script src="public/van_hanh/js/jquery.nicescroll.js"></script>
-<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-<script src="public/van_hanh/js/jquery.scrollTo.js"></script>
-</body>
-</html>
+@extends('khach_hang.bo_cuc_khach_hang')
+@section('noi_dung')
+<section id="form">
+	<!--form-->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-1">
+				<div class="login-form">
+					<!--login form-->
+					<h2>Đăng Nhập Vào Tài Khoản</h2>
+			<?php
+
+			use Illuminate\Support\Facades\Session;
+
+			if (Session::get('tin_nhan')) {
+				echo '<p style="color: red;">' . Session::get('tin_nhan') . '</p>';
+				Session::put('tin_nhan', null);
+			}
+			?>
+					<form action="{{URL::to('/kiem_tra_dang_nhap')}}" method="post">
+						{{csrf_field()}}
+						<input type="text" name="email" placeholder="Email" required />
+						<input type="password" name="mat_khau" placeholder="Mật Khẩu" required />
+						<span>
+							<input type="checkbox" class="checkbox">
+							Nhớ đăng nhập
+						</span>
+						<!-- <span><input type="checkbox" /> Ghi nhớ</span> -->
+						<h6><a href="#">Quên mật khẩu?</a></h6>
+						<button type="submit" class="btn btn-default">Đăng Nhập</button>
+					</form>
+				</div>
+				<!--/login form-->
+			</div>
+			<div class="col-sm-1">
+				<h2 class="or">HOẶC</h2>
+			</div>
+			<div class="col-sm-4">
+				<div class="signup-form">
+					<!--sign up form-->
+					<h2>Đăng Ký Tài Khoản Mới</h2>
+			<?php
+			if (Session::get('tin_nhan_dang_ky')) {
+				echo '<p style="color: green;">' . Session::get('tin_nhan_dang_ky') . '</p>';
+				Session::put('tin_nhan_dang_ky', null);
+			}
+			?>
+					<form action="{{URL::to('/dang_ky')}}" method="post">
+						{{csrf_field()}}
+						<input type="text" name="ten" placeholder="Họ Tên" required/>
+						<input type="text" name="email" placeholder="Email" required/>
+						<input type="password" name="mat_khau" placeholder="Mật Khẩu" required/>
+						<input type="text" name="dien_thoai" placeholder="Điện Thoại" required/>
+						<input type="text" name="dia_chi" placeholder="Địa Chỉ" />
+						<button type="submit" class="btn btn-default">Đăng Ký</button>
+					</form>
+				</div>
+				<!--/sign up form-->
+			</div>
+		</div>
+	</div>
+</section>
+<!--/form-->
+@endsection

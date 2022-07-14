@@ -19,7 +19,6 @@ class DanhMucSanPhamController extends Controller
         return view('nhan_vien.bo_cuc_nhan_vien')->with('nhan_vien.quan_li_the_loai.liet_ke_danh_muc',$quan_ly_danh_muc);        
     }
     public function luu_danh_muc(Request $request){
-        $chuoi = array();
         $data['TEN'] = $request->ten_danh_muc;
         $data['MO_TA'] = $request->mo_ta_danh_muc;
         $data['TRANG_THAI'] = $request->trang_thai_danh_muc;

@@ -50,7 +50,7 @@
                 <tbody>
                     @foreach($liet_ke_nhan_vien as $chia_khoa => $nhan_vien)
                     <tr>
-                        <td><img src="{{URL::to('public/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100"></td>
+                        <td><img src="{{URL::to('uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100"></td>
                         <td>{{$nhan_vien->HO_TEN}}</td>
                         <td>{{$nhan_vien->DIA_CHI}}</td>
                         <td>{{$nhan_vien->EMAIL}}</td>
@@ -67,6 +67,11 @@
                         <td>
                             <a href="{{URL::to('/sua_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
                                 Sửa
+                                <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
+                            </a>
+                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
+                            href="{{URL::to('/xoa_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
+                                Xóa
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                             </a>
                         </td>

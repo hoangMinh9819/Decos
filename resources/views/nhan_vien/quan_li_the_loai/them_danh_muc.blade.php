@@ -22,7 +22,7 @@
                             <label>Hiển thị / Ẩn</label>
                             <select name="trang_thai_danh_muc" class="form-control input-sm m-bot15">
                                 <option value="Ẩn">Ẩn</option>
-                                <option value="Hiện">Hiển thị</option>
+                                <option value="Hiện Thị">Hiển thị</option>
                             </select>
                         </div>
                         <button type="submit" name="them_danh_muc" class="btn btn-info">Thêm Danh Mục</button>

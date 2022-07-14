@@ -1,40 +1,38 @@
 @extends('quan_tri_vien.bo_cuc_quan_tri_vien')
-@section('qtv_noi_dung')
+@section('quan_tri_vien_noi_dung')
 <div class="row">
     <div class="col-lg-12">
         <section class="panel">
             <header class="panel-heading">
-                Cập nhật danh mục sản phẩm
+                Cập nhật nhân viên
             </header>
             <div class="panel-body">
-                @foreach($sua_nhan_vien as $key => $gia_tri)
                 <div class="position-center">
-
-                    <form role="form" action="{{URL::to('/cap_nhat_nhan_vien/'.$gia_tri->ID_NGUOI_DUNG)}}" method="post" enctype="multipart/form-data">
+                    <form role="form" action="{{URL::to('/cap_nhat_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="ten">Tên danh mục</label>
-                            <input type="text" value="{{$gia_tri->HO_TEN}}" name="ten" class="form-control" id="ten" placeholder="Tên danh mục">
+                            <input type="text" value="{{$nhan_vien->HO_TEN}}" name="ten" class="form-control" id="ten" placeholder="Tên danh mục">
                         </div>
                         <div class="form-group">
                             <label for="matkhau">Mật Khẩu</label>
-                            <input type="text" value="{{$gia_tri->MAT_KHAU}}" name="mat_khau" class="form-control" id="matkhau" placeholder="Mật khẩu" required>
+                            <input type="text" value="{{$nhan_vien->MAT_KHAU}}" name="mat_khau" class="form-control" id="matkhau" placeholder="Mật khẩu" required>
                         </div>
                         <div class="form-group">
                             <label for="diachi">Địa Chỉ</label>
-                            <input type="text" value="{{$gia_tri->DIA_CHI}}" name="dia_chi" class="form-control" id="diachi" placeholder="Địa chỉ">
+                            <input type="text" value="{{$nhan_vien->DIA_CHI}}" name="dia_chi" class="form-control" id="diachi" placeholder="Địa chỉ">
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="text" value="{{$gia_tri->EMAIL}}" name="email" class="form-control" id="email" placeholder="Email" required>
+                            <input type="text" value="{{$nhan_vien->EMAIL}}" name="email" class="form-control" id="email" placeholder="Email" required>
                         </div>
                         <div class="form-group">
                             <label for="dienthoai">Điện Thoại</label>
-                            <input type="text" value="{{$gia_tri->DIEN_THOAI}}" name="dien_thoai" class="form-control" id="dienthoai" placeholder="Điện Thoại">
+                            <input type="text" value="{{$nhan_vien->DIEN_THOAI}}" name="dien_thoai" class="form-control" id="dienthoai" placeholder="Điện Thoại">
                         </div>
                         <div class="form-group">
                             <label for="hinhanh">Hình Ảnh</label>
-                            <input type="file" value="{{$gia_tri->HINH_ANH}}" name="hinh_anh" class="form-control" id="hinhanh" placeholder="Hình Ảnh">
+                            <input type="file" value="{{$nhan_vien->HINH_ANH}}" name="hinh_anh" class="form-control" id="hinhanh" placeholder="Hình Ảnh">
                         </div>
                         <div class="form-group">
                             <label>Trạng Thái</label>
@@ -46,7 +44,6 @@
                         <button type="submit" name="cap_nhat_nhan_vien" class="btn btn-info">Cập Nhật Nhân Viên</button>
                     </form>
                 </div>
-                @endforeach
             </div>
         </section>
 
