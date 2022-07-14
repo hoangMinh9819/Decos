@@ -27,7 +27,7 @@ class QuanlisanphamController extends Controller
         $chuoi = array();
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
-        $data['TEN'] = $request->TEN;
+        $data['TEN_SP'] = $request->TEN_SP;
         $data['GIA'] = $request->GIA;
         $data['MO_TA'] = $request->MO_TA;
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
@@ -46,7 +46,7 @@ class QuanlisanphamController extends Controller
         $data = array();
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
-        $data['TEN'] = $request->TEN;
+        $data['TEN_SP'] = $request->TEN;
         $data['GIA'] = $request->GIA;
         $data['MO_TA'] = $request->MO_TA;
         $data['NGAY_CAP_NHAT'] = date('y/m/d H:i:s');

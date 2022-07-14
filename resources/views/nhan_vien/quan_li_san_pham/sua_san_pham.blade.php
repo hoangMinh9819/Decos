@@ -24,7 +24,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
-                                    <input type="text" name="TEN" class="form-control" value="{{$gia_tri ->TEN}}" id="exampleInput" >
+                                    <input type="text" name="TEN_SP" class="form-control" value="{{$gia_tri ->TEN_SP}}" id="exampleInput" >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Đơn giá</label>
