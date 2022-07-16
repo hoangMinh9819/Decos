@@ -52,9 +52,9 @@ class KhachhangController extends Controller
     }
 
     public function sua_khach_hang($id){
-        $sua_khach_hang = DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->get();
-        $quan_ly_khach_hang = view('nhan_vien.quan_li_khach_hang.sua_khach_hang')->with('sua_khach_hang',$sua_khach_hang);
-        return view('nhan_vien.bo_cuc_nhan_vien')->with('nhan_vien.quan_li_khach_hang.sua_khach_hang',$quan_ly_khach_hang);
+        $sua_khach_hang = DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->first();
+        $view = view('nhan_vien.quan_li_khach_hang.sua_khach_hang')->with('khach_hang',$sua_khach_hang);
+        return $view;
     }
     public function cap_nhat_khach_hang(Request $request, $id){
         // $this->uy_quyen_dang_nhap();

@@ -100,14 +100,15 @@ $hinh = Session::get('hinh');
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li> -->
-								<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
-								<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
-								<!-- <li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
 								<?php if ($ten == null) { ?>
+									<li><a href="{{URL::to('hien_thi_gio_hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
 									<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
 									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
+									<li><a href="{{URL::to('/')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
+									<li><a href="{{URL::to('hien_thi_gio_hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+									<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
+									<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
 									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
 								<?php } ?>
@@ -179,8 +180,8 @@ $hinh = Session::get('hinh');
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
 									<h2 style="color: #32A966;">Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
-									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018 
-										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang 
+									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018
+										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang
 										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
 									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
@@ -194,8 +195,8 @@ $hinh = Session::get('hinh');
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
 									<h2 style="color: #32A966;">Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
-									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018 
-										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang 
+									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018
+										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang
 										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
 									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
@@ -220,21 +221,6 @@ $hinh = Session::get('hinh');
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2">
-					<div class="left-sidebar">
-						<h2>Bộ Sưu Tập</h2>
-						<div class="panel-group category-products" id="accordian">
-							<!--category-productsr-->
-							@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}" style="color: #94C03C;">{{$gia_tri->TEN_TL}}</a></h4>
-								</div>
-							</div>
-							@endforeach
-						</div>
-					</div>
-				</div>
 				@yield('noi_dung')
 			</div>
 		</div>
@@ -247,75 +233,47 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+							<h2><span>Decos</span></h2>
+							<p>“Năng lực con người là vô hạn.
+								Đừng bao giờ nghĩ bạn bị giới hạn bởi bất cứ điều gì.
+								Tôi tin khi con người biết nỗ lực,
+								không ngừng học hỏi và tích luỹ kinh nghiệm lẫn chuyên môn,
+								bạn sẽ tạo ra kỳ tích”.</p>
 						</div>
 					</div>
 					<div class="col-sm-7">
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('khach_hang/images/home/iframe1.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
+						<?php
+						$count = 0;
+						foreach ($liet_ke_slide as $slide => $gia_tri) {
+							$count++;
+						?>
+							<div class="col-sm-3">
+								<div class="video-gallery text-center">
+									<a href="#">
+										<div class="iframe-img">
+											<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" height="100" alt="" />
+										</div>
+										<div class="overlay-icon">
+											<i class="fa fa-play-circle-o"></i>
+										</div>
+									</a>
+									<p>{{$gia_tri->TEN_SLIDE}}</p>
+									<h2>{{$gia_tri->NGAY_TAO}}</h2>
+								</div>
 							</div>
-						</div>
 
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('khach_hang/images/home/iframe2.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('khach_hang/images/home/iframe3.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('khach_hang/images/home/iframe4.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
+						<?php
+							if ($count == 4) break;
+						}
+						?>
 					</div>
 					<div class="col-sm-3">
-						<div class="address">
+						<div class="address" style="height: 200px; width: 300px">
 							<img src="{{asset('khach_hang/images/home/map.png')}}" alt="" />
-							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+							<p>DECOS HCM: 83 Dong Khoi St, District 1
+								<br>DECOS HN: 23 Pho Hue St, Hoan Kiem District
+								<br>DECOS ĐN: 88 Nguyen Van Linh St, Hai Chau District
+							</p>
 						</div>
 					</div>
 				</div>
@@ -329,11 +287,11 @@ $hinh = Session::get('hinh');
 						<div class="single-widget">
 							<h2>Dịch Vụ</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Online Help</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Tư Vấn</a></li>
+								<!-- <li><a href="#">Contact Us</a></li>
 								<li><a href="#">Order Status</a></li>
 								<li><a href="#">Change Location</a></li>
-								<li><a href="#">FAQ’s</a></li>
+								<li><a href="#">FAQ’s</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -341,11 +299,11 @@ $hinh = Session::get('hinh');
 						<div class="single-widget">
 							<h2>Bộ Sưu Tập</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">T-Shirt</a></li>
-								<li><a href="#">Mens</a></li>
+								<li><a href="#">Fall Winter 2022</a></li>
+								<!-- <li><a href="#">Mens</a></li>
 								<li><a href="#">Womens</a></li>
 								<li><a href="#">Gift Cards</a></li>
-								<li><a href="#">Shoes</a></li>
+								<li><a href="#">Shoes</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -353,11 +311,11 @@ $hinh = Session::get('hinh');
 						<div class="single-widget">
 							<h2>Chính Sách</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Terms of Use</a></li>
-								<li><a href="#">Privecy Policy</a></li>
+								<li><a href="#">Đổi Trả</a></li>
+								<!-- <li><a href="#">Privecy Policy</a></li>
 								<li><a href="#">Refund Policy</a></li>
 								<li><a href="#">Billing System</a></li>
-								<li><a href="#">Ticket System</a></li>
+								<li><a href="#">Ticket System</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -365,21 +323,21 @@ $hinh = Session::get('hinh');
 						<div class="single-widget">
 							<h2>Về Chúng Tôi</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Company Information</a></li>
-								<li><a href="#">Careers</a></li>
+								<li><a href="#">Thông Tin Công Ty</a></li>
+								<!-- <li><a href="#">Careers</a></li>
 								<li><a href="#">Store Location</a></li>
 								<li><a href="#">Affillate Program</a></li>
-								<li><a href="#">Copyright</a></li>
+								<li><a href="#">Copyright</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Ưu Đãi</h2>
 							<form action="#" class="searchform">
-								<input type="text" placeholder="Your email address" />
+								<input type="text" placeholder="Địa chỉ email của bạn" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+								<p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
 							</form>
 						</div>
 					</div>
