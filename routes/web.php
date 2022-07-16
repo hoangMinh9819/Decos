@@ -44,10 +44,6 @@ Route::get('/liet_ke_danh_muc',[DanhMucSanPhamController::class, 'liet_ke_danh_m
 Route::post('/luu_danh_muc',[DanhMucSanPhamController::class, 'luu_danh_muc']);
 Route::post('/cap_nhat_danh_muc/{id}',[DanhMucSanPhamController::class, 'cap_nhat_danh_muc']);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 5f12cb076e29abe07d8d0ef5be1a9b2f5f8e135c
 //Quan li san pham
 Route::get('/liet_ke_san_pham',[QuanlisanphamController::class, 'liet_ke_san_pham']);
 Route::get('/them_san_pham',[QuanlisanphamController::class, 'them_san_pham']);
@@ -68,11 +64,6 @@ Route::post('/cap_nhat_khach_hang/{id}',[KhachhangController::class, 'cap_nhat_k
 
 
 
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 5f12cb076e29abe07d8d0ef5be1a9b2f5f8e135c
 //Quan Tri Vien
 Route::get('/ho_so_quan_tri_vien',[QuanTriVienController::class, 'ho_so_quan_tri_vien']);
 Route::get('/them_nhan_vien',[QuanTriVienController::class, 'them_nhan_vien']);

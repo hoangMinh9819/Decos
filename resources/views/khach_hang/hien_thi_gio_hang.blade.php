@@ -129,10 +129,10 @@
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Tổng <span>{{Cart::total()}} VND</span></li>
+							<li>Thành Tiền <span>{{Cart::subtotal()}} VND</span></li>
 							<li>Thuế <span>{{Cart::tax()}} VND</span></li>
 							<li>Phí Vận Chuyển <span>Free</span></li>
-							<li>Thành Tiền <span>{{Cart::subtotal()}} VND</span></li>
+							<li>Tổng <span>{{Cart::total()}} VND</span></li>
 						</ul>
 							<!-- <a class="btn btn-default update" href="">Update</a> -->
 							<a class="btn btn-default check_out" href="{{URL::to('/dang_nhap_thanh_toan')}}">Thanh Toán</a>

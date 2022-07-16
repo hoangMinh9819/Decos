@@ -110,7 +110,7 @@ $hinh = Session::get('hinh');
 									<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
 									<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
-									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
+									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40" style="border-radius: 15px;"></li>
 								<?php } ?>
 							</ul>
 						</div>

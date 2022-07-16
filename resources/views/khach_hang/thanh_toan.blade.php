@@ -32,14 +32,14 @@
             </div> -->
             <!--/checkout-options-->
 
-            <div class="register-req">
+            <!-- <div class="register-req">
                 <p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
-            </div>
+            </div> -->
             <!--/register-req-->
 
             <div class="shopper-informations">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <!-- <div class="col-sm-3">
                         <div class="shopper-info">
                             <p>Shopper Information</p>
                             <form>
@@ -51,65 +51,30 @@
                             <a class="btn btn-primary" href="">Get Quotes</a>
                             <a class="btn btn-primary" href="">Continue</a>
                         </div>
-                    </div>
-                    <div class="col-sm-5 clearfix">
+                    </div> -->
+                    <div class="col-sm-6 clearfix">
                         <div class="bill-to">
-                            <p>Bill To</p>
                             <div class="form-one">
+                                <p>Thông Tin Người Nhận</p>
                                 <form>
-                                    <input type="text" placeholder="Company Name">
-                                    <input type="text" placeholder="Email*">
-                                    <input type="text" placeholder="Title">
-                                    <input type="text" placeholder="First Name *">
-                                    <input type="text" placeholder="Middle Name">
-                                    <input type="text" placeholder="Last Name *">
-                                    <input type="text" placeholder="Address 1 *">
-                                    <input type="text" placeholder="Address 2">
-                                </form>
-                            </div>
-                            <div class="form-two">
-                                <form>
-                                    <input type="text" placeholder="Zip / Postal Code *">
-                                    <select>
-                                        <option>-- Country --</option>
-                                        <option>United States</option>
-                                        <option>Bangladesh</option>
-                                        <option>UK</option>
-                                        <option>India</option>
-                                        <option>Pakistan</option>
-                                        <option>Ucrane</option>
-                                        <option>Canada</option>
-                                        <option>Dubai</option>
-                                    </select>
-                                    <select>
-                                        <option>-- State / Province / Region --</option>
-                                        <option>United States</option>
-                                        <option>Bangladesh</option>
-                                        <option>UK</option>
-                                        <option>India</option>
-                                        <option>Pakistan</option>
-                                        <option>Ucrane</option>
-                                        <option>Canada</option>
-                                        <option>Dubai</option>
-                                    </select>
-                                    <input type="password" placeholder="Confirm password">
-                                    <input type="text" placeholder="Phone *">
-                                    <input type="text" placeholder="Mobile Phone">
-                                    <input type="text" placeholder="Fax">
+                                    <input type="text" placeholder="Email *">
+                                    <input type="text" placeholder="Họ Tên *">
+                                    <input type="text" placeholder="Địa Chỉ *">
+                                    <input type="text" placeholder="Điện Thoại *">
                                 </form>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-4">
                         <div class="order-message">
-                            <p>Shipping Order</p>
-                            <textarea name="message" placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
-                            <label><input type="checkbox"> Shipping to bill address</label>
+                            <p>Ghi Chú</p>
+                            <textarea name="message" placeholder="Ghi chú cho cửa hàng" rows="16"></textarea>
+                            <!-- <label><input type="checkbox"> Shipping to bill address</label> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="review-payment">
+            <!-- <div class="review-payment">
                 <h2>Review & Payment</h2>
             </div>
 
@@ -238,7 +203,7 @@
                 <span>
                     <label><input type="checkbox"> Paypal</label>
                 </span>
-            </div>
+            </div> -->
         </div>
     </section>
     <!--/#cart_items-->
