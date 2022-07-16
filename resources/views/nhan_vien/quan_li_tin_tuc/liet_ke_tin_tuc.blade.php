@@ -14,7 +14,7 @@
             }
             ?>
             <div class="row w3-res-tb">
-                <div class="col-sm-5 m-b-xs">
+                <div class="col-sm-3 m-b-xs">
                     <select class="input-sm form-control w-sm inline v-middle">
                         <option value="0">Bulk action</option>
                         <option value="1">Delete selected</option>
@@ -25,17 +25,18 @@
                 </div>
                 <div class="col-sm-4">
                 </div>
-                <div class="col-sm-3">
-                    <div class="input-group">
-                        <input type="text" class="input-sm form-control" placeholder="Search">
-                        <span class="input-group-btn">
-                            <button class="btn btn-sm btn-default" type="button">Go!</button>
-                        </span>
-                    </div>
+                <div class="col-sm-5">
+                    <form role="form" action="{{ URL::to('/search') }}" method="POST">
+                        {{csrf_field()}}
+                        <div class="search_box pull-right">
+                            <input type="text"  name="keyword_submit" placeholder="Tìm kiếm tin tức">
+                            <input type="submit" name="search_tin_tuc" class="btn btn-success btn-sm" value="Tìm kiếm">
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped b-t b-light">
+                <table class="table table-striped b-t b-light" id="myTable">
                     <thead>
                         <tr>
                             <th>Chủ đề</th>

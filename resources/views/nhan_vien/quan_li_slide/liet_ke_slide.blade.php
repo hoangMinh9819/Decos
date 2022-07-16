@@ -26,11 +26,12 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-3">
-                    <div class="input-group">
-                        <input type="text" class="input-sm form-control" placeholder="Search">
-                        <span class="input-group-btn">
-                            <button class="btn btn-sm btn-default" type="button">Go!</button>
-                        </span>
+                    <div class="search">
+                        <form class="navbar-form navbar-left" action="" method="post">
+                            {{ csrf_field() }}
+                            <input type="text" name="search" id="search" class="form-control" placeholder="Search">
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -67,6 +68,10 @@
                                 </td>
                             </tr>
                         @endforeach
+{{-- hihhihi --}}
+
+
+                    <tbody id="Content"></tbody>
                     </tbody>
                 </table>
             </div>
@@ -89,4 +94,26 @@
             </footer>
         </div>
     </div>
+    <script type="text/javascript">
+        $('#search').on('keyup', function() {
+            $value = $(this).val();
+
+            $.ajax({
+                type: 'get',
+                url: '{{ URL::to('search') }}',
+                data: {
+                    'search': $value
+                },
+                success: function(data) {
+                    console.log(data);
+                    $('#Content').html(data);
+
+                }
+
+
+            });
+
+            alert($value);
+        })
+    </script>
 @endsection

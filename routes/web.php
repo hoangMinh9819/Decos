@@ -51,7 +51,7 @@ Route::get('/xoa_tin_tuc/{id}', [NewsController::class, 'xoa_tin_tuc']);
 Route::get('/liet_ke_tin_tuc', [NewsController::class, 'liet_ke_tin_tuc']);
 Route::post('/luu_tin_tuc', [NewsController::class, 'luu_tin_tuc']);
 Route::post('/cap_nhat_tin_tuc/{id}', [NewsController::class, 'cap_nhat_tin_tuc']);
-
+Route::post('/search', [NewsController::class, 'search']);
 
 //Quản lí slide
 
@@ -61,6 +61,10 @@ Route::get('/xoa_slide/{id}', [SlideController::class, 'xoa_slide']);
 Route::get('/liet_ke_slide', [SlideController::class, 'liet_ke_slide']);
 Route::post('/luu_slide', [SlideController::class, 'luu_slide']);
 Route::post('/cap_nhat_slide/{id}', [SlideController::class, 'cap_nhat_slide']);
+
+Route::get('/search', [SlideController::class, 'search']);
+
+
  //quan li sản phẩm
 
  Route::get('/them_san_pham', [QuanlisanphamController::class, 'them_san_pham']);
@@ -69,3 +73,4 @@ Route::get('/xoa_san_pham/{id}', [QuanlisanphamController::class, 'xoa_san_pham'
 Route::get('/liet_ke_san_pham', [QuanlisanphamController::class, 'liet_ke_san_pham']);
 Route::post('/luu_san_pham', [QuanlisanphamController::class, 'luu_san_pham']);
 Route::post('/cap_nhat_san_pham/{id}', [QuanlisanphamController::class, 'cap_nhat_san_pham']);
+Route::post('/search', [QuanlisanphamController::class, 'search']);

@@ -11,6 +11,18 @@ use App\Http\Requests;
 
 class QuanlisanphamController extends Controller
 {
+    public function search(Request $request)
+    {
+        $keyword = $request->keyword_submit;
+        $search_san_pham = DB::table('san_pham')->where('TEN_SP', 'like', '%' . $keyword . '%')
+            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
+            ->orwhere('GIA', 'like', '%' . $keyword . '%')
+            ->orwhere('TEN_TL', 'like', '%' . $keyword . '%')
+            ->get();
+
+        return view('nhan_vien.quan_li_san_pham.search')->with('search_san_pham', $search_san_pham);
+    }
+
     public function liet_ke_san_pham(){
         $danh_sach_san_pham = DB::table('san_pham')
         ->join('the_loai','the_loai.ID_THE_LOAI','=','san_pham.ID_THE_LOAI')

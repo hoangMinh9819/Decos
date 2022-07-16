@@ -32,7 +32,7 @@
                         {{ csrf_field() }}
                         <div class="search_box pull-right">
                             <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
-                            <input type="submit" name="search_san_pham" class="btn btn-success btn-sm" value="Tìm kiếm">
+                            <input type="submit" name="search_tin_tuc" class="btn btn-success btn-sm" value="Tìm kiếm">
                         </div>
                     </form>
                 </div>
@@ -53,7 +53,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_san_pham as $chia_khoa => $san_pham)
+                        @foreach ($search_san_pham as $chia_khoa => $san_pham)
                             <tr>
                                 <td>{{ $san_pham->TEN_TL }}</td>
                                 <td>{{ $san_pham->MA_SAN_PHAM }}</td>
