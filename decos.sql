@@ -110,6 +110,7 @@ create table HINH_ANH_SAN_PHAM
 create table HINH_ANH_SLIDE
 (
    ID_SLIDE             int not null auto_increment,
+   TEN_SLIDE            varchar(50),
    HINH_ANH             varchar(100),
    LINK                 varchar(200),
    VI_TRI               smallint,
@@ -167,7 +168,7 @@ create table SAN_PHAM
    TRANG_THAI_SP           varchar(50),
    KICH_THUOC           varchar(2),
    MAU_SAC              varchar(10),
-   MO_TA                text,
+   MO_TA_SP                text,
    XUAT_XU              varchar(50),
    SLUG                 varchar(100),
    MO_TA_NGAN           text,
@@ -190,7 +191,7 @@ create table THE_LOAI
 (
    ID_THE_LOAI          int not null auto_increment,
    TEN_TL                  varchar(70),
-   MO_TA                text,
+   MO_TA_TL                text,
    HINH_ANH_TL          varchar(100),
    SLUG                 varchar(100),
    NGAY_TAO             datetime,
@@ -262,7 +263,7 @@ insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, DIA_CHI,
 ('Quốc Thái', 'thaikhachhang@gmail.com', 'quocthai', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'quocthai.png');
 
 
-insert into the_loai(TEN_TL, HINH_ANH_TL, MO_TA, TRANG_THAI) VALUES
+insert into the_loai(TEN_TL, HINH_ANH_TL, MO_TA_TL, TRANG_THAI) VALUES
 ('FALL WINTER 2020','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg','Bộ Sưu Tập Mùa Xuân' ,'Hiển Thị'),
 ('FALL WINTER 2019','z3513568016587_7fe3393e3aa955677e14d245ba4ba91e.jpg','Bộ Sưu Tập Mùa Hạ' ,'Hiển Thị'),
 ('PRE-FALL 2020','z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg','Bộ Sưu Tập Mùa Đông' ,'Hiển Thị'),
@@ -278,7 +279,7 @@ insert into the_loai(TEN_TL, HINH_ANH_TL, MO_TA, TRANG_THAI) VALUES
 ('WEDDING 2019','z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg','Bộ Sưu Tập Mùa Đông' ,'Hiển Thị');
 
 
-insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA, HINH_ANH_HAI, TRANG_THAI_SP, HINH_ANH, MOI, BAN_CHAY, DAC_SAC, MO_TA_NGAN) VALUES
+insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THAI_SP, HINH_ANH, MOI, BAN_CHAY, DAC_SAC, MO_TA_NGAN) VALUES
 (7,'Aaaaa',5000000,'Mô tả dài','z3513554982861_80e02a8c77658a238a3946c826e8b7c9.jpg','Còn Hàng','z3513554996026_52ba01e74c0312245c00b7c25401f23b.jpg', true, false, true,'Mô tả ngắn'),
 (8,'bbbbb',4000000,'Mô tả dài','z3513555161937_af2b6e70a64cf1e9e8c47fb68cdd4de7.jpg','Hết Hàng','z3513555156867_42f42e1977c9c71b2980d5a8557a887b.jpg', true, true, true,'Mô tả ngắn'),
 (9,'ccccc',4500000,'Mô tả dài','z3513562077620_865656edf9f4adabb2a55daf08a0f2d1.jpg','Hết Hàng','z3513562096055_fff8bd44fba7af424f5d170f5cd31816.jpg', false, false, true,'Mô tả ngắn'),
@@ -300,7 +301,6 @@ insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA, HINH_ANH_HAI, TRANG_THAI_S
 (12,'ddtttttddd',5100000,'Mô tả dài','z3513562497881_f0ffea7ac9c99a1b77b4450bb0c92ffb.jpg','Còn Hàng','z3513562518330_0a5fce90befad056a93d661eea4ca2a9.jpg', true, false, false,'Mô tả ngắn'),
 (13,'ssxxxxss',7900000,'Mô tả dài','z3513562448947_d9c4278dc384d4bfdf29c909459e48c2.jpg','Còn Hàng','z3513562485581_d70bbcd0ce80c2706f49578461f3a7e0.jpg', false, true, true,'Mô tả ngắn');
 
-
 insert into don_hang(ID_NGUOI_DUNG, DIA_CHI_GIAO, TEN_NGUOI_NHAN, DIEN_THOAI_NGUOI_NHAN, TRANG_THAI) VALUES
 (1,'590 CMT8','Hoàng Minh','0902252888','Đang Giao'),
 (2,'590 CMT8','Hoàng Minh','0902252888','Chờ Xác Nhận'),
@@ -315,11 +315,11 @@ insert into tin_tuc(ID_THE_LOAI, TIEU_DE, NOI_DUNG) VALUES
 (1,'Tiêu đề 4 ','Nội dung bài viết'),
 (2,'Tiêu đề 5 ','Nội dung bài viết');
 
-
-insert into hinh_anh_slide(HINH_ANH) VALUES
-('z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg'),
-('z3513568016587_7fe3393e3aa955677e14d245ba4ba91e.jpg'),
-('z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg');
+insert into hinh_anh_slide(TEN_SLIDE, HINH_ANH) VALUES
+('Slide one','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg'),
+('Slide two','z3513568016587_7fe3393e3aa955677e14d245ba4ba91e.jpg'),
+('Slide three','z3513568027356_1d86134e5959933ed35eb599fc3882ad.jpg'),
+('Slide four','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg');
 
 
 

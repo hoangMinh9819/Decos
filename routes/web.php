@@ -7,7 +7,8 @@ use App\Http\Controllers\DanhMucSanPhamController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\QuanlisanphamController;
 use App\Http\Controllers\KhachhangController;
-
+use App\Http\Controllers\GioHangController;
+use App\Http\Controllers\ThanhToanController;
 
 //Khach Hang
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
@@ -21,6 +22,16 @@ Route::get('/the_loai_san_pham/{id}',[TrangChuController::class, 'the_loai_san_p
 Route::get('/chi_tiet_san_pham/{id}',[TrangChuController::class, 'chi_tiet_san_pham']);
 //Hiển thị tất cả sản phẩm.
 Route::get('/tat_ca_san_pham',[TrangChuController::class, 'tat_ca_san_pham']);
+
+//Lưu vào giỏ hàng.
+Route::post('/luu_gio_hang',[GioHangController::class, 'luu_gio_hang']);
+Route::get('/hien_thi_gio_hang',[GioHangController::class, 'hien_thi_gio_hang']);
+Route::get('/xoa_gio_hang/{id}',[GioHangController::class, 'xoa_gio_hang']);
+Route::post('/cap_nhat_so_luong',[GioHangController::class, 'cap_nhat_so_luong']);
+
+//Thanh Toán
+Route::get('/dang_nhap_thanh_toan',[ThanhToanController::class,'dang_nhap_thanh_toan']);
+Route::get('/thanh_toan',[ThanhToanController::class,'thanh_toan']);
 
 //Nhan Vien
 Route::get('/ho_so_nhan_vien',[NhanVienController::class, 'ho_so_nhan_vien']);
