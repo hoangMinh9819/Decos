@@ -26,7 +26,7 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-5">
-                    <form role="form" action="{{ URL::to('/search') }}" method="POST">
+                    <form role="form" action="{{ URL::to('/search_tin_tuc') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="search_box pull-right">
                             <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">

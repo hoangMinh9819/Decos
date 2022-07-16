@@ -11,21 +11,19 @@ use App\Http\Requests;
 session_start();
 class NewsController extends Controller
 {
-<<<<<<< HEAD
-    public function search(Request $request)
+    public function search_tin_tuc(Request $request)
     {
         $keyword = $request->keyword_submit;
         $search_tin_tuc = DB::table('tin_tuc')->where('TIEU_DE', 'like', '%' . $keyword . '%')
             ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'tin_tuc.ID_THE_LOAI')
             ->orwhere('NOI_DUNG', 'like', '%' . $keyword . '%')
+            ->orwhere('TEN_TL', 'like', '%' . $keyword . '%')
             ->get();
 
         return view('nhan_vien.quan_li_tin_tuc.search')->with('search_tin_tuc', $search_tin_tuc);
     }
 
 
-=======
->>>>>>> 24cfe215df0aa6025fd5a854b7982180c7f9ef51
     public function them_tin_tuc()
     {
         return view('nhan_vien.quan_li_tin_tuc.them_tin_tuc');
@@ -33,13 +31,8 @@ class NewsController extends Controller
     public function liet_ke_tin_tuc()
     {
         $tat_ca_tin_tuc = DB::table('tin_tuc')
-<<<<<<< HEAD
-            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'tin_tuc.ID_THE_LOAI')
-            ->orderBy('tin_tuc.ID_TIN_TUC')->get();
-=======
         ->join('the_loai','the_loai.ID_THE_LOAI','=','tin_tuc.ID_THE_LOAI')
         ->get();
->>>>>>> 24cfe215df0aa6025fd5a854b7982180c7f9ef51
         $view = view('nhan_vien.quan_li_tin_tuc.liet_ke_tin_tuc')->with('liet_ke_tin_tuc', $tat_ca_tin_tuc);
         return $view;
     }

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TrangChuController;
 use App\Http\Controllers\QuanTriVienController;
 use App\Http\Controllers\DanhMucSanPhamController;
+use App\Http\Controllers\DonHangController;
 use App\Http\Controllers\NhanVienController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\SlideController;
@@ -63,6 +64,7 @@ Route::get('/xoa_khach_hang/{id}',[KhachhangController::class, 'xoa_khach_hang']
 Route::get('/liet_ke_khach_hang',[KhachhangController::class, 'liet_ke_khach_hang']);
 Route::post('/luu_khach_hang',[KhachhangController::class, 'luu_khach_hang']);
 Route::post('/cap_nhat_khach_hang/{id}',[KhachhangController::class, 'cap_nhat_khach_hang']);
+Route::post('/search_khach_hang', [KhachhangController::class, 'search_khach_hang']);
 
 
 
@@ -84,7 +86,7 @@ Route::get('/xoa_tin_tuc/{id}', [NewsController::class, 'xoa_tin_tuc']);
 Route::get('/liet_ke_tin_tuc', [NewsController::class, 'liet_ke_tin_tuc']);
 Route::post('/luu_tin_tuc', [NewsController::class, 'luu_tin_tuc']);
 Route::post('/cap_nhat_tin_tuc/{id}', [NewsController::class, 'cap_nhat_tin_tuc']);
-Route::post('/search', [NewsController::class, 'search']);
+Route::post('/search_tin_tuc', [NewsController::class, 'search_tin_tuc']);
 
 //Quản lí slide
 
@@ -95,8 +97,6 @@ Route::get('/liet_ke_slide', [SlideController::class, 'liet_ke_slide']);
 Route::post('/luu_slide', [SlideController::class, 'luu_slide']);
 Route::post('/cap_nhat_slide/{id}', [SlideController::class, 'cap_nhat_slide']);
 
-Route::get('/search', [SlideController::class, 'search']);
-
 
  //quan li sản phẩm
 
@@ -106,4 +106,14 @@ Route::get('/xoa_san_pham/{id}', [QuanlisanphamController::class, 'xoa_san_pham'
 Route::get('/liet_ke_san_pham', [QuanlisanphamController::class, 'liet_ke_san_pham']);
 Route::post('/luu_san_pham', [QuanlisanphamController::class, 'luu_san_pham']);
 Route::post('/cap_nhat_san_pham/{id}', [QuanlisanphamController::class, 'cap_nhat_san_pham']);
-Route::post('/search', [QuanlisanphamController::class, 'search']);
+Route::post('/search_san_pham', [QuanlisanphamController::class, 'search_san_pham']);
+
+ //quan li đơn hàng
+
+ Route::get('/them_don_hang', [DonHangController::class, 'them_don_hang']);
+Route::get('/sua_don_hang/{id}', [DonHangController::class, 'sua_don_hang']);
+Route::get('/xoa_don_hang/{id}', [DonHangController::class, 'xoa_don_hang']);
+Route::get('/liet_ke_don_hang', [DonHangController::class, 'liet_ke_don_hang']);
+Route::post('/luu_don_hang', [DonHangController::class, 'luu_don_hang']);
+Route::post('/cap_nhat_don_hang/{id}', [DonHangController::class, 'cap_nhat_don_hang']);
+Route::post('/search_don_hang', [DonHangController::class, 'search_don_hang']);

@@ -3,7 +3,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Danh Sách Sản Phẩm
+                Danh Sách Đơn Hàng
             </div>
 
             <?php
@@ -28,11 +28,11 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-5">
-                    <form role="form" action="{{ URL::to('/search_san_pham') }}" method="POST">
+                    <form role="form" action="{{ URL::to('/search_don_hang') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="search_box pull-right">
-                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm sản phẩm">
-                            <input type="submit" name="search_san_pham" class="btn btn-success btn-sm" value="Tìm kiếm">
+                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
+                            <input type="submit" name="search_don_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
                         </div>
                     </form>
                 </div>
@@ -41,34 +41,32 @@
                 <table class="table table-striped b-t b-light" id="myTable">
                     <thead>
                         <tr>
-                            <th>Bộ Sưu Tập</th>
-                            <th>Mã sản phẩm</th>
-                            <th>Tên</th>
-                            <th>Đơn giá</th>
-                            <th>Mô tả</th>
-                            <th>Ngày tạo</th>
-                            <th>Ngày cập nhật</th>
+                            <th>Người dùng</th>
+                            <th>Tên người nhận</th>
+                            <th>Địa chỉ</th>
+                            <th>Điện thoại người nhận</th>
+                            <th>Tổng cộng</th>
+                            <th>Trạng Thái</th>
 
                             <th style="width:50px;"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($search_san_pham as $chia_khoa => $san_pham)
+                        @foreach ($search_don_hang as $chia_khoa => $don_hang)
                             <tr>
-                                <td>{{ $san_pham->TEN_TL }}</td>
-                                <td>{{ $san_pham->MA_SAN_PHAM }}</td>
-                                <td>{{ $san_pham->TEN_SP }}</td>
-                                <td>{{ $san_pham->GIA }}</td>
-                                <td>{{ $san_pham->MO_TA_SP }}</td>
-                                <td>{{ $san_pham->NGAY_TAO }}</td>
-                                <td>{{ $san_pham->NGAY_CAP_NHAT }}</td>
-                                <td><a href="{{ URL::to('/sua_san_pham/' . $san_pham->ID_SAN_PHAM) }}" class="active"
+                                <td>{{ $don_hang->HO_TEN }}</td>
+                                <td>{{ $don_hang->TEN_NGUOI_NHAN }}</td>
+                                <td>{{ $don_hang->DIA_CHI_GIAO }}</td>
+                                <td>{{ $don_hang->DIEN_THOAI_NGUOI_NHAN }}</td>
+                                <td>{{ $don_hang->TONG_CONG_CUOI_CUNG }}</td>
+                                <td>{{ $don_hang->TRANG_THAI }}</td>
+                                <td><a href="{{ URL::to('/sua_dom_hang/' . $don_hang->ID_DON_HANG) }}" class="active"
                                         ui-toggle-class="">
                                         Sửa
                                         <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                                     </a>
                                     <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                                        href="{{ URL::to('/xoa_san_pham/' . $san_pham->ID_SAN_PHAM) }}" class="active"
+                                        href="{{ URL::to('/xoa_don_hang/' . $don_hang->ID_DON_HANG) }}" class="active"
                                         ui-toggle-class="">
                                         Xóa
                                         <!-- <i class="fa fa-times text-danger text"></i> -->

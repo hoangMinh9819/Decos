@@ -3,9 +3,8 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Danh Sách Sản Phẩm
+                Danh sách Khách Hàng
             </div>
-
             <?php
             use Illuminate\Support\Facades\Session;
             $tin_nhan = Session::get('tin_nhan');
@@ -14,7 +13,6 @@
                 Session::put('tin_nhan', null);
             }
             ?>
-
             <div class="row w3-res-tb">
                 <div class="col-sm-3 m-b-xs">
                     <select class="input-sm form-control w-sm inline v-middle">
@@ -28,50 +26,51 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-5">
-                    <form role="form" action="{{ URL::to('/search_san_pham') }}" method="POST">
+                    <form role="form" action="{{ URL::to('/search_khach_hang') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="search_box pull-right">
-                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm sản phẩm">
-                            <input type="submit" name="search_san_pham" class="btn btn-success btn-sm" value="Tìm kiếm">
+                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
+                            <input type="submit" name="search_khach_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
                         </div>
                     </form>
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped b-t b-light" id="myTable">
+                <table class="table table-striped b-t b-light">
                     <thead>
                         <tr>
-                            <th>Bộ Sưu Tập</th>
-                            <th>Mã sản phẩm</th>
-                            <th>Tên</th>
-                            <th>Đơn giá</th>
-                            <th>Mô tả</th>
-                            <th>Ngày tạo</th>
-                            <th>Ngày cập nhật</th>
-
-                            <th style="width:50px;"></th>
+                            <th>Hình Ảnh</th>
+                            <th>Tên Nhân Viên</th>
+                            <th>Địa Chỉ</th>
+                            <th>Email</th>
+                            <th>Điện Thoại</th>
+                            <th>Trạng Thái</th>
+                            <th style="width:30px;"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($search_san_pham as $chia_khoa => $san_pham)
+                        @foreach ($search_khach_hang as $chia_khoa => $khach_hang)
                             <tr>
-                                <td>{{ $san_pham->TEN_TL }}</td>
-                                <td>{{ $san_pham->MA_SAN_PHAM }}</td>
-                                <td>{{ $san_pham->TEN_SP }}</td>
-                                <td>{{ $san_pham->GIA }}</td>
-                                <td>{{ $san_pham->MO_TA_SP }}</td>
-                                <td>{{ $san_pham->NGAY_TAO }}</td>
-                                <td>{{ $san_pham->NGAY_CAP_NHAT }}</td>
-                                <td><a href="{{ URL::to('/sua_san_pham/' . $san_pham->ID_SAN_PHAM) }}" class="active"
+                                <td><img src="{{ URL::to('public/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}"
+                                        height="100"></td>
+                                <td>{{ $khach_hang->HO_TEN }}</td>
+                                <td>{{ $khach_hang->DIA_CHI }}</td>
+                                <td>{{ $khach_hang->EMAIL }}</td>
+                                <td>{{ $khach_hang->DIEN_THOAI }}</td>
+                                <td><span class="text-ellipsis">
+                                        <?php
+                                        if ($khach_hang->TRANG_THAI === 'bi_chan') {
+                                            echo 'Bị Chặn';
+                                        } else {
+                                            echo 'Hoạt Động';
+                                        }
+                                        ?>
+                                    </span></td>
+                                <td>
+                                    <a href="{{ URL::to('/sua_khach_hang/' . $khach_hang->ID_NGUOI_DUNG) }}" class="active"
                                         ui-toggle-class="">
                                         Sửa
                                         <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
-                                    </a>
-                                    <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                                        href="{{ URL::to('/xoa_san_pham/' . $san_pham->ID_SAN_PHAM) }}" class="active"
-                                        ui-toggle-class="">
-                                        Xóa
-                                        <!-- <i class="fa fa-times text-danger text"></i> -->
                                     </a>
                                 </td>
                             </tr>
