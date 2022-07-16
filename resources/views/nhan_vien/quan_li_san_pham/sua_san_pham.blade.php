@@ -10,6 +10,7 @@
                     @foreach ($sua_san_pham as $key => $gia_tri)
                         <div class="position-center">
 
+<<<<<<< HEAD
                             <form role="form" action="{{ URL::to('/cap_nhat_san_pham/' . $gia_tri->ID_SAN_PHAM) }}"
                                 method="post">
                                 {{ csrf_field() }}
@@ -24,15 +25,44 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Tên sản phẩm</label>
+=======
+                            <form role="form" action="{{ URL::to('/cap_nhat_san_pham/' . $gia_tri->ID_THE_LOAI) }}"
+                                method="post">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Thể Loại</label>
+                                    <input type="text" name="ID_THE_LOAI" class="form-control"
+                                        value="{{ $gia_tri->ID_THE_LOAI }}" id="exampleInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Mã sản phẩm</label>
+                                    <input type="text" name="MA_SAN_PHAM" class="form-control"
+                                        value="{{ $gia_tri->MA_SAN_PHAM }}" id="exampleInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Tên sản phẩm</label>
+                                    <input type="text" name="TEN_SP" class="form-control"
+                                        value="{{ $gia_tri->TEN_SP }}" id="exampleInput">
+>>>>>>> 24cfe215df0aa6025fd5a854b7982180c7f9ef51
                                     <input type="text" name="TEN_SP" class="form-control" value="{{$gia_tri ->TEN_SP}}" id="exampleInput" >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Đơn giá</label>
+<<<<<<< HEAD
                                     <input type="number" name="GIA" class="form-control" value="{{$gia_tri ->GIA}}" id="exampleInput" >
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">Mô tả sản phẩm</label>
                                     <textarea style="resize: none" rows="8" name="MO_TA" class="form-control" value="{{$gia_tri ->MO_TA}}" id="exampleInputPassword1" ></textarea>
+=======
+                                    <input type="number" name="GIA" class="form-control" value="{{ $gia_tri->GIA }}"
+                                        id="exampleInput">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Mô tả sản phẩm</label>
+                                    <textarea style="resize: none" rows="8" name="MO_TA" class="form-control" value="{{ $gia_tri->MO_TA }}"
+                                        id="exampleInputPassword1"></textarea>
+>>>>>>> 24cfe215df0aa6025fd5a854b7982180c7f9ef51
                                 </div>
                                 <div class="form-group">
                                     <label>Hiển thị / Ẩn</label>

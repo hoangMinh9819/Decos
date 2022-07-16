@@ -1,9 +1,9 @@
-@extends('quan_tri_vien.bo_cuc_quan_tri_vien')
-@section('quan_tri_vien_noi_dung')
+@extends('nhan_vien.bo_cuc_nhan_vien')
+@section('nhan_vien_noi_dung')
 <div class="table-agile-info">
     <div class="panel panel-default">
         <div class="panel-heading">
-            Danh sách nhân viên
+            Danh sách Khách Hàng
         </div>
         <?php
         use Illuminate\Support\Facades\Session;
@@ -48,16 +48,16 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($liet_ke_nhan_vien as $chia_khoa => $nhan_vien)
+                    @foreach($liet_ke_khach_hang as $chia_khoa => $khach_hang)
                     <tr>
-                        <td><img src="{{URL::to('uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" height="100"></td>
-                        <td>{{$nhan_vien->HO_TEN}}</td>
-                        <td>{{$nhan_vien->DIA_CHI}}</td>
-                        <td>{{$nhan_vien->EMAIL}}</td>
-                        <td>{{$nhan_vien->DIEN_THOAI}}</td>
+                        <td><img src="{{URL::to('public/uploads/nguoi_dung/'.$khach_hang->HINH_ANH)}}" height="100"></td>
+                        <td>{{$khach_hang->HO_TEN}}</td>
+                        <td>{{$khach_hang->DIA_CHI}}</td>
+                        <td>{{$khach_hang->EMAIL}}</td>
+                        <td>{{$khach_hang->DIEN_THOAI}}</td>
                         <td><span class="text-ellipsis">
                                 <?php
-                                if ($nhan_vien->TRANG_THAI === 'bi_chan') {
+                                if ($khach_hang->TRANG_THAI === 'bi_chan') {
                                     echo 'Bị Chặn';
                                 } else {
                                     echo 'Hoạt Động';
@@ -65,13 +65,8 @@
                                 ?>
                             </span></td>
                         <td>
-                            <a href="{{URL::to('/sua_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
+                            <a href="{{URL::to('/sua_khach_hang/'.$khach_hang->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
                                 Sửa
-                                <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
-                            </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                            href="{{URL::to('/xoa_nhan_vien/'.$nhan_vien->ID_NGUOI_DUNG)}}" class="active" ui-toggle-class="">
-                                Xóa
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                             </a>
                         </td>

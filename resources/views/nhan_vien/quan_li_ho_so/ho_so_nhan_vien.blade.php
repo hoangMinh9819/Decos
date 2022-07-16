@@ -12,7 +12,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                             <label for="1">Chân Dung</label><br>
-                            <img src="{{URL::to('/public/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" width="300">
+                            <img src="{{URL::to('/uploads/nguoi_dung/'.$nhan_vien->HINH_ANH)}}" width="300">
                         </div>
                         <div class="form-group">
                             <label for="1">Họ Tên</label>

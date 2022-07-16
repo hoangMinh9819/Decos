@@ -27,7 +27,13 @@ class TrangChuController extends Controller
     }
     public function dang_nhap()
     {
-        return view('khach_hang.dang_nhap');
+        $tat_ca_the_loai = DB::table('the_loai')
+        ->where('TRANG_THAI','Hiển Thị')->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.dang_nhap')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_slide', $tat_ca_slide);        
+        return $view;
     }
     public function dang_xuat()
     {
@@ -41,8 +47,8 @@ class TrangChuController extends Controller
         $email = $request->email;
         $mat_khau = $request->mat_khau;
         $result = DB::table('nguoi_dung')
-            ->where('email', $email)
-            ->where('mat_khau', $mat_khau)
+            ->where('EMAIL', $email)
+            ->where('MAT_KHAU', $mat_khau)
             ->first();
         if ($result) {
             if ($result->TRANG_THAI === 'bi_chan') {
@@ -114,5 +120,18 @@ class TrangChuController extends Controller
             ->with('liet_ke_san_pham', $tat_ca_san_pham)
             ->with('liet_ke_slide', $tat_ca_slide);         
         return $view;
+    }
+    
+    public function dang_ky(Request $request){
+        $data['HO_TEN'] = $request->ten;
+        $data['EMAIL'] = $request->email;
+        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['DIEN_THOAI'] = $request->dien_thoai;
+        $data['DIA_CHI'] = $request->dia_chi;
+        $data['PHAN_QUYEN'] = 'khach_hang';
+        $data['NGAY_TAO'] = date('y/m/d H:i:s');
+        DB::table('nguoi_dung')->insert($data);
+        Session::put('tin_nhan_dang_ky','Đăng ký thành công! Vui lòng đăng nhập');
+        return Redirect::to('dang_nhap');
     }
 }

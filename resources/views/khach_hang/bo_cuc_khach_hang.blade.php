@@ -15,22 +15,22 @@ $hinh = Session::get('hinh');
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>Home | DECOS</title>
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/bootstrap.min.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/font-awesome.min.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/prettyPhoto.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/price-range.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/animate.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/main.css')}}">
-	<link type="text/css" rel="stylesheet" href="{{URL::asset('public/giao_dien/css/responsive.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/bootstrap.min.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/font-awesome.min.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/prettyPhoto.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/price-range.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/animate.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/main.css')}}">
+	<link type="text/css" rel="stylesheet" href="{{asset('khach_hang/css/responsive.css')}}">
 	<!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-	<link rel="shortcut icon" href="/public/giao_dien/images/ico/favicon.ico">
-	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/giao_dien/images/ico/apple-touch-icon-144-precomposed.png')}}">
-	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/public/giao_dien/images/ico/apple-touch-icon-114-precomposed.png')}}">
-	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/public/giao_dien/images/ico/apple-touch-icon-72-precomposed.png')}}">
-	<link rel="apple-touch-icon-precomposed" href="/public/giao_dien/images/ico/apple-touch-icon-57-precomposed.png')}}">
+	<link rel="shortcut icon" href="/khach_hang/images/ico/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/khach_hang/images/ico/apple-touch-icon-144-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/khach_hang/images/ico/apple-touch-icon-114-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/khach_hang/images/ico/apple-touch-icon-72-precomposed.png')}}">
+	<link rel="apple-touch-icon-precomposed" href="/khach_hang/images/ico/apple-touch-icon-57-precomposed.png')}}">
 </head>
 <!--/head-->
 
@@ -44,8 +44,8 @@ $hinh = Session::get('hinh');
 					<div class="col-sm-6">
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
-								<!-- <li><a href=""><i class="fa fa-phone"></i> 0902252846</a></li> -->
-								<!-- <li><a href="#"><i class="fa fa-envelope"></i> mynameisminh191998@gmail.com</a></li> -->
+								<li><a href=""><i class="fa fa-phone"></i> 0902252846</a></li>
+								<li><a href="#"><i class="fa fa-envelope"></i> mynameisminh191998@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -71,7 +71,7 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<!-- <a href="index.html"><img src="{{asset('public/giao_dien/images/home/logo.png')}}" alt="" /></a> -->
+							<a href="{{URL::to('/trang_chu')}}"><img src="{{asset('khach_hang/images/home/logo2.jpg')}}" width="150" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<!-- <div class="btn-group">
@@ -100,15 +100,17 @@ $hinh = Session::get('hinh');
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
-								<!-- <li><a href="#"><i class="fa fa-user"></i> Account</a></li> -->
-								<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
-								<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
-								<!-- <li><a href="qtv_dang_nhap"><i class="fa fa-shopping-cart"></i> Cart</a></li> -->
 								<?php if ($ten == null) { ?>
+									<li><a href="{{URL::to('hien_thi_gio_hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
 									<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
+									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
+									<li><a href="{{URL::to('/')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
+									<li><a href="{{URL::to('hien_thi_gio_hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+									<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
+									<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
-									<li><img alt="" src="{{URL::to('public/uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
+									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40"></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -139,7 +141,7 @@ $hinh = Session::get('hinh');
 										<li><a href="{{URL::to('/tat_ca_san_pham')}}">Tất Cả Sản Phẩm</a></li>
 									</ul>
 								</li>
-								<!-- <li class="dropdown"><a href="#">Tin Tức</i></a></li> -->
+								<li class="dropdown"><a href="#">Tin Tức</i></a></li>
 								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
 								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
 							</ul>
@@ -173,13 +175,13 @@ $hinh = Session::get('hinh');
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-9">
-									<img src="{{asset('public/uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
-									<h2>Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
-									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018 
-										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang 
+									<h2 style="color: #32A966;">Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
+									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018
+										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang
 										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
 									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
@@ -188,13 +190,13 @@ $hinh = Session::get('hinh');
 							@foreach($liet_ke_slide as $slide => $gia_tri)
 							<div class="item">
 								<div class="col-sm-9">
-									<img src="{{asset('public/uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt="" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
-									<h2>Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
-									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018 
-										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang 
+									<h2 style="color: #32A966;">Thương Hiệu Thời Trang Nữ Cao Cấp Do Người Việt Sáng Lập.</h2>
+									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018
+										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang
 										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
 									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
@@ -219,21 +221,6 @@ $hinh = Session::get('hinh');
 	<section>
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-2">
-					<div class="left-sidebar">
-						<h2>Bộ Sưu Tập</h2>
-						<div class="panel-group category-products" id="accordian">
-							<!--category-productsr-->
-							@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}" style="color: purple;">{{$gia_tri->TEN_TL}}</a></h4>
-								</div>
-							</div>
-							@endforeach
-						</div>
-					</div>
-				</div>
 				@yield('noi_dung')
 			</div>
 		</div>
@@ -246,75 +233,47 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+							<h2><span>Decos</span></h2>
+							<p>“Năng lực con người là vô hạn.
+								Đừng bao giờ nghĩ bạn bị giới hạn bởi bất cứ điều gì.
+								Tôi tin khi con người biết nỗ lực,
+								không ngừng học hỏi và tích luỹ kinh nghiệm lẫn chuyên môn,
+								bạn sẽ tạo ra kỳ tích”.</p>
 						</div>
 					</div>
 					<div class="col-sm-7">
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('public/giao_dien/images/home/iframe1.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
+						<?php
+						$count = 0;
+						foreach ($liet_ke_slide as $slide => $gia_tri) {
+							$count++;
+						?>
+							<div class="col-sm-3">
+								<div class="video-gallery text-center">
+									<a href="#">
+										<div class="iframe-img">
+											<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" height="100" alt="" />
+										</div>
+										<div class="overlay-icon">
+											<i class="fa fa-play-circle-o"></i>
+										</div>
+									</a>
+									<p>{{$gia_tri->TEN_SLIDE}}</p>
+									<h2>{{$gia_tri->NGAY_TAO}}</h2>
+								</div>
 							</div>
-						</div>
 
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('public/giao_dien/images/home/iframe2.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('public/giao_dien/images/home/iframe3.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
-
-						<div class="col-sm-3">
-							<div class="video-gallery text-center">
-								<a href="#">
-									<div class="iframe-img">
-										<img src="{{asset('public/giao_dien/images/home/iframe4.png')}}" alt="" />
-									</div>
-									<div class="overlay-icon">
-										<i class="fa fa-play-circle-o"></i>
-									</div>
-								</a>
-								<p>Circle of Hands</p>
-								<h2>24 DEC 2014</h2>
-							</div>
-						</div>
+						<?php
+							if ($count == 4) break;
+						}
+						?>
 					</div>
 					<div class="col-sm-3">
-						<div class="address">
-							<img src="{{asset('public/giao_dien/images/home/map.png')}}" alt="" />
-							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+						<div class="address" style="height: 200px; width: 300px">
+							<img src="{{asset('khach_hang/images/home/map.png')}}" alt="" />
+							<p>DECOS HCM: 83 Dong Khoi St, District 1
+								<br>DECOS HN: 23 Pho Hue St, Hoan Kiem District
+								<br>DECOS ĐN: 88 Nguyen Van Linh St, Hai Chau District
+							</p>
 						</div>
 					</div>
 				</div>
@@ -326,59 +285,59 @@ $hinh = Session::get('hinh');
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Service</h2>
+							<h2>Dịch Vụ</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Online Help</a></li>
-								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Tư Vấn</a></li>
+								<!-- <li><a href="#">Contact Us</a></li>
 								<li><a href="#">Order Status</a></li>
 								<li><a href="#">Change Location</a></li>
-								<li><a href="#">FAQ’s</a></li>
+								<li><a href="#">FAQ’s</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Quock Shop</h2>
+							<h2>Bộ Sưu Tập</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">T-Shirt</a></li>
-								<li><a href="#">Mens</a></li>
+								<li><a href="#">Fall Winter 2022</a></li>
+								<!-- <li><a href="#">Mens</a></li>
 								<li><a href="#">Womens</a></li>
 								<li><a href="#">Gift Cards</a></li>
-								<li><a href="#">Shoes</a></li>
+								<li><a href="#">Shoes</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>Policies</h2>
+							<h2>Chính Sách</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Terms of Use</a></li>
-								<li><a href="#">Privecy Policy</a></li>
+								<li><a href="#">Đổi Trả</a></li>
+								<!-- <li><a href="#">Privecy Policy</a></li>
 								<li><a href="#">Refund Policy</a></li>
 								<li><a href="#">Billing System</a></li>
-								<li><a href="#">Ticket System</a></li>
+								<li><a href="#">Ticket System</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-2">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Về Chúng Tôi</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Company Information</a></li>
-								<li><a href="#">Careers</a></li>
+								<li><a href="#">Thông Tin Công Ty</a></li>
+								<!-- <li><a href="#">Careers</a></li>
 								<li><a href="#">Store Location</a></li>
 								<li><a href="#">Affillate Program</a></li>
-								<li><a href="#">Copyright</a></li>
+								<li><a href="#">Copyright</a></li> -->
 							</ul>
 						</div>
 					</div>
 					<div class="col-sm-3 col-sm-offset-1">
 						<div class="single-widget">
-							<h2>About Shopper</h2>
+							<h2>Ưu Đãi</h2>
 							<form action="#" class="searchform">
-								<input type="text" placeholder="Your email address" />
+								<input type="text" placeholder="Địa chỉ email của bạn" />
 								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Get the most recent updates from <br />our site and be updated your self...</p>
+								<p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
 							</form>
 						</div>
 					</div>
@@ -390,8 +349,8 @@ $hinh = Session::get('hinh');
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+					<p class="pull-left">Bản quyền © 2022 DECOS Inc. Chưa đăng ký bản quyền</p>
+					<p class="pull-right">Thiết kế bởi nhóm 2 Decos Store.</p>
 				</div>
 			</div>
 		</div>
@@ -401,12 +360,12 @@ $hinh = Session::get('hinh');
 
 
 
-	<script src="{{asset('public/giao_dien/js/jquery.js')}}"></script>
-	<script src="{{asset('public/giao_dien/js/bootstrap.min.js')}}"></script>
-	<script src="{{asset('public/giao_dien/js/jquery.scrollUp.min.js')}}"></script>
-	<script src="{{asset('public/giao_dien/js/price-range.js')}}"></script>
-	<script src="{{asset('public/giao_dien/js/jquery.prettyPhoto.js')}}"></script>
-	<script src="{{asset('public/giao_dien/js/main.js')}}"></script>
+	<script src="{{asset('khach_hang/js/jquery.js')}}"></script>
+	<script src="{{asset('khach_hang/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('khach_hang/js/jquery.scrollUp.min.js')}}"></script>
+	<script src="{{asset('khach_hang/js/price-range.js')}}"></script>
+	<script src="{{asset('khach_hang/js/jquery.prettyPhoto.js')}}"></script>
+	<script src="{{asset('khach_hang/js/main.js')}}"></script>
 </body>
 
 </html>

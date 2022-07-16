@@ -21,7 +21,11 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm</label>
+<<<<<<< HEAD
                             <input type="text" name="TEN_SP" class="form-control" id="exampleInput" >
+=======
+                            <input type="text" name="TEN" class="form-control" id="exampleInput" >
+>>>>>>> 24cfe215df0aa6025fd5a854b7982180c7f9ef51
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Đơn giá</label>
