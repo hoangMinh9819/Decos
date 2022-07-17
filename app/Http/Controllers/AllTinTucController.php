@@ -9,9 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use PhpParser\Node\Expr\BinaryOp\Equal;
 
-session_start();
-
-class TrangChuController extends Controller
+class AllTinTucController extends Controller
 {
     public function trang_chu()
     {
@@ -70,70 +68,7 @@ class TrangChuController extends Controller
             Session::put('tin_nhan', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại');
             return Redirect::to('/dang_nhap');
         }
-    }
 
-    public function the_loai_san_pham($id)
-    {
-        $tat_ca_the_loai = DB::table('the_loai')
-            ->where('TRANG_THAI', 'Hiển Thị')->get();
-        $tat_ca_san_pham = DB::table('san_pham')
-            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
-            ->where('san_pham.ID_THE_LOAI', $id)
-            ->get();
-        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
-        $ten_the_loai = DB::table('the_loai')
-            ->where('ID_THE_LOAI', $id)->first();
-        $view = view('khach_hang.the_loai_san_pham')
-            ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('liet_ke_san_pham', $tat_ca_san_pham)
-            ->with('liet_ke_slide', $tat_ca_slide)
-            ->with('ten_the_loai', $ten_the_loai);
-        return $view;
-    }
-    public function chi_tiet_san_pham($id)
-    {
-        $tat_ca_the_loai = DB::table('the_loai')
-            ->where('TRANG_THAI', 'Hiển Thị')->get();
-        $san_pham = DB::table('san_pham')
-            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
-            ->where('ID_SAN_PHAM', $id)->first();
-        $san_pham_dac_sac = DB::table('san_pham')->where('DAC_SAC', true)->get();
-        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
-        $view = view('khach_hang.chi_tiet_san_pham')
-            ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('san_pham', $san_pham)
-            ->with('san_pham_dac_sac', $san_pham_dac_sac)
-            ->with('liet_ke_slide', $tat_ca_slide);
-        return $view;
-    }
-
-    public function tat_ca_san_pham()
-    {
-        $tat_ca_the_loai = DB::table('the_loai')
-            ->where('TRANG_THAI', 'Hiển Thị')->get();
-        $tat_ca_san_pham = DB::table('san_pham')
-            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
-            ->get();
-        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
-        $view = view('khach_hang.tat_ca_san_pham')
-            ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('liet_ke_san_pham', $tat_ca_san_pham)
-            ->with('liet_ke_slide', $tat_ca_slide);
-        return $view;
-    }
-
-    public function dang_ky(Request $request)
-    {
-        $data['HO_TEN'] = $request->ten;
-        $data['EMAIL'] = $request->email;
-        $data['MAT_KHAU'] = $request->mat_khau;
-        $data['DIEN_THOAI'] = $request->dien_thoai;
-        $data['DIA_CHI'] = $request->dia_chi;
-        $data['PHAN_QUYEN'] = 'khach_hang';
-        $data['NGAY_TAO'] = date('y/m/d H:i:s');
-        DB::table('nguoi_dung')->insert($data);
-        Session::put('tin_nhan_dang_ky', 'Đăng ký thành công! Vui lòng đăng nhập');
-        return Redirect::to('dang_nhap');
     }
     public function the_loai_tin_tuc($id)
     {
@@ -155,7 +90,6 @@ class TrangChuController extends Controller
 
     public function chi_tiet_tin_tuc($id)
     {
-        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $tat_ca_the_loai = DB::table('the_loai')
             ->where('TRANG_THAI', 'Hiển Thị')->get();
         $tin_tuc = DB::table('tin_tuc')
@@ -163,14 +97,12 @@ class TrangChuController extends Controller
             ->where('ID_TIN_TUC', $id)->first();
         $view = view('khach_hang.chi_tiet_tin_tuc')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('san_pham', $tin_tuc)
-            ->with('liet_ke_slide', $tat_ca_slide);
+            ->with('san_pham', $tin_tuc);
         return $view;
     }
 
     public function tat_ca_tin_tuc()
     {
-        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $tat_ca_the_loai = DB::table('the_loai')
             ->where('TRANG_THAI', 'Hiển Thị')->get();
         $tat_ca_tin_tuc = DB::table('tin_tuc')
@@ -178,8 +110,7 @@ class TrangChuController extends Controller
             ->get();
         $view = view('khach_hang.tat_ca_tin_tuc')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('liet_ke_tin_tuc', $tat_ca_tin_tuc)
-            ->with('liet_ke_slide', $tat_ca_slide);
+            ->with('liet_ke_tin_tuc', $tat_ca_tin_tuc);
         return $view;
     }
 }

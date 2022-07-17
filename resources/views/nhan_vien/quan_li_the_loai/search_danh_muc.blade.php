@@ -46,7 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_danh_muc as $chia_khoa => $danh_muc)
+                        @foreach ($search_danh_muc as $chia_khoa => $danh_muc)
                             <tr>
                                 <td>{{ $danh_muc->TEN_TL }}</td>
                                 <td>{{ $danh_muc->MO_TA_TL }}</td>

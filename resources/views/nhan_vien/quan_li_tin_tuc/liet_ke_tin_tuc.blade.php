@@ -56,7 +56,7 @@
                                 <td>{{ $tin_tuc->NOI_DUNG }}</td>
                                 <td>{{ $tin_tuc->NGAY_TAO }}</td>
                                 <td>{{ $tin_tuc->NGAY_CAP_NHAT }}</td>
-                                <td><img src="{{ URL::to('public/uploads/tin_tuc/' . $tin_tuc->HINH_ANH) }}"
+                                <td><img src="{{ URL::to('uploads/tin_tuc/' . $tin_tuc->HINH_ANH_TT) }}"
                                         height="100">
                                 </td>
                                 <td>

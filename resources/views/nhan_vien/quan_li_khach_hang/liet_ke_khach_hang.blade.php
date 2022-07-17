@@ -40,7 +40,7 @@
                     <thead>
                         <tr>
                             <th>Hình Ảnh</th>
-                            <th>Tên Nhân Viên</th>
+                            <th>Tên Khách hàng</th>
                             <th>Địa Chỉ</th>
                             <th>Email</th>
                             <th>Điện Thoại</th>

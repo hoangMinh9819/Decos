@@ -35,7 +35,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="hinhanh">Hình Ảnh</label>
-                                    <input type="file" value="{{ $gia_tri->HINH_ANH }}" name="HINH_ANH"
+                                    <input type="file" value="{{ $gia_tri->HINH_ANH_TT }}" name="HINH_ANH"
                                         class="form-control" id="hinhanh" placeholder="Hình Ảnh">
                                 </div>
                                 {{-- <div class="form-group">

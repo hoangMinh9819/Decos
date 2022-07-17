@@ -11,6 +11,11 @@
                         <form role="form" action="{{ URL::to('/luu_slide') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">
+                                <label for="ten">Tên Hình Ảnh</label>
+                                <input type="text" name="ten" class="form-control" id="ten"
+                                    placeholder="Tên hình ảnh">
+                            </div>
+                            <div class="form-group">
                                 <label for="hinhanh">Hình Ảnh</label>
                                 <input type="file" name="hinh_anh" class="form-control" id="hinhanh"
                                     placeholder="Hình Ảnh">

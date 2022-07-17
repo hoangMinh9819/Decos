@@ -13,7 +13,7 @@
                 Session::put('tin_nhan', null);
             }
             ?>
-            <div class="row w3-res-tb">
+            {{-- <div class="row w3-res-tb">
                 <div class="col-sm-5 m-b-xs">
                     <select class="input-sm form-control w-sm inline v-middle">
                         <option value="0">Bulk action</option>
@@ -34,12 +34,13 @@
                         </form>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     <thead>
                         <tr>
                             <th>Hình ảnh</th>
+                            <th>Tên Hình ảnh</th>
                             <th>Ngày tạo</th>
                             <th>Ngày cập nhật</th>
                             <th>Ngày hết hạn</th>
@@ -51,6 +52,8 @@
                             <tr>
                                 <td> <img src="{{ URL::to('public/uploads/slide/' . $slide->HINH_ANH) }}" height="100">
                                 </td>
+                                <td>{{ $slide->TEN_SLIDE }}</td>
+                                <td>{{ $slide->HINH_ANH }}</td>
                                 <td>{{ $slide->NGAY_TAO }}</td>
                                 <td>{{ $slide->NGAY_CAP_NHAT }}</td>
                                 <td>{{ $slide->NGAY_HET_HAN }}</td>

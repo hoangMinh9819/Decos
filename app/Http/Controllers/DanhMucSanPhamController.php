@@ -10,6 +10,15 @@ use App\Http\Requests;
 
 class DanhMucSanPhamController extends Controller
 {
+    public function search_danh_muc(Request $request)
+    {
+        $keyword = $request->keyword_submit;
+        $search_danh_muc = DB::table('the_loai')->where('TEN_TL', 'like', '%' . $keyword . '%')
+            ->orwhere('MO_TA_TL', 'like', '%' . $keyword . '%')
+            ->get();
+
+        return view('nhan_vien.quan_li_the_loai.search_danh_muc')->with('search_danh_muc', $search_danh_muc);
+    }
     public function them_danh_muc(){
         return view('nhan_vien.quan_li_the_loai.them_danh_muc');
     }
@@ -20,7 +29,7 @@ class DanhMucSanPhamController extends Controller
     }
     public function luu_danh_muc(Request $request){
         $data['TEN_TL'] = $request->ten_danh_muc;
-        $data['MO_TA'] = $request->mo_ta_danh_muc;
+        $data['MO_TA_TL'] = $request->mo_ta_danh_muc;
         $data['TRANG_THAI'] = $request->trang_thai_danh_muc;
         DB::table('the_loai')->insert($data);
         Session::put('tin_nhan','Thêm danh mục sản phẩm thành công!');
@@ -34,7 +43,7 @@ class DanhMucSanPhamController extends Controller
     public function cap_nhat_danh_muc(Request $request, $id){
         $data = array();
         $data['TEN_TL'] = $request->ten_danh_muc;
-        $data['MO_TA'] = $request->mo_ta_danh_muc;
+        $data['MO_TA_TL'] = $request->mo_ta_danh_muc;
         $data['TRANG_THAI'] = $request->trang_thai_danh_muc;
         DB::table('the_loai')->where('ID_THE_LOAI',$id)->update($data);
         Session::put('tin_nhan','Cập nhật thành công!');
