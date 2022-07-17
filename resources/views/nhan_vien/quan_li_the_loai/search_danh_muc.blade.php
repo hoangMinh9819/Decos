@@ -3,7 +3,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Danh Sách Các Slide
+                Danh Sách Bộ Sưu Tập
             </div>
             <?php
             use Illuminate\Support\Facades\Session;
@@ -13,8 +13,8 @@
                 Session::put('tin_nhan', null);
             }
             ?>
-            {{-- <div class="row w3-res-tb">
-                <div class="col-sm-5 m-b-xs">
+            <div class="row w3-res-tb">
+                <div class="col-sm-3 m-b-xs">
                     <select class="input-sm form-control w-sm inline v-middle">
                         <option value="0">Bulk action</option>
                         <option value="1">Delete selected</option>
@@ -25,45 +25,39 @@
                 </div>
                 <div class="col-sm-4">
                 </div>
-                <div class="col-sm-3">
-                    <div class="search">
-                        <form class="navbar-form navbar-left" action="" method="post">
-                            {{ csrf_field() }}
-                            <input type="text" name="search" id="search" class="form-control" placeholder="Search">
-                            <button type="submit" class="btn btn-primary">Search</button>
-                        </form>
-                    </div>
+                <div class="col-sm-5">
+                    <form role="form" action="{{ URL::to('/search_danh_muc') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="search_box pull-right">
+                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
+                            <input type="submit" name="search_danh_muc" class="btn btn-success btn-sm" value="Tìm kiếm">
+                        </div>
+                    </form>
                 </div>
-            </div> --}}
+            </div>
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     <thead>
                         <tr>
-                            <th>Hình ảnh</th>
-                            <th>Tên Hình ảnh</th>
-                            <th>Ngày tạo</th>
-                            <th>Ngày cập nhật</th>
-                            <th>Ngày hết hạn</th>
+                            <th>Tên Bộ Sưu Tập</th>
+                            <th>Mô Tả</th>
+                            <th>Trạng Thái</th>
                             <th style="width:50px;"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_slide as $chia_khoa => $slide)
+                        @foreach ($search_danh_muc as $chia_khoa => $danh_muc)
                             <tr>
-                                <td> <img src="{{ URL::to('public/uploads/slide/' . $slide->HINH_ANH) }}" height="100">
-                                </td>
-                                <td>{{ $slide->TEN_SLIDE }}</td>
-                                <td>{{ $slide->HINH_ANH }}</td>
-                                <td>{{ $slide->NGAY_TAO }}</td>
-                                <td>{{ $slide->NGAY_CAP_NHAT }}</td>
-                                <td>{{ $slide->NGAY_HET_HAN }}</td>
-                                <td><a href="{{ URL::to('/sua_slide/' . $slide->ID_SLIDE) }}" class="active"
+                                <td>{{ $danh_muc->TEN_TL }}</td>
+                                <td>{{ $danh_muc->MO_TA_TL }}</td>
+                                <td>{{ $danh_muc->TRANG_THAI }}</td>
+                                <td><a href="{{ URL::to('/sua_danh_muc/' . $danh_muc->ID_THE_LOAI) }}" class="active"
                                         ui-toggle-class="">
                                         Sửa
                                         <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                                     </a>
                                     <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                                        href="{{ URL::to('/xoa_slide/' . $slide->ID_SLIDE) }}" class="active"
+                                        href="{{ URL::to('/xoa_danh_muc/' . $danh_muc->ID_THE_LOAI) }}" class="active"
                                         ui-toggle-class="">
                                         Xóa
                                         <!-- <i class="fa fa-times text-danger text"></i> -->
@@ -71,10 +65,6 @@
                                 </td>
                             </tr>
                         @endforeach
-{{-- hihhihi --}}
-
-
-                    <tbody id="Content"></tbody>
                     </tbody>
                 </table>
             </div>
@@ -97,26 +87,4 @@
             </footer>
         </div>
     </div>
-    <script type="text/javascript">
-        $('#search').on('keyup', function() {
-            $value = $(this).val();
-
-            $.ajax({
-                type: 'get',
-                url: '{{ URL::to('search') }}',
-                data: {
-                    'search': $value
-                },
-                success: function(data) {
-                    console.log(data);
-                    $('#Content').html(data);
-
-                }
-
-
-            });
-
-            alert($value);
-        })
-    </script>
 @endsection

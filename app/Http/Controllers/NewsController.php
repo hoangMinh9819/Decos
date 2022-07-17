@@ -43,10 +43,10 @@ class NewsController extends Controller
         $data['TIEU_DE'] = $request->TIEU_DE;
         $data['NOI_DUNG'] = $request->NOI_DUNG;
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
-        $data['HINH_ANH'] = $request->HINH_ANH;
+        $data['HINH_ANH_TT'] = $request->HINH_ANH;
         if ($request->file('HINH_ANH')) {
-            $request->file('HINH_ANH')->move('public/uploads/tin_tuc', $request->file('HINH_ANH')->getClientOriginalName());
-            $data['HINH_ANH'] = $request->file('HINH_ANH')->getClientOriginalName();
+            $request->file('HINH_ANH')->move('uploads/tin_tuc', $request->file('HINH_ANH')->getClientOriginalName());
+            $data['HINH_ANH_TT'] = $request->file('HINH_ANH')->getClientOriginalName();
         }
 
         DB::table('tin_tuc')->insert($data);
@@ -66,10 +66,10 @@ class NewsController extends Controller
         $data['TIEU_DE'] = $request->TIEU_DE;
         $data['NOI_DUNG'] = $request->NOI_DUNG;
         $data['NGAY_CAP_NHAT'] = date('y/m/d H:i:s');
-        $data['HINH_ANH'] = $request->HINH_ANH;
+        $data['HINH_ANH_TT'] = $request->HINH_ANH;
         if ($request->file('HINH_ANH')) {
-            $request->file('HINH_ANH')->move('public/uploads/tin_tuc', $request->file('HINH_ANH')->getClientOriginalName());
-            $data['HINH_ANH'] = $request->file('HINH_ANH')->getClientOriginalName();
+            $request->file('HINH_ANH')->move('uploads/tin_tuc', $request->file('HINH_ANH')->getClientOriginalName());
+            $data['HINH_ANH_TT'] = $request->file('HINH_ANH')->getClientOriginalName();
         }
 
         DB::table('tin_tuc')->where('ID_TIN_TUC', $id)->update($data);

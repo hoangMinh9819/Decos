@@ -12,6 +12,8 @@ use App\Http\Controllers\QuanlisanphamController;
 use App\Http\Controllers\KhachhangController;
 use App\Http\Controllers\GioHangController;
 use App\Http\Controllers\ThanhToanController;
+use App\Http\Controllers\AllTinTucController;
+
 
 //Khach Hang
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
@@ -19,12 +21,26 @@ Route::get('/dang_xuat',[TrangChuController::class, 'dang_xuat']);
 Route::get('/dang_nhap',[TrangChuController::class, 'dang_nhap']);
 Route::post('/dang_ky',[TrangChuController::class, 'dang_ky']);
 Route::post('/kiem_tra_dang_nhap',[TrangChuController::class, 'kiem_tra_dang_nhap']);
+<<<<<<< HEAD
     //Hiển thị các sản phẩm thuộc danh mục.
     Route::get('/the_loai_san_pham/{id}',[TrangChuController::class, 'the_loai_san_pham']);
     //Hiển thị chi tiết sản phẩm.
     Route::get('/chi_tiet_san_pham/{id}',[TrangChuController::class, 'chi_tiet_san_pham']);
     //Hiển thị tất cả sản phẩm.
     Route::get('/tat_ca_san_pham',[TrangChuController::class, 'tat_ca_san_pham']);
+=======
+//Hiển thị các sản phẩm thuộc danh mục.
+Route::get('/the_loai_san_pham/{id}',[TrangChuController::class, 'the_loai_san_pham']);
+//Hiển thị chi tiết sản phẩm.
+Route::get('/chi_tiet_san_pham/{id}',[TrangChuController::class, 'chi_tiet_san_pham']);
+//Hiển thị tất cả sản phẩm.
+Route::get('/tat_ca_san_pham',[TrangChuController::class, 'tat_ca_san_pham']);
+//Hiển thị chi tiết tin tức
+Route::get('/chi_tiet_tin_tuc/{id}',[TrangChuController::class, 'chi_tiet_tin_tuc']);
+//Hiển thị tất cả tin tức
+Route::get('/tat_ca_tin_tuc',[TrangChuController::class, 'tat_ca_tin_tuc']);
+Route::get('/the_loai_tin_tuc/{id}',[TrangChuController::class, 'the_loai_tin_tuc']);
+>>>>>>> c921f83165d8e178898c26875630feec341ccc93
 
 //Lưu vào giỏ hàng.
 Route::post('/luu_gio_hang',[GioHangController::class, 'luu_gio_hang']);
@@ -47,6 +63,10 @@ Route::get('/xoa_danh_muc/{id}',[DanhMucSanPhamController::class, 'xoa_danh_muc'
 Route::get('/liet_ke_danh_muc',[DanhMucSanPhamController::class, 'liet_ke_danh_muc']);
 Route::post('/luu_danh_muc',[DanhMucSanPhamController::class, 'luu_danh_muc']);
 Route::post('/cap_nhat_danh_muc/{id}',[DanhMucSanPhamController::class, 'cap_nhat_danh_muc']);
+<<<<<<< HEAD
+=======
+Route::post('/search_danh_muc', [DanhMucSanPhamController::class, 'search_danh_muc']);
+>>>>>>> c921f83165d8e178898c26875630feec341ccc93
 
 //Danh Mục Khách Hàng
 Route::get('/sua_khach_hang/{id}',[KhachhangController::class, 'sua_khach_hang']);
@@ -103,3 +123,5 @@ Route::get('/liet_ke_don_hang', [DonHangController::class, 'liet_ke_don_hang']);
 Route::post('/luu_don_hang', [DonHangController::class, 'luu_don_hang']);
 Route::post('/cap_nhat_don_hang/{id}', [DonHangController::class, 'cap_nhat_don_hang']);
 Route::post('/search_don_hang', [DonHangController::class, 'search_don_hang']);
+
+

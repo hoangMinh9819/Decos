@@ -14,6 +14,11 @@
                                 method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="form-group">
+                                    <label for="ten">Tên hình ảnh</label>
+                                    <input type="text" value="{{ $gia_tri->TEN_SLIDE }}" name="ten"
+                                        class="form-control" id="ten" placeholder="Tên hình ảnh">
+                                </div>
+                                <div class="form-group">
                                     <label for="hinhanh">Hình Ảnh</label>
                                     <input type="file" value="{{ $gia_tri->HINH_ANH }}" name="hinh_anh"
                                         class="form-control" id="hinhanh" placeholder="Hình Ảnh">

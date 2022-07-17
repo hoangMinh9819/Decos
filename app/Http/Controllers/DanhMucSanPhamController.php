@@ -10,6 +10,15 @@ use App\Http\Requests;
 
 class DanhMucSanPhamController extends Controller
 {
+    public function search_danh_muc(Request $request)
+    {
+        $keyword = $request->keyword_submit;
+        $search_danh_muc = DB::table('the_loai')->where('TEN_TL', 'like', '%' . $keyword . '%')
+            ->orwhere('MO_TA_TL', 'like', '%' . $keyword . '%')
+            ->get();
+
+        return view('nhan_vien.quan_li_the_loai.search_danh_muc')->with('search_danh_muc', $search_danh_muc);
+    }
     public function them_danh_muc(){
         return view('nhan_vien.quan_li_the_loai.them_danh_muc');
     }

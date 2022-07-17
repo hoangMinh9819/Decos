@@ -24,6 +24,7 @@ class SlideController extends Controller
     public function luu_slide(Request $request)
     {
         $chuoi = array();
+        $data['TEN_SLIDE'] = $request->ten;
         $data['HINH_ANH'] = $request->HINH_ANH;
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
         $data['NGAY_HET_HAN'] = $request->NGAY_HET_HAN;
@@ -44,6 +45,7 @@ class SlideController extends Controller
     public function cap_nhat_slide(Request $request, $id)
     {
         $data = array();
+        $data['TEN_SLIDE'] = $request->ten;
         $data['HINH_ANH'] = null;
         $data['NGAY_CAP_NHAT'] = date('y/m/d H:i:s');
         $data['NGAY_HET_HAN'] = $request->NGAY_HET_HAN;

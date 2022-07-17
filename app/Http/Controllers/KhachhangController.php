@@ -13,15 +13,17 @@ class KhachhangController extends Controller
     public function search_khach_hang(Request $request)
     {
         $keyword = $request->keyword_submit;
-        $khach_hang = DB::table('nguoi_dung');
-        $search_khach_hang = DB::table('nguoi_dung')->where('TEN_NGUOI_NHAN', 'like', '%' . $keyword . '%')
-            ->join('nguoi_dung', 'don_hang.ID_NGUOI_DUNG', '=', 'nguoi_dung.ID_NGUOI_DUNG')
-            ->orwhere('DIEN_THOAI_NGUOI_NHAN', 'like', '%' . $keyword . '%')
+        $id = Session::get('id');
+        $khach_hang = DB::table('nguoi_dung')
+            ->where('PHAN_QUYEN', $id)
+            ->first();;
+        $search_khach_hang = DB::table('nguoi_dung')->where('DIA_CHI', 'like', '%' . $keyword . '%')
             ->orwhere('HO_TEN', 'like', '%' . $keyword . '%')
-            ->orwhere('DIA_CHI_GIAO', 'like', '%' . $keyword . '%')
+            ->orwhere('EMAIL', 'like', '%' . $keyword . '%')
+            ->orwhere('DIEN_THOAI', 'like', '%' . $keyword . '%')
             ->get();
 
-        return view('nhan_vien.quan_li_don_hang.search_don_hang')->with('search_don_hang', $search_khach_hang)
+        return view('nhan_vien.quan_li_khach_hang.search_khach_hang')->with('search_khach_hang', $search_khach_hang)
             ->with('khach_hang', $khach_hang);
     }
     public function ho_so_khach_hang()

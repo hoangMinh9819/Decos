@@ -118,7 +118,7 @@ $hinh = Session::get('hinh');
 										<li><a href="{{URL::to('/tat_ca_san_pham')}}">Tất Cả Sản Phẩm</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="#">Tin Tức</i></a></li>
+								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc')}}">Tin Tức</i></a></li>
 								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
 								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
 							</ul>
