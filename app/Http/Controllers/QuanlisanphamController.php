@@ -11,6 +11,18 @@ use App\Http\Requests;
 
 class QuanlisanphamController extends Controller
 {
+    public function search_san_pham(Request $request)
+    {
+        $keyword = $request->keyword_submit;
+        $search_san_pham = DB::table('san_pham')->where('TEN_SP', 'like', '%' . $keyword . '%')
+            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
+            ->orwhere('GIA', 'like', '%' . $keyword . '%')
+            ->orwhere('TEN_TL', 'like', '%' . $keyword . '%')
+            ->get();
+
+        return view('nhan_vien.quan_li_san_pham.search')->with('search_san_pham', $search_san_pham);
+    }
+
     public function liet_ke_san_pham(){
         $danh_sach_san_pham = DB::table('san_pham')
         ->join('the_loai','the_loai.ID_THE_LOAI','=','san_pham.ID_THE_LOAI')
@@ -24,12 +36,11 @@ class QuanlisanphamController extends Controller
     }
 
     public function luu_san_pham(Request $request){
-        $data = array();
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
         $data['TEN_SP'] = $request->TEN_SP;
         $data['GIA'] = $request->GIA;
-        $data['MO_TA'] = $request->MO_TA;
+        $data['MO_TA_SP'] = $request->MO_TA;
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
         DB::table('san_pham')->insert($data);
         Session::put('tin_nhan','Thêm sản phẩm thành công!');
@@ -48,7 +59,7 @@ class QuanlisanphamController extends Controller
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
         $data['TEN_SP'] = $request->TEN_SP;
         $data['GIA'] = $request->GIA;
-        $data['MO_TA'] = $request->MO_TA;
+        $data['MO_TA_SP'] = $request->MO_TA;
         $data['NGAY_CAP_NHAT'] = date('y/m/d H:i:s');
         DB::table('san_pham')->where('ID_SAN_PHAM',$id)->update($data);
         Session::put('tin_nhan','Cập nhật thành công!');

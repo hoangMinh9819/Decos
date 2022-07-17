@@ -48,7 +48,7 @@
                     @foreach($liet_ke_danh_muc as $chia_khoa => $danh_muc)
                     <tr>
                         <td>{{$danh_muc->TEN_TL}}</td>
-                        <td>{{$danh_muc->MO_TA}}</td>
+                        <td>{{$danh_muc->MO_TA_TL}}</td>
                         <td>{{$danh_muc->TRANG_THAI}}</td>
                         <td><a href="{{URL::to('/sua_danh_muc/'.$danh_muc->ID_THE_LOAI)}}" class="active" ui-toggle-class="">
                                 Sửa

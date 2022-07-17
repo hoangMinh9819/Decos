@@ -3,8 +3,9 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Danh sách Khách Hàng
+                Danh Sách Đơn Hàng
             </div>
+
             <?php
             use Illuminate\Support\Facades\Session;
             $tin_nhan = Session::get('tin_nhan');
@@ -13,6 +14,7 @@
                 Session::put('tin_nhan', null);
             }
             ?>
+
             <div class="row w3-res-tb">
                 <div class="col-sm-3 m-b-xs">
                     <select class="input-sm form-control w-sm inline v-middle">
@@ -26,51 +28,48 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-5">
-                    <form role="form" action="{{ URL::to('/search_khach_hang') }}" method="POST">
+                    <form role="form" action="{{ URL::to('/search_don_hang') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="search_box pull-right">
                             <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
-                            <input type="submit" name="search_khach_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
+                            <input type="submit" name="search_don_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
                         </div>
                     </form>
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped b-t b-light">
+                <table class="table table-striped b-t b-light" id="myTable">
                     <thead>
                         <tr>
-                            <th>Hình Ảnh</th>
-                            <th>Tên Nhân Viên</th>
-                            <th>Địa Chỉ</th>
-                            <th>Email</th>
-                            <th>Điện Thoại</th>
+                            <th>Người dùng</th>
+                            <th>Tên người nhận</th>
+                            <th>Địa chỉ</th>
+                            <th>Điện thoại người nhận</th>
+                            <th>Tổng cộng</th>
                             <th>Trạng Thái</th>
-                            <th style="width:30px;"></th>
+
+                            <th style="width:50px;"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_khach_hang as $chia_khoa => $khach_hang)
+                        @foreach ($search_don_hang as $chia_khoa => $don_hang)
                             <tr>
-                                <td><img src="{{ URL::to('public/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}"
-                                        height="100"></td>
-                                <td>{{ $khach_hang->HO_TEN }}</td>
-                                <td>{{ $khach_hang->DIA_CHI }}</td>
-                                <td>{{ $khach_hang->EMAIL }}</td>
-                                <td>{{ $khach_hang->DIEN_THOAI }}</td>
-                                <td><span class="text-ellipsis">
-                                        <?php
-                                        if ($khach_hang->TRANG_THAI === 'bi_chan') {
-                                            echo 'Bị Chặn';
-                                        } else {
-                                            echo 'Hoạt Động';
-                                        }
-                                        ?>
-                                    </span></td>
-                                <td>
-                                    <a href="{{ URL::to('/sua_khach_hang/' . $khach_hang->ID_NGUOI_DUNG) }}" class="active"
+                                <td>{{ $don_hang->HO_TEN }}</td>
+                                <td>{{ $don_hang->TEN_NGUOI_NHAN }}</td>
+                                <td>{{ $don_hang->DIA_CHI_GIAO }}</td>
+                                <td>{{ $don_hang->DIEN_THOAI_NGUOI_NHAN }}</td>
+                                <td>{{ $don_hang->TONG_CONG_CUOI_CUNG }}</td>
+                                <td>{{ $don_hang->TRANG_THAI }}</td>
+                                <td><a href="{{ URL::to('/sua_dom_hang/' . $don_hang->ID_DON_HANG) }}" class="active"
                                         ui-toggle-class="">
                                         Sửa
                                         <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
+                                    </a>
+                                    <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
+                                        href="{{ URL::to('/xoa_don_hang/' . $don_hang->ID_DON_HANG) }}" class="active"
+                                        ui-toggle-class="">
+                                        Xóa
+                                        <!-- <i class="fa fa-times text-danger text"></i> -->
                                     </a>
                                 </td>
                             </tr>

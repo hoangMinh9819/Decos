@@ -49,7 +49,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_khach_hang as $chia_khoa => $khach_hang)
+                        @foreach ($search_khach_hang as $chia_khoa => $khach_hang)
                             <tr>
                                 <td><img src="{{ URL::to('public/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}"
                                         height="100"></td>

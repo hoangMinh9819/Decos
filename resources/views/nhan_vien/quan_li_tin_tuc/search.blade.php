@@ -3,7 +3,7 @@
     <div class="table-agile-info">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Danh sách Khách Hàng
+                Kết quả tìm kiếm tin tức
             </div>
             <?php
             use Illuminate\Support\Facades\Session;
@@ -26,51 +26,50 @@
                 <div class="col-sm-4">
                 </div>
                 <div class="col-sm-5">
-                    <form role="form" action="{{ URL::to('/search_khach_hang') }}" method="POST">
+                    <form role="form" action="{{ URL::to('/search_tin_tuc') }}" method="POST">
                         {{ csrf_field() }}
                         <div class="search_box pull-right">
                             <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
-                            <input type="submit" name="search_khach_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
+                            <input type="submit" name="search_tin_tuc" class="btn btn-success btn-sm" value="Tìm kiếm">
                         </div>
                     </form>
                 </div>
             </div>
             <div class="table-responsive">
-                <table class="table table-striped b-t b-light">
+                <table class="table table-striped b-t b-light" id="myTable">
                     <thead>
                         <tr>
-                            <th>Hình Ảnh</th>
-                            <th>Tên Nhân Viên</th>
-                            <th>Địa Chỉ</th>
-                            <th>Email</th>
-                            <th>Điện Thoại</th>
-                            <th>Trạng Thái</th>
+                            <th>Chủ đề</th>
+                            <th>Tiêu đề</th>
+                            <th>Nội dung</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày cập nhật</th>
+                            <th>Hình ảnh</th>
                             <th style="width:30px;"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_khach_hang as $chia_khoa => $khach_hang)
+                        @foreach ($search_tin_tuc as $key => $tin_tuc)
                             <tr>
-                                <td><img src="{{ URL::to('public/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}"
-                                        height="100"></td>
-                                <td>{{ $khach_hang->HO_TEN }}</td>
-                                <td>{{ $khach_hang->DIA_CHI }}</td>
-                                <td>{{ $khach_hang->EMAIL }}</td>
-                                <td>{{ $khach_hang->DIEN_THOAI }}</td>
-                                <td><span class="text-ellipsis">
-                                        <?php
-                                        if ($khach_hang->TRANG_THAI === 'bi_chan') {
-                                            echo 'Bị Chặn';
-                                        } else {
-                                            echo 'Hoạt Động';
-                                        }
-                                        ?>
-                                    </span></td>
+                                <td>{{ $tin_tuc->TEN_TL }}</td>
+                                <td>{{ $tin_tuc->TIEU_DE }}</td>
+                                <td>{{ $tin_tuc->NOI_DUNG }}</td>
+                                <td>{{ $tin_tuc->NGAY_TAO }}</td>
+                                <td>{{ $tin_tuc->NGAY_CAP_NHAT }}</td>
+                                <td><img src="{{ URL::to('public/uploads/tin_tuc/' . $tin_tuc->HINH_ANH) }}"
+                                        height="100">
+                                </td>
                                 <td>
-                                    <a href="{{ URL::to('/sua_khach_hang/' . $khach_hang->ID_NGUOI_DUNG) }}" class="active"
+                                    <a href="{{ URL::to('/sua_tin_tuc/' . $tin_tuc->ID_TIN_TUC) }}" class="active"
                                         ui-toggle-class="">
                                         Sửa
                                         <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
+                                    </a>
+                                    <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
+                                        href="{{ URL::to('/xoa_tin_tuc/' . $tin_tuc->ID_TIN_TUC) }}" class="active"
+                                        ui-toggle-class="">
+                                        Xóa
+                                        <!-- <i class="fa fa-times text-danger text"></i> -->
                                     </a>
                                 </td>
                             </tr>

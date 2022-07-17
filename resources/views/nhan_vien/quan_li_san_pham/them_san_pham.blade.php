@@ -1,6 +1,5 @@
 @extends('nhan_vien.bo_cuc_nhan_vien')
 @section('nhan_vien_noi_dung')
-
 <div class="row">
     <div class="col-lg-12">
         <section class="panel">
@@ -21,7 +20,7 @@
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên sản phẩm</label>
-                            <input type="text" name="TEN" class="form-control" id="exampleInput" >
+                            <input type="text" name="TEN_SP" class="form-control" id="exampleInput" >
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Đơn giá</label>
@@ -41,10 +40,8 @@
                         <button type="submit" name="them_san_pham" class="btn btn-info">Thêm Sản Phẩm</button>
                     </form>
                 </div>
-
             </div>
         </section>
-
     </div>
 </div>
 

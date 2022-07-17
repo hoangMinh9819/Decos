@@ -29,7 +29,8 @@
 					<div class="product-image-wrapper">
 						<div class="single-products">
 							<div class="productinfo text-center">
-								<img src={{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
+								<img src={{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" 
+								style="border-style: outset; border-color: black; border-width: 5px" />
 								<h2>{{number_format($gia_tri->GIA)}} VND</h2>
 								<p>{{$gia_tri->TEN_SP}}</p>
 								<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>
@@ -73,7 +74,8 @@
 					<div class="product-image-wrapper">
 						<div class="single-products">
 							<div class="productinfo text-center">
-								<img src={{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" />
+								<img src={{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}} alt="" 
+								style="border-style: outset; border-color: black; border-width: 5px"/>
 								<h2>{{number_format($gia_tri->GIA)}}VND</h2>
 								<p>{{$gia_tri->TEN_SP}}</p>
 								<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</a>

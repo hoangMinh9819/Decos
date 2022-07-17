@@ -1,20 +1,24 @@
 <?php
 use Illuminate\Support\Facades\Session;
-    $ten = Session::get('ten');
-    $hinh = Session::get('hinh');
+$ten = Session::get('ten');
+$hinh = Session::get('hinh');
 ?>
 <!DOCTYPE html>
 
 <head>
     <title>Nhân Viên</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="_token" content="{{ csrf_token() }}">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+    <meta name="keywords"
+    content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
         }, false);
+
         function hideURLbar() {
             window.scrollTo(0, 1);
         }
@@ -26,7 +30,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="{{asset('nhan_vien/css/style.css')}}" rel='stylesheet' type='text/css' />
     <link href="{{asset('nhan_vien/css/style-responsive.css')}}" rel="stylesheet" />
     <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
     <link rel="stylesheet" href="{{asset('nhan_vien/css/font.css')}}" type="text/css" />
     <link href="{{asset('nhan_vien/css/font-awesome.css')}}" rel="stylesheet">
@@ -67,9 +73,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="{{URL::to('/ho_so_nhan_vien')}}"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
+                            <li><a href="{{ URL::to('/ho_so_nhan_vien') }}"><i class=" fa fa-suitcase"></i>Hồ Sơ</a>
+                            </li>
                             <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
-                            <li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                            <li><a href="{{ URL::to('/dang_xuat') }}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
@@ -86,7 +93,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
                         <li>
-                            <a class="active" href="{{URL::to('/nhan_vien_trang_chu')}}">
+                            <a class="active" href="{{ URL::to('/nhan_vien_trang_chu') }}">
                                 <i class="fa fa-dashboard"></i>
                                 <span>Tổng Quan</span>
                             </a>
@@ -98,8 +105,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Bộ Sưu Tập</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_danh_muc')}}">Thêm Bộ Sưu Tập</a></li>
-                                <li><a href="{{URL::to('liet_ke_danh_muc')}}">Liệt kê Bộ Sưu Tập</a></li>
+                                <li><a href="{{ URL::to('them_danh_muc') }}">Thêm Bộ Sưu Tập</a></li>
+                                <li><a href="{{ URL::to('liet_ke_danh_muc') }}">Liệt kê Bộ Sưu Tập</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -108,8 +115,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Sản Phẩm</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_san_pham')}}">Thêm Sản Phẩm</a></li>
-                                <li><a href="{{URL::to('liet_ke_san_pham')}}">Liệt Kê Sản Phẩm</a></li>
+                                <li><a href="{{ URL::to('them_san_pham') }}">Thêm Sản Phẩm</a></li>
+                                <li><a href="{{ URL::to('liet_ke_san_pham') }}">Liệt Kê Sản Phẩm</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -118,7 +125,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Đơn Hàng</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('liet_ke_don_hang')}}">Liệt kê Đơn Hàng</a></li>
+                                <li><a href="{{ URL::to('liet_ke_don_hang') }}">Liệt kê Đơn Hàng</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -136,8 +143,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Tin Tức</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_bai_viet')}}">Thêm Tin Tức</a></li>
-                                <li><a href="{{URL::to('liet_ke_bai_viet')}}">Liệt Kê Bài Viết</a></li>
+                                <li><a href="{{ URL::to('them_tin_tuc') }}">Thêm Tin Tức</a></li>
+                                <li><a href="{{ URL::to('liet_ke_tin_tuc') }}">Liệt Kê Bài Viết</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -146,8 +153,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Slide</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_bai_viet')}}">Thêm Slide</a></li>
-                                <li><a href="{{URL::to('liet_ke_bai_viet')}}">Liệt Kê Slide</a></li>
+                                <li><a href="{{ URL::to('them_slide') }}">Thêm Slide</a></li>
+                                <li><a href="{{ URL::to('liet_ke_slide') }}">Liệt Kê Slide</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -310,6 +317,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!-- //calendar -->
+
 </body>
 
 </html>

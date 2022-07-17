@@ -73,29 +73,6 @@ $hinh = Session::get('hinh');
 						<div class="logo pull-left">
 							<a href="{{URL::to('/trang_chu')}}"><img src="{{asset('khach_hang/images/home/logo2.jpg')}}" width="150" alt="" /></a>
 						</div>
-						<div class="btn-group pull-right">
-							<!-- <div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									USA
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Canada</a></li>
-									<li><a href="#">UK</a></li>
-								</ul>
-							</div> -->
-
-							<!-- <div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
-									DOLLAR
-									<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a href="#">Canadian Dollar</a></li>
-									<li><a href="#">Pound</a></li>
-								</ul>
-							</div> -->
-						</div>
 					</div>
 					<div class="col-sm-8">
 						<div class="shop-menu pull-right">
@@ -149,7 +126,7 @@ $hinh = Session::get('hinh');
 					</div>
 					<div class="col-sm-3">
 						<div class="search_box pull-right">
-							<!-- <input type="text" placeholder="Search" /> -->
+							<input type="text" placeholder="Search" />
 						</div>
 					</div>
 				</div>
@@ -175,7 +152,8 @@ $hinh = Session::get('hinh');
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-9">
-									<img src="{{asset('uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" 
+									style="border-style: outset; border-color: purple; border-width: 10px"/>
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -190,7 +168,8 @@ $hinh = Session::get('hinh');
 							@foreach($liet_ke_slide as $slide => $gia_tri)
 							<div class="item">
 								<div class="col-sm-9">
-									<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt="" />
+									<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt=""
+									style="border-style: outset; border-color: purple; border-width: 10px" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -231,7 +210,7 @@ $hinh = Session::get('hinh');
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-2">
+					<div class="col-sm-7">
 						<div class="companyinfo">
 							<h2><span>Decos</span></h2>
 							<p>“Năng lực con người là vô hạn.
@@ -240,32 +219,6 @@ $hinh = Session::get('hinh');
 								không ngừng học hỏi và tích luỹ kinh nghiệm lẫn chuyên môn,
 								bạn sẽ tạo ra kỳ tích”.</p>
 						</div>
-					</div>
-					<div class="col-sm-7">
-						<?php
-						$count = 0;
-						foreach ($liet_ke_slide as $slide => $gia_tri) {
-							$count++;
-						?>
-							<div class="col-sm-3">
-								<div class="video-gallery text-center">
-									<a href="#">
-										<div class="iframe-img">
-											<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" height="100" alt="" />
-										</div>
-										<div class="overlay-icon">
-											<i class="fa fa-play-circle-o"></i>
-										</div>
-									</a>
-									<p>{{$gia_tri->TEN_SLIDE}}</p>
-									<h2>{{$gia_tri->NGAY_TAO}}</h2>
-								</div>
-							</div>
-
-						<?php
-							if ($count == 4) break;
-						}
-						?>
 					</div>
 					<div class="col-sm-3">
 						<div class="address" style="height: 200px; width: 300px">
@@ -288,10 +241,6 @@ $hinh = Session::get('hinh');
 							<h2>Dịch Vụ</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Tư Vấn</a></li>
-								<!-- <li><a href="#">Contact Us</a></li>
-								<li><a href="#">Order Status</a></li>
-								<li><a href="#">Change Location</a></li>
-								<li><a href="#">FAQ’s</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -300,10 +249,6 @@ $hinh = Session::get('hinh');
 							<h2>Bộ Sưu Tập</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Fall Winter 2022</a></li>
-								<!-- <li><a href="#">Mens</a></li>
-								<li><a href="#">Womens</a></li>
-								<li><a href="#">Gift Cards</a></li>
-								<li><a href="#">Shoes</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -312,10 +257,6 @@ $hinh = Session::get('hinh');
 							<h2>Chính Sách</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Đổi Trả</a></li>
-								<!-- <li><a href="#">Privecy Policy</a></li>
-								<li><a href="#">Refund Policy</a></li>
-								<li><a href="#">Billing System</a></li>
-								<li><a href="#">Ticket System</a></li> -->
 							</ul>
 						</div>
 					</div>
@@ -324,10 +265,6 @@ $hinh = Session::get('hinh');
 							<h2>Về Chúng Tôi</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Thông Tin Công Ty</a></li>
-								<!-- <li><a href="#">Careers</a></li>
-								<li><a href="#">Store Location</a></li>
-								<li><a href="#">Affillate Program</a></li>
-								<li><a href="#">Copyright</a></li> -->
 							</ul>
 						</div>
 					</div>
