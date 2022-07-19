@@ -163,7 +163,7 @@ class TrangChuController extends Controller
             ->where('ID_TIN_TUC', $id)->first();
         $view = view('khach_hang.chi_tiet_tin_tuc')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('san_pham', $tin_tuc)
+            ->with('tin_tuc', $tin_tuc)
             ->with('liet_ke_slide', $tat_ca_slide);
         return $view;
     }
