@@ -220,8 +220,8 @@ $hinh = Session::get('hinh');
 								bạn sẽ tạo ra kỳ tích”.</p>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="address" style="height: 200px; width: 300px">
+					<div class="col-sm-5">
+						<div class="address">
 							<img src="{{asset('khach_hang/images/home/map.png')}}" alt="" />
 							<p>DECOS HCM: 83 Dong Khoi St, District 1
 								<br>DECOS HN: 23 Pho Hue St, Hoan Kiem District
