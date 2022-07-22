@@ -25,7 +25,6 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-
                                 <a href="{{ URL::to('/chi_tiet_tin_tuc/' . $gia_tri->ID_TIN_TUC) }}"> <img
                                         src="{{ asset('uploads/tin_tuc/' . $gia_tri->HINH_ANH_TT) }}" alt="" />
                                 </a>
@@ -68,4 +67,8 @@
 
         <!--features_items-->
     </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 97e72c555050e0503da8b869df2d7f1001fc7494

@@ -4,6 +4,10 @@
     <div class="left-sidebar">
         <h2>Bộ Sưu Tập</h2>
         <div class="panel-group category-products" id="accordian">
+<<<<<<< HEAD
+=======
+            <!--category-productsr-->
+>>>>>>> 97e72c555050e0503da8b869df2d7f1001fc7494
             @foreach($liet_ke_the_loai as $the_loai => $gia_tri)
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -25,4 +29,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection
+>>>>>>> 97e72c555050e0503da8b869df2d7f1001fc7494
