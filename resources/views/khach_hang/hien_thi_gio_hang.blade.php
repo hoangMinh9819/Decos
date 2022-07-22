@@ -1,6 +1,35 @@
 @extends('khach_hang.bo_cuc_khach_hang')
 @section('noi_dung')
-<div class="col-sm-7 padding-right">
+<?php
+if (Cart::total() == 0) { ?>
+	<div class="col-sm-2">
+		<div class="left-sidebar">
+			<h2>Bộ Sưu Tập</h2>
+			<div class="panel-group category-products" id="accordian">
+				<!--category-productsr-->
+				@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}" style="color: #94C03C;">{{$gia_tri->TEN_TL}}</a></h4>
+					</div>
+				</div>
+				@endforeach
+			</div>
+		</div>
+	</div>
+<?php
+	if (Session('tin_nhan_don_hang') == null) {
+		echo '<h3 style="color: red;">Hiện tại giỏ hàng chưa có bất kỳ sản phẩm nào</h3>';
+	} else {
+		echo '<h3 style="color: green;">' . Session('tin_nhan_don_hang') . '</h3>';
+		Session::put('tin_nhan_don_hang', null);
+	}
+}
+$content = Cart::content();
+?>
+
+@if(Cart::total()>0)
+<div class="col-sm-12 padding-right">
 	<section id="cart_items">
 		<div class="container">
 			<!-- <div class="breadcrumbs">
@@ -10,13 +39,6 @@
                 </ol>
             </div> -->
 			<div class="table-responsive cart_info">
-				<?php
-				if(Session('tin_nhan_don_hang')){
-					echo '<h3 style="color: green;">'.Session('tin_nhan_don_hang').'</h3>';
-					Session::put('tin_nhan_don_hang',null);
-				}
-				$content = Cart::content();
-				?>
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
@@ -69,7 +91,6 @@
 		</div>
 	</section>
 	<!--/#cart_items-->
-
 	<section id="do_action">
 		<div class="container">
 			<!-- <div class="heading">
@@ -83,15 +104,24 @@
 							<p>Thông Tin Người Nhận</p>
 							<form method="POST" action="{{URL::to('/luu_thanh_toan')}}">
 								{{csrf_field()}}
-								<input type="text" name="ten" placeholder="Họ Tên *">
-								<input type="text" name="dia_chi" placeholder="Địa Chỉ *">
-								<input type="text" name="dien_thoai" placeholder="Điện Thoại *">
+								<input type="text" name="ten" placeholder="Họ Tên *" value="{{old('ten')}}">
+							@error('ten')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
+								<input type="text" name="dia_chi" placeholder="Địa Chỉ *" value="{{old('dia_chi')}}">
+							@error('dia_chi')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
+								<input type="text" name="dien_thoai" placeholder="Điện Thoại *" value="{{old('dien_thoai')}}">
+							@error('dien_thoai')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
 								<label>Phương Thức Thanh Toán:</label>
 								<select style="margin-bottom: 10px;" name="phuong_thuc">
 									<option value="Tiền Mặt">Tiền Mặt</option>
 									<option value="Thẻ ATM">Thẻ ATM</option>
 								</select>
-								<textarea name="ghi_chu" placeholder="Ghi chú . . ." rows="8"></textarea>
+								<textarea name="ghi_chu" placeholder="Ghi chú . . ." rows="8">{{old('ghi_chu')}}</textarea>
 								<input type="submit" value="Đặt Hàng" class="btn btn-primary btn-sm">
 							</form>
 						</div>
@@ -106,13 +136,12 @@
 							<li>Tổng <span>{{Cart::total()}} VND</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> -->
-						</div>
+					</div>
 				</div>
-				
 			</div>
 		</div>
 	</section>
 	<!--/#do_action-->
-
 </div>
+@endif
 @endsection

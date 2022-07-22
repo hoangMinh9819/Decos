@@ -35,7 +35,6 @@
                     </form>
                 </div>
             </div>
-<<<<<<< HEAD
         </div>
         <div class="table-responsive">
             <table class="table table-striped b-t b-light">
@@ -83,40 +82,6 @@
                         <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
                     </ul>
                 </div>
-=======
-            <div class="table-responsive">
-                <table class="table table-striped b-t b-light">
-                    <thead>
-                        <tr>
-                            <th>Tên Bộ Sưu Tập</th>
-                            <th>Mô Tả</th>
-                            <th>Trạng Thái</th>
-                            <th style="width:50px;"></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($liet_ke_danh_muc as $chia_khoa => $danh_muc)
-                            <tr>
-                                <td>{{ $danh_muc->TEN_TL }}</td>
-                                <td>{{ $danh_muc->MO_TA_TL }}</td>
-                                <td>{{ $danh_muc->TRANG_THAI }}</td>
-                                <td><a href="{{ URL::to('/sua_danh_muc/' . $danh_muc->ID_THE_LOAI) }}" class="active"
-                                        ui-toggle-class="">
-                                        Sửa
-                                        <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
-                                    </a>
-                                    <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                                        href="{{ URL::to('/xoa_danh_muc/' . $danh_muc->ID_THE_LOAI) }}" class="active"
-                                        ui-toggle-class="">
-                                        Xóa
-                                        <!-- <i class="fa fa-times text-danger text"></i> -->
-                                    </a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
->>>>>>> c921f83165d8e178898c26875630feec341ccc93
             </div>
             <footer class="panel-footer">
                 <div class="row">

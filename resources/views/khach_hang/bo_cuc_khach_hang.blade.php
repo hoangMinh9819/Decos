@@ -153,7 +153,7 @@ $hinh = Session::get('hinh');
 							<div class="item active">
 								<div class="col-sm-9">
 									<img src="{{asset('uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" 
-									style="border-style: outset; border-color: purple; border-width: 10px"/>
+									style="border-style: outset; border-color: black; border-width: 10px"/>
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -169,7 +169,7 @@ $hinh = Session::get('hinh');
 							<div class="item">
 								<div class="col-sm-9">
 									<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt=""
-									style="border-style: outset; border-color: purple; border-width: 10px" />
+									style="border-style: outset; border-color: black; border-width: 10px" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -220,8 +220,8 @@ $hinh = Session::get('hinh');
 								bạn sẽ tạo ra kỳ tích”.</p>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="address" style="height: 200px; width: 300px">
+					<div class="col-sm-5">
+						<div class="address">
 							<img src="{{asset('khach_hang/images/home/map.png')}}" alt="" />
 							<p>DECOS HCM: 83 Dong Khoi St, District 1
 								<br>DECOS HN: 23 Pho Hue St, Hoan Kiem District
@@ -294,8 +294,6 @@ $hinh = Session::get('hinh');
 
 	</footer>
 	<!--/Footer-->
-
-
 
 	<script src="{{asset('khach_hang/js/jquery.js')}}"></script>
 	<script src="{{asset('khach_hang/js/bootstrap.min.js')}}"></script>

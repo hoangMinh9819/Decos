@@ -47,12 +47,27 @@
 						}
 						?>
 						<form action="{{URL::to('/dang_ky')}}" method="post">
-							{{csrf_field()}}
-							<input type="text" name="ten" placeholder="Họ Tên" required />
-							<input type="text" name="email" placeholder="Email" required />
-							<input type="password" name="mat_khau" placeholder="Mật Khẩu" required />
-							<input type="text" name="dien_thoai" placeholder="Điện Thoại" required />
-							<input type="text" name="dia_chi" placeholder="Địa Chỉ" />
+							{{csrf_field()}}							
+							<input type="text" name="ten" placeholder="Họ Tên" value="{{old('ten')}}"/>
+							@error('ten')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
+							<input type="text" name="email" placeholder="Email" value="{{old('email')}}" />
+							@error('email')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
+							<input type="password" name="mat_khau" placeholder="Mật Khẩu" value="{{old('mat_khau')}}" />
+							@error('mat_khau')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
+							<input type="text" name="dien_thoai" placeholder="Điện Thoại" value="{{old('dien_thoai')}}" />
+							@error('dien_thoai')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
+							<input type="text" name="dia_chi" placeholder="Địa Chỉ" value="{{old('dia_chi')}}" />
+							@error('dia_chi')
+							<p style="color: red;">{{$message}}</p> 
+							@enderror
 							<button type="submit" class="btn btn-default">Đăng Ký</button>
 						</form>
 					</div>

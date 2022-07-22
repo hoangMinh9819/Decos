@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use PhpParser\Node\Expr\BinaryOp\Equal;
-
+use App\Http\Requests\DangKyRequest;
+use Illuminate\Support\Facades\Mail;
 session_start();
 
 class TrangChuController extends Controller
@@ -45,7 +46,7 @@ class TrangChuController extends Controller
     public function kiem_tra_dang_nhap(Request $request)
     {
         $email = $request->email;
-        $mat_khau = $request->mat_khau;
+        $mat_khau = md5($request->mat_khau);
         $result = DB::table('nguoi_dung')
             ->where('EMAIL', $email)
             ->where('MAT_KHAU', $mat_khau)
@@ -64,7 +65,7 @@ class TrangChuController extends Controller
             } elseif ($quyen === 'nhan_vien') {
                 return Redirect::to('/ho_so_nhan_vien');
             } else {
-                return Redirect::to('/trang_chu');
+                return Redirect::to('/hien_thi_gio_hang');
             }
         } else {
             Session::put('tin_nhan', 'Mật khẩu hoặc tài khoản bị sai. Vui lòng nhập lại');
@@ -122,11 +123,11 @@ class TrangChuController extends Controller
         return $view;
     }
 
-    public function dang_ky(Request $request)
+    public function dang_ky(DangKyRequest $request)
     {
         $data['HO_TEN'] = $request->ten;
         $data['EMAIL'] = $request->email;
-        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIEN_THOAI'] = $request->dien_thoai;
         $data['DIA_CHI'] = $request->dia_chi;
         $data['PHAN_QUYEN'] = 'khach_hang';
@@ -163,7 +164,7 @@ class TrangChuController extends Controller
             ->where('ID_TIN_TUC', $id)->first();
         $view = view('khach_hang.chi_tiet_tin_tuc')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
-            ->with('san_pham', $tin_tuc)
+            ->with('tin_tuc', $tin_tuc)
             ->with('liet_ke_slide', $tat_ca_slide);
         return $view;
     }

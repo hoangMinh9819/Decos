@@ -49,10 +49,9 @@ class KhachhangController extends Controller
     public function luu_khach_hang(Request $request)
     {
         // $this->uy_quyen_dang_nhap();
-        $chuoi = array();
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['HO_TEN'] = $request->ten;
-        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIA_CHI'] = $request->dia_chi;
         $data['EMAIL'] = $request->email;
         $data['DIEN_THOAI'] = $request->dien_thoai;
@@ -82,7 +81,7 @@ class KhachhangController extends Controller
         $chuoi = array();
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['HO_TEN'] = $request->ten;
-        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIA_CHI'] = $request->dia_chi;
         $data['EMAIL'] = $request->email;
         $data['DIEN_THOAI'] = $request->dien_thoai;
