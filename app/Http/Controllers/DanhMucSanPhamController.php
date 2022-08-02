@@ -23,7 +23,7 @@ class DanhMucSanPhamController extends Controller
         return view('nhan_vien.quan_li_the_loai.them_danh_muc');
     }
     public function liet_ke_danh_muc(){
-        $tat_ca_danh_muc = DB::table('the_loai')->get();
+        $tat_ca_danh_muc = DB::table('the_loai')->paginate(4);
         $quan_ly_danh_muc = view('nhan_vien.quan_li_the_loai.liet_ke_danh_muc')->with('liet_ke_danh_muc',$tat_ca_danh_muc);
         return view('nhan_vien.bo_cuc_nhan_vien')->with('nhan_vien.quan_li_the_loai.liet_ke_danh_muc',$quan_ly_danh_muc);
     }

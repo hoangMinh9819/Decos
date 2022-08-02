@@ -26,7 +26,7 @@ class DonHangController extends Controller
     public function liet_ke_don_hang(){
         $danh_sach_don_hang = DB::table('don_hang')
         ->join('nguoi_dung', 'don_hang.ID_NGUOI_DUNG', '=', 'nguoi_dung.ID_NGUOI_DUNG')
-        ->get();
+        ->paginate(3);
         $quan_ly_don_hang = view('nhan_vien.quan_li_don_hang.liet_ke_don_hang')->with('liet_ke_don_hang',$danh_sach_don_hang);
         return view('nhan_vien.bo_cuc_nhan_vien')->with('nhan_vien.quan_li_don_hang.liet_ke_don_hang',$quan_ly_don_hang);
     }
