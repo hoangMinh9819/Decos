@@ -26,7 +26,7 @@ class QuanlisanphamController extends Controller
     public function liet_ke_san_pham(){
         $danh_sach_san_pham = DB::table('san_pham')
         ->join('the_loai','the_loai.ID_THE_LOAI','=','san_pham.ID_THE_LOAI')
-        ->get();
+        ->paginate(4);
         $quan_ly_san_pham = view('nhan_vien.quan_li_san_pham.liet_ke_san_pham')->with('liet_ke_san_pham',$danh_sach_san_pham);
         return view('nhan_vien.bo_cuc_nhan_vien')->with('nhan_vien.quan_li_san_pham.liet_ke_san_pham',$quan_ly_san_pham);
     }

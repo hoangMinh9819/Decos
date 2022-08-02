@@ -17,7 +17,7 @@ class SlideController extends Controller
     }
     public function liet_ke_slide()
     {
-        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->paginate(3);
         $quan_li_slide = view('nhan_vien.quan_li_slide.liet_ke_slide')->with('liet_ke_slide', $tat_ca_slide);
         return view('nhan_vien.bo_cuc_nhan_vien')->with('nhan_vien.quan_li_the_loai.liet_ke_danh_muc', $quan_li_slide);
     }
