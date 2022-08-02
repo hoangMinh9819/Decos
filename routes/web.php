@@ -59,7 +59,7 @@ Route::post('/search_danh_muc', [DanhMucSanPhamController::class, 'search_danh_m
 
 //Danh Mục Khách Hàng
 Route::get('/sua_khach_hang/{id}',[KhachhangController::class, 'sua_khach_hang']);
-Route::get('/xoa_khach_hang/{id}',[KhachhangController::class, 'xoa_khach_hang']);
+// Route::get('/xoa_khach_hang/{id}',[KhachhangController::class, 'xoa_khach_hang']);
 Route::get('/liet_ke_khach_hang',[KhachhangController::class, 'liet_ke_khach_hang']);
 Route::post('/luu_khach_hang',[KhachhangController::class, 'luu_khach_hang']);
 Route::post('/cap_nhat_khach_hang/{id}',[KhachhangController::class, 'cap_nhat_khach_hang']);
