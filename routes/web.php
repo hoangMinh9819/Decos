@@ -116,3 +116,6 @@ Route::post('/search_don_hang', [DonHangController::class, 'search_don_hang']);
 // Gửi Mail
 Route::get('/gui_mail',[TrangChuController::class,'gui_mail']);
 
+// thong tin lien he
+Route::get('/thong_tin_lien_he',[TrangChuController::class, 'thong_tin_lien_he']);
+
