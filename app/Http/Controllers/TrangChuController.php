@@ -206,4 +206,11 @@ class TrangChuController extends Controller
         Session::put('tin_nhan','Cập nhật thành công!');
         return Redirect::to('ho_so_khach_hang');
     }
+    
+    public function thong_tin_lien_he(){
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $views = view('khach_hang.thong_tin_lien_he')
+        ->with('liet_ke_slide', $tat_ca_slide);
+        return $views;
+    }
 }
