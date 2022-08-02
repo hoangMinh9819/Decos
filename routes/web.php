@@ -119,3 +119,7 @@ Route::get('/gui_mail',[TrangChuController::class,'gui_mail']);
 // thong tin lien he
 Route::get('/thong_tin_lien_he',[TrangChuController::class, 'thong_tin_lien_he']);
 
+// ho sơ khach hang
+Route::get('/ho_so_khach_hang',[TrangChuController::class, 'ho_so_khach_hang']);
+Route::post('/cap_nhat_ho_so_khach_hang/{id}',[TrangChuController::class, 'cap_nhat_ho_so_khach_hang']);
+
