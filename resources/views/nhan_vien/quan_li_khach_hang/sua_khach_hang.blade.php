@@ -36,11 +36,11 @@
                                 <input type="text" value="{{ $khach_hang->DIEN_THOAI }}" name="dien_thoai"
                                     class="form-control" id="dienthoai" placeholder="Điện Thoại">
                             </div>
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="hinhanh">Hình Ảnh</label>
                                 <input type="file" value="{{ $khach_hang->HINH_ANH }}" name="hinh_anh"
                                     class="form-control" id="hinhanh" placeholder="Hình Ảnh">
-                            </div>
+                            </div> --}}
                             <div class="form-group">
                                 <label>Trạng Thái</label>
                                 <select name="trang_thai" class="form-control input-sm m-bot15">
