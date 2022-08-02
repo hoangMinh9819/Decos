@@ -119,6 +119,7 @@ $hinh = Session::get('hinh');
 									</ul>
 								</li>
 								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc')}}">Tin Tức</i></a></li>
+                                <li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</i></a>
 								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
 								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
 							</ul>
@@ -234,54 +235,73 @@ $hinh = Session::get('hinh');
 		</div>
 
 		<div class="footer-widget">
-			<div class="container">
-				<div class="row">
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Dịch Vụ</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Tư Vấn</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Bộ Sưu Tập</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Fall Winter 2022</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Chính Sách</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Đổi Trả</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-2">
-						<div class="single-widget">
-							<h2>Về Chúng Tôi</h2>
-							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Thông Tin Công Ty</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-sm-3 col-sm-offset-1">
-						<div class="single-widget">
-							<h2>Ưu Đãi</h2>
-							<form action="#" class="searchform">
-								<input type="text" placeholder="Địa chỉ email của bạn" />
-								<button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
-								<p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
-							</form>
-						</div>
-					</div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Dịch Vụ</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Tư Vấn</a></li>
+                                <li><a href="#">Hỗ trợ khách hàng</a></li>
+                                <li><a href="#">Đặt lịch hẹn</a></li>
+                                <li><a href="#">FAQs</a></li>
+                                <li><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Bộ Sưu Tập</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Fall Winter 2022</a></li>
+                                <li><a href="#">Fall Winter 2021</a></li>
+                                <li><a href="#">Fall Winter 2020</a></li>
+                                <li><a href="#">Spring Summer 2022</a></li>
+                                <li><a href="#">Spring Summer 2021</a></li>
+                                <li><a href="#">Spring Summer 2020</a></li>
+                                <li><a href="#">Resort 2022</a></li>
+                                <li><a href="#">Resort 2021</a></li>
+                                <li><a href="#">Resort 2020</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Chính Sách</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Đổi Trả</a></li>
+                                <li><a href="#">Hỗ trợ tư vấn</a></li>
+                                <li><a href="#">Trả hàng & trao đổi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Về Chúng Tôi</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Thông tin liên hệ</a></li>
+                                <li><a href="#">Quy tắc</a></li>
+                                <li><a href="#">Thông báo pháp lý</a></li>
+                                <li><a href="#">Chính sách Bảo mật & Cookie</a></li>
+                                <li><a href="#">Thông Tin Công Ty</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget">
+                            <h2>Ưu Đãi</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Địa chỉ email của bạn" />
+                                <button type="submit" class="btn btn-default"><i
+                                        class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
+                            </form>
+                        </div>
+                    </div>
 
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
 
 		<div class="footer-bottom">
 			<div class="container">
