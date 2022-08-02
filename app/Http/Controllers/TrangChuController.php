@@ -183,4 +183,27 @@ class TrangChuController extends Controller
             ->with('liet_ke_slide', $tat_ca_slide);
         return $view;
     }
+    public function ho_so_khach_hang()
+    {
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $id = Session::get('id');
+        $khach_hang = DB::table('nguoi_dung')
+            ->where('ID_NGUOI_DUNG',$id)
+            ->first();
+        $views = view('khach_hang.ho_so_khach_hang')
+        ->with('khach_hang',$khach_hang)
+        ->with('liet_ke_slide', $tat_ca_slide);
+        return $views;
+    }
+    public function cap_nhat_ho_so_khach_hang(Request $request, $id){
+        $data = array();
+        $data['PHAN_QUYEN'] = 'khach_hang';
+        $data['HO_TEN'] = $request->ten;
+        $data['DIA_CHI'] = $request->dia_chi;
+        $data['EMAIL'] = $request->email;
+        $data['DIEN_THOAI'] = $request->dien_thoai;
+        DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->update($data);
+        Session::put('tin_nhan','Cập nhật thành công!');
+        return Redirect::to('ho_so_khach_hang');
+    }
 }
