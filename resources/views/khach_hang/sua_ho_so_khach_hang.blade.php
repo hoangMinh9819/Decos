@@ -1,5 +1,5 @@
-@extends('nhan_vien.bo_cuc_nhan_vien')
-@section('nhan_vien_noi_dung')
+@extends('khach_hang.bo_cuc_khach_hang')
+@section('noi_dung')
     <div class="row">
         <div class="col-lg-12">
             <section class="panel">
@@ -8,7 +8,7 @@
                 </header>
                 <div class="panel-body">
                     <div class="position-center">
-                        <form role="form" action="{{ URL::to('/cap_nhat_khach_hang/' . $khach_hang->ID_NGUOI_DUNG) }}"
+                        <form role="form" action="{{ URL::to('/cap_nhat_ho_so_khach_hang/' . $khach_hang->ID_NGUOI_DUNG) }}"
                             method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="form-group">

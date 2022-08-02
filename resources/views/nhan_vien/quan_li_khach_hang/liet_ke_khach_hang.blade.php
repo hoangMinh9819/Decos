@@ -14,7 +14,7 @@
             }
             ?>
             <div class="row w3-res-tb">
-                <div class="col-sm-3 m-b-xs">
+                <div class="col-sm-5 m-b-xs">
                     <select class="input-sm form-control w-sm inline v-middle">
                         <option value="0">Bulk action</option>
                         <option value="1">Delete selected</option>
@@ -25,22 +25,21 @@
                 </div>
                 <div class="col-sm-4">
                 </div>
-                <div class="col-sm-5">
-                    <form role="form" action="{{ URL::to('/search_khach_hang') }}" method="POST">
-                        {{ csrf_field() }}
-                        <div class="search_box pull-right">
-                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm tin tức">
-                            <input type="submit" name="search_khach_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
-                        </div>
-                    </form>
+                <div class="col-sm-3">
+                    <div class="input-group">
+                        <input type="text" class="input-sm form-control" placeholder="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Go!</button>
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped b-t b-light">
                     <thead>
                         <tr>
-                            <th>Hình Ảnh</th>
-                            <th>Tên Khách hàng</th>
+                            {{-- <th>Hình Ảnh</th> --}}
+                            <th>Tên Nhân Viên</th>
                             <th>Địa Chỉ</th>
                             <th>Email</th>
                             <th>Điện Thoại</th>
@@ -49,10 +48,10 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($liet_ke_khach_hang as $chia_khoa => $khach_hang)
+                        @foreach ($liet_ke_khach_hang as  $khach_hang)
                             <tr>
-                                <td><img src="{{ URL::to('public/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}"
-                                        height="100"></td>
+                                {{-- <td><img src="{{ URL::to('public/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}"
+                                        height="100"></td> --}}
                                 <td>{{ $khach_hang->HO_TEN }}</td>
                                 <td>{{ $khach_hang->DIA_CHI }}</td>
                                 <td>{{ $khach_hang->EMAIL }}</td>
@@ -78,7 +77,8 @@
                     </tbody>
                 </table>
             </div>
-            <footer class="panel-footer">
+            {{$liet_ke_khach_hang->links("pagination::bootstrap-4")}}
+            {{-- <footer class="panel-footer">
                 <div class="row">
                     <div class="col-sm-5 text-center">
                         <small class="text-muted inline m-t-sm m-b-sm">showing 20-30 of 50 items</small>
@@ -94,7 +94,9 @@
                         </ul>
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
+
+
         </div>
     </div>
 @endsection
