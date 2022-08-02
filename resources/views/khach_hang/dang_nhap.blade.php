@@ -1,6 +1,6 @@
 @extends('khach_hang.bo_cuc_khach_hang')
 @section('noi_dung')
-<div class="col-sm-10 padding-right">
+<div class="col-sm-10 padding-right" id="giua_trang">
 	<section id="form">
 		<!--form-->
 		<div class="container">

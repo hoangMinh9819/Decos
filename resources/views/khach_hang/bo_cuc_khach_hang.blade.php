@@ -78,12 +78,12 @@ $hinh = Session::get('hinh');
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php if ($ten == null) { ?>
-									<li><a href="{{URL::to('hien_thi_gio_hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
-									<li><a href="{{ URL::to('/dang_nhap') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
+									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}})  </span></a></li>
+									<li><a href="{{ URL::to('/dang_nhap'.'#giua_trang') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
 									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
 									<li><a href="{{URL::to('/')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
-									<li><a href="{{URL::to('hien_thi_gio_hang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng</a></li>
+									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}})  </span></a></li>
 									<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
 									<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
@@ -115,10 +115,10 @@ $hinh = Session::get('hinh');
 								<li><a href="{{URL::to('/trang_chu')}}" class="active">Trang Chủ</a></li>
 								<li class="dropdown"><a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
 									<ul role="menu" class="sub-menu">
-										<li><a href="{{URL::to('/tat_ca_san_pham')}}">Tất Cả Sản Phẩm</a></li>
+										<li><a href="{{URL::to('/tat_ca_san_pham'.'#giua_trang')}}">Tất Cả Sản Phẩm</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc')}}">Tin Tức</i></a></li>
+								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc'.'#giua_trang')}}">Tin Tức</i></a></li>
 								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
 								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
 							</ul>

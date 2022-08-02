@@ -15,7 +15,7 @@
 		</div>
 	</div>
 </div>
-<div class="col-sm-10 padding-right">
+<div class="col-sm-10 padding-right" id="giua_trang">
     <div class="features_items">
         <!--features_items-->
         <h2 class="title text-center">Tất Cả Sản Phẩm</h2>

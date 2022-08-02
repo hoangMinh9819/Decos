@@ -27,7 +27,7 @@ class GioHangController extends Controller
         $data['weight'] = '123';
         $data['options']['image'] = $thong_tin_san_pham->HINH_ANH;
         Cart::add($data);
-        return Redirect::to('/hien_thi_gio_hang');
+        return Redirect::to('/hien_thi_gio_hang#giua_trang');
     }
     public function hien_thi_gio_hang(){
         $tat_ca_the_loai = DB::table('the_loai')
@@ -35,17 +35,17 @@ class GioHangController extends Controller
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $view = view('khach_hang.hien_thi_gio_hang')
         ->with('liet_ke_the_loai', $tat_ca_the_loai)
-        ->with('liet_ke_slide', $tat_ca_slide); 
+        ->with('liet_ke_slide', $tat_ca_slide);
         return $view;
     }
     public function xoa_gio_hang($rowId){
         Cart::update($rowId,0);        
-        return Redirect::to('/hien_thi_gio_hang');
+        return Redirect::to('/hien_thi_gio_hang#giua_trang');
     }
     public function cap_nhat_so_luong(Request $request){
         $rowId=$request->rowId_gio_hang;
         $so_luong=$request->so_luong;
         Cart::update($rowId,$so_luong);
-        return Redirect::to('/hien_thi_gio_hang');
+        return Redirect::to('/hien_thi_gio_hang#giua_trang');
     }
 }

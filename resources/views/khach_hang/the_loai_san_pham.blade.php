@@ -8,14 +8,14 @@
 			@foreach($liet_ke_the_loai as $the_loai => $gia_tri)
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI)}}" style="color: #94C03C;">{{$gia_tri->TEN_TL}}</a></h4>
+					<h4 class="panel-title"><a href="{{URL::to('the_loai_san_pham/'.$gia_tri->ID_THE_LOAI.'#giua_trang')}}" style="color: #94C03C;">{{$gia_tri->TEN_TL}}</a></h4>
 				</div>
 			</div>
 			@endforeach
 		</div>
 	</div>
 </div>
-<div class="col-sm-10 padding-right">
+<div class="col-sm-10 padding-right" id="giua_trang">
     <div class="features_items">
         <!--features_items-->
         <h2 class="title text-center">Bộ Sưu Tập <span style="color: purple;">{{$ten_the_loai->TEN_TL}}</span></h2>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="product-overlay">
                             <div class="overlay-content">
-                                <a href="{{URL::to('/chi_tiet_san_pham/'.$gia_tri->ID_SAN_PHAM)}}">
+                                <a href="{{URL::to('/chi_tiet_san_pham/'.$gia_tri->ID_SAN_PHAM.'#giua_trang')}}">
                                 <img src={{asset('uploads/san_pham/'.$gia_tri->HINH_ANH_HAI)}} alt="" width="290px" /></a>
                                 <h2>{{number_format($gia_tri->GIA)}} VND</h2>
                                 <p>{{$gia_tri->TEN_SP}}</p>

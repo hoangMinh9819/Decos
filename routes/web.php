@@ -43,6 +43,7 @@ Route::post('/cap_nhat_so_luong',[GioHangController::class, 'cap_nhat_so_luong']
 //Thanh Toán
 Route::get('/dang_nhap_thanh_toan',[ThanhToanController::class,'dang_nhap_thanh_toan']);
 Route::get('/thanh_toan',[ThanhToanController::class,'thanh_toan']);
+Route::get('/thanh_toan_thanh_cong',[ThanhToanController::class,'thanh_toan_thanh_cong']);
 Route::post('/luu_thanh_toan',[ThanhToanController::class, 'luu_thanh_toan']);
 
 //Nhan Vien

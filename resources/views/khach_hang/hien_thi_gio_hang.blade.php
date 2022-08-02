@@ -1,6 +1,8 @@
 @extends('khach_hang.bo_cuc_khach_hang')
 @section('noi_dung')
 <?php
+use Illuminate\Support\Facades\Session;
+use Gloudemans\Shoppingcart\Facades\Cart;
 if (Cart::total() == 0) { ?>
 	<div class="col-sm-2">
 		<div class="left-sidebar">
@@ -19,9 +21,9 @@ if (Cart::total() == 0) { ?>
 	</div>
 <?php
 	if (Session('tin_nhan_don_hang') == null) {
-		echo '<h3 style="color: red;">Hiện tại giỏ hàng chưa có bất kỳ sản phẩm nào</h3>';
+		echo '<h3 id="giua_trang" style="color: red;">Hiện tại giỏ hàng chưa có bất kỳ sản phẩm nào</h3>';
 	} else {
-		echo '<h3 style="color: green;">' . Session('tin_nhan_don_hang') . '</h3>';
+		echo '<h3 id="giua_trang" style="color: green;">' . Session('tin_nhan_don_hang') . '</h3>';
 		Session::put('tin_nhan_don_hang', null);
 	}
 }
@@ -29,7 +31,7 @@ $content = Cart::content();
 ?>
 
 @if(Cart::total()>0)
-<div class="col-sm-12 padding-right">
+<div class="col-sm-12 padding-right" id="giua_trang">
 	<section id="cart_items">
 		<div class="container">
 			<!-- <div class="breadcrumbs">
@@ -102,8 +104,8 @@ $content = Cart::content();
 					<div class="bill-to">
 						<div class="form-one">
 							<p>Thông Tin Người Nhận</p>
-							<form method="POST" action="{{URL::to('/luu_thanh_toan')}}">
-								{{csrf_field()}}
+							<form method="POST" action="{{URL::to('/luu_thanh_toan#giua_trang')}}">
+								@csrf
 								<input type="text" name="ten" placeholder="Họ Tên *" value="{{old('ten')}}">
 							@error('ten')
 							<p style="color: red;">{{$message}}</p> 
@@ -118,8 +120,8 @@ $content = Cart::content();
 							@enderror
 								<label>Phương Thức Thanh Toán:</label>
 								<select style="margin-bottom: 10px;" name="phuong_thuc">
-									<option value="Tiền Mặt">Tiền Mặt</option>
-									<option value="Thẻ ATM">Thẻ ATM</option>
+									<option value="Tiền Mặt">Tiền Mặt Khi Nhận Hàng</option>
+									<option value="VNPAY">Thanh Toán VNPAY</option>
 								</select>
 								<textarea name="ghi_chu" placeholder="Ghi chú . . ." rows="8">{{old('ghi_chu')}}</textarea>
 								<input type="submit" value="Đặt Hàng" class="btn btn-primary btn-sm">
