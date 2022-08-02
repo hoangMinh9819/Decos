@@ -41,7 +41,7 @@ class KhachhangController extends Controller
     // }
     public function liet_ke_khach_hang()
     {
-        $tat_ca_khach_hang = DB::table('nguoi_dung')->where('PHAN_QUYEN', 'khach_hang')->get();
+        $tat_ca_khach_hang = DB::table('nguoi_dung')->where('PHAN_QUYEN', 'khach_hang')->paginate(3);
         return view('nhan_vien.quan_li_khach_hang.liet_ke_khach_hang')
             ->with('liet_ke_khach_hang', $tat_ca_khach_hang);
     }
