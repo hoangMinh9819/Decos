@@ -32,7 +32,7 @@ class NewsController extends Controller
     {
         $tat_ca_tin_tuc = DB::table('tin_tuc')
         ->join('the_loai','the_loai.ID_THE_LOAI','=','tin_tuc.ID_THE_LOAI')
-        ->get();
+        ->paginate(3);
         $view = view('nhan_vien.quan_li_tin_tuc.liet_ke_tin_tuc')->with('liet_ke_tin_tuc', $tat_ca_tin_tuc);
         return $view;
     }
