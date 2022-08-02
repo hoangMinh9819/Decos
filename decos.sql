@@ -280,26 +280,179 @@ insert into the_loai(TEN_TL, HINH_ANH_TL, MO_TA_TL, TRANG_THAI) VALUES
 
 
 insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THAI_SP, HINH_ANH, MOI, BAN_CHAY, DAC_SAC, MO_TA_NGAN) VALUES
-(7,'Aaaaa',5000000,'Mô tả dài','z3513554982861_80e02a8c77658a238a3946c826e8b7c9.jpg','Còn Hàng','z3513554996026_52ba01e74c0312245c00b7c25401f23b.jpg', true, false, true,'Mô tả ngắn'),
-(8,'bbbbb',4000000,'Mô tả dài','z3513555161937_af2b6e70a64cf1e9e8c47fb68cdd4de7.jpg','Hết Hàng','z3513555156867_42f42e1977c9c71b2980d5a8557a887b.jpg', true, true, true,'Mô tả ngắn'),
-(9,'ccccc',4500000,'Mô tả dài','z3513562077620_865656edf9f4adabb2a55daf08a0f2d1.jpg','Hết Hàng','z3513562096055_fff8bd44fba7af424f5d170f5cd31816.jpg', false, false, true,'Mô tả ngắn'),
-(10,'ddddd',3500000,'Mô tả dài','z3513562836833_d4cee16640fefe8e16e2c31816beacad.jpg','Còn Hàng','z3513562817998_b6db5ae5614cdcefe77337d5add37449.jpg', true, false, false,'Mô tả ngắn'),
-(12,'ssss',2500000,'Mô tả dài','z3513562286411_b9f54dd1e71309ac0b876e4813b9d06b.jpg','Còn Hàng','z3513562337204_42f69e00ee46aa0e2968277d531eb4e4.jpg', false, true, true,'Mô tả ngắn'),
-(11,'ffffff',1500000,'Mô tả dài','z3513562787191_773b89f2acb4d710a7c0aac08b889603.jpg','Còn Hàng','z3513562803419_32bb0ddd7eaae42c50f3a39ac381b966.jpg', true, false, true,'Mô tả ngắn'),
+(7,'Đầm cổ chữ V bất đối xứng Schafer',5000000,'- Loại sản phẩm: Đầm mini
+- Chất liệu: Poly, Cotton, Polyurethane
+- Tay áo giữa
+- Dòng nút bên
+- Váy xếp ly
+- Đệm vai
+- Cổ chữ V không đối xứng
+- Chiều dài: 100cm ','z3513554982861_80e02a8c77658a238a3946c826e8b7c9.jpg','Còn Hàng','z3513554996026_52ba01e74c0312245c00b7c25401f23b.jpg', true, false, true,'Đầm vest cổ, hàng nút lệch, tay lửng, vết xếp li'),
+(8,'Váy tay ngắn Natee',4000000,'- Loại sản phẩm: Đầm mini
+- Chất liệu: Len, Bông
+- Cổ tròn
+- Tay áo ngắn
+- Thắt lưng vừa vặn
+- Khe ngắn
+- Váy chữ A
+- Dạng thẳng
+- Chiều dài: 95cm ','z3513555161937_af2b6e70a64cf1e9e8c47fb68cdd4de7.jpg','Hết Hàng','z3513555156867_42f42e1977c9c71b2980d5a8557a887b.jpg', true, true, true,'Đầm dáng ngắn, kèm belt phối dây xích'),
+(9,'Cyril Peplum Top và Cyril Sides Slit Pants',4500000,'- Dối với sản phẩm (Áo): Áo không tay
+- Chất liệu: Cotton
+- Tặng kèm bralette ren
+- Quai
+- Thẳng qua
+- Gân
+- Vạt túi
+- Thiết kế peplum
+- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+ - Loại sản phẩm: Quần
+- Chất liệu: Cotton
+- Dạng thẳng
+- Khe trượt
+- Túi bên hông
+- Chiều dài: 92 / 110-94 / 112-94 / 112-95 / 112cm (XS / S / M / L) ','z3513562077620_865656edf9f4adabb2a55daf08a0f2d1.jpg','Hết Hàng','z3513562096055_fff8bd44fba7af424f5d170f5cd31816.jpg', false, false, true,'Áo 2 dây dáng peplum, xếp li + kèm bra ren. Quần tây ống đứng, xẻ 2 bên.'),
+(10,'Maris Round Neck Top-',3500000,'- Loại sản phẩm: Áo dài tay
+- Chất liệu: Cotton
+- Áo dài tay
+- Cổ tròn
+- Dòng nút
+- Chiếc nơ ở đường viền cổ áo
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)','z3513562836833_d4cee16640fefe8e16e2c31816beacad.jpg','Còn Hàng','z3513562817998_b6db5ae5614cdcefe77337d5add37449.jpg', true, false, false,'Áo kiểu cổ tròn, tay lửng đính nơ'),
+(12,'Kelsey Bowtie Neck Top',2500000,'- Loại sản phẩm: Áo sơ mi
+- Chất liệu: Cotton, Ren
+- Tay áo ngắn
+- Cổ tròn
+- Chiếc nơ ở cổ
+- Mẫu ren xuyên thấu
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)','z3513562286411_b9f54dd1e71309ac0b876e4813b9d06b.jpg','Còn Hàng','z3513562337204_42f69e00ee46aa0e2968277d531eb4e4.jpg', false, true, true,'Áo ren tay ngắn, cổ đính nơ, xếp lớp ngang ngực'),
+(11,'Phelim Deep V-Neck Dress',1500000,'- Loại sản phẩm: Đầm mini
+- Chất liệu: Cotton
+- Cổ chữ V sâu
+- Áo dài tay
+- Thả eo
+- Các nút dòng cả hai bên
+- Mặt xếp li
+- Chiều dài: 120cm ','z3513562787191_773b89f2acb4d710a7c0aac08b889603.jpg','Còn Hàng','z3513562803419_32bb0ddd7eaae42c50f3a39ac381b966.jpg', true, false, true,'Đầm mini, cổ V, đính nút ở túi'),
 (13,'gggggg',7500000,'Mô tả dài','z3513562388820_5b35cb53f2155b522e3190d0c40fab0d.jpg','Hết Hàng','z3513562353760_4e6a2c343fcaf4e5d9c0ad15b9a00f87.jpg', true, true, true,'Mô tả ngắn'),
-(1,'ccjjjjjccc',8500000,'Mô tả dài','z3513563017766_0f5723854bfa4e07f670eeaad9c59e03.jpg','Hết Hàng','z3513563037343_d1bbb6127c969227f3f9e36f0af055d0.jpg', false, false, true,'Mô tả ngắn'),
-(2,'ddtttttddd',9500000,'Mô tả dài','z3513562886944_41f7ec7ee108d32a9be93e97848023fd.jpg','Còn Hàng','z3513562904030_f90d14c5b307e955aea5c84e42d2d218.jpg', true, false, false,'Mô tả ngắn'),
-(3,'ssxxxxss',8800000,'Mô tả dài','z3513562853817_43ff326846df9295a062d8d22eec3fff.jpg','Còn Hàng','z3513562871469_c745871db8648a67615945da25cf61f0.jpg', false, true, true,'Mô tả ngắn'),
-(4,'Aaaaa',7700000,'Mô tả dài','z3513562750726_9d42b7ec22ce8d9c5f608ce1c4ae88af.jpg','Còn Hàng','z3513562763812_f719808df38c8e20717b3d0fadc321c1.jpg', true, false, true,'Mô tả ngắn'),
-(5,'bbbbb',5500000,'Mô tả dài','z3513562720227_e49a4d2a1ba4fde87841cc94449f72dd.jpg','Hết Hàng','z3513562726682_c67013eb1c537539a3a453963668433f.jpg', true, true, true,'Mô tả ngắn'),
-(6,'ccccc',5700000,'Mô tả dài','z3513562676874_612865135c214de32f992010f491a3c6.jpg','Hết Hàng','z3513562694142_0e87f14496cc2b5f90c79ca91f39758f.jpg', false, false, true,'Mô tả ngắn'),
-(7,'ddddd',5800000,'Mô tả dài','z3513562942819_7cda62e9734c85926b94dfabc3366590.jpg','Còn Hàng','z3513563002570_d20f02a05873f9566a112dde40cdcf4c.jpg', true, false, false,'Mô tả ngắn'),
-(8,'ssss',5900000,'Mô tả dài','z3513562934921_fea5d973d72b0a733f773b7de962642d.jpg','Còn Hàng','z3513562976702_691ac1e3f96a05b895007485c0de0571.jpg', false, true, true,'Mô tả ngắn'),
-(9,'ffffff',5600000,'Mô tả dài','z3513562592706_870a077242b501e73a933fdfea35da07.jpg','Còn Hàng','z3513562607876_9f19190e9eaad2b94fe74d539f08c500.jpg', true, false, true,'Mô tả ngắn'),
-(10,'gggggg',5300000,'Mô tả dài','z3513562552340_2495ff11f8ada1edf1ecb47638be7d78.jpg','Hết Hàng','z3513562576256_8a97c2cf37cdd50108008b915dee2185.jpg', true, true, true,'Mô tả ngắn'),
-(11,'ccjjjjjccc',5200000,'Mô tả dài','z3513562522991_32f58e40494b1d2a79f11856dd70f7d7.jpg','Hết Hàng','z3513562537338_9d15fa2996222506ca59900b12eb1f9d.jpg', false, false, true,'Mô tả ngắn'),
-(12,'ddtttttddd',5100000,'Mô tả dài','z3513562497881_f0ffea7ac9c99a1b77b4450bb0c92ffb.jpg','Còn Hàng','z3513562518330_0a5fce90befad056a93d661eea4ca2a9.jpg', true, false, false,'Mô tả ngắn'),
-(13,'ssxxxxss',7900000,'Mô tả dài','z3513562448947_d9c4278dc384d4bfdf29c909459e48c2.jpg','Còn Hàng','z3513562485581_d70bbcd0ce80c2706f49578461f3a7e0.jpg', false, true, true,'Mô tả ngắn');
+(1,'Silas Square Neck Dress',8500000,'- Loại sản phẩm: Đầm maxi
+- Chất liệu: Cotton
+- Cổ vuông
+- Không tay
+- Đường xếp ly
+- Váy liền thân
+- Bao gồm dây đai
+- Chiều dài: 165cm ','z3513563017766_0f5723854bfa4e07f670eeaad9c59e03.jpg','Hết Hàng','z3513563037343_d1bbb6127c969227f3f9e36f0af055d0.jpg', false, false, true,'Đầm maxi cổ vuông, chi tiết xếp li dọc thân váy, thắt lưng cùng chất liệu'),
+(2,'Genevieve Ruffle Layers Top and Neil Mini Skirt',9500000,'- Loại sản phẩm: Áo dài tay
+- Chất liệu: Cotton, Silk
+- Đường viền cổ áo xếp lớp
+- Tay áo dài phồng
+- Cổ tay áo xù xì
+- Cổ tròn
+- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+ - Loại sản phẩm: Váy
+- Chất liệu: Cotton
+- Váy chữ A
+- Đường cắt nối
+- Chiều dài: 40cm ','z3513562886944_41f7ec7ee108d32a9be93e97848023fd.jpg','Còn Hàng','z3513562904030_f90d14c5b307e955aea5c84e42d2d218.jpg', true, false, false,'-Áo kiểu phối cổ và bo tay xếp ly
+ -Chân Váy mini đính nối phần tùng váy'),
+(3,'Claws Ruffle Neck Dress',8800000,'- Loại sản phẩm: Đầm Midi
+- Chất liệu: Chính: Poly, Cotton; Kết hợp: lụa, bông
+- Cổ bèo xếp lớp
+- Áo dài tay
+- Cổ tay áo xù xì
+- Thả eo
+- Váy liền thân
+- Xếp ly bên
+- Chiều dài: 162cm ','z3513562853817_43ff326846df9295a062d8d22eec3fff.jpg','Còn Hàng','z3513562871469_c745871db8648a67615945da25cf61f0.jpg', false, true, true,'Đầm maxi thân váy xếp li phối cổ và bo tay xếp li 2 lớp'),
+(4,'Abner Cut-Out Dress',7700000,'- Loại sản phẩm: Đầm Dài Gối Gối
+- Chất liệu: Cotton, Poly, Elastane
+- Cổ chữ V sâu
+- Tay áo ngắn
+- Đường cắt ở eo
+- Chiều dài: 162cm ','z3513562750726_9d42b7ec22ce8d9c5f608ce1c4ae88af.jpg','Còn Hàng','z3513562763812_f719808df38c8e20717b3d0fadc321c1.jpg', true, false, true,'Đầm midi, cổ V cách điệu, cut-out'),
+(5,'Placid Overall Dress',5500000,'- Loại sản phẩm: Đầm Midi
+- Chất liệu: Poly, Cotton, Tussah Silk
+- Quai
+- Tổng thể trang phục
+- Thẳng qua
+- Túi có cúc
+- Thả eo
+- Váy xếp ly
+- Gân
+- Chiều dài: 172cm ','z3513562720227_e49a4d2a1ba4fde87841cc94449f72dd.jpg','Hết Hàng','z3513562726682_c67013eb1c537539a3a453963668433f.jpg', true, true, true,'Đầm yếm maxi xếp ly tùng dưới'),
+(6,'Duncan Folded Collar Top and Duncan A-line Skirt',5700000,'- Loại sản phẩm: Áo sơ mi
+- Chất liệu: Cotton
+- Cổ áo gấp
+- Tay áo giữa
+- Các nút ẩn
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)
+ - Loại sản phẩm: Váy
+- Chất liệu: Poly, Cotton, Elastane
+- Váy chữ A
+- Váy xòe
+- Chiều dài: 43cm "','z3513562676874_612865135c214de32f992010f491a3c6.jpg','Hết Hàng','z3513562694142_0e87f14496cc2b5f90c79ca91f39758f.jpg', false, false, true,'Áo sơ mi tay lửng và chân váy xòe dáng chữ A'),
+(7,'Aneutin Cropped Gilet and Cyril Sides Slit Pants',5800000,'- Loại sản phẩm: Áo không tay
+- Chất liệu: Chính: Len; Dòng: Bông
+- Không tay
+- Cổ tròn
+- Dạng cắt
+- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+ - Loại sản phẩm: Quần
+- Chất liệu: Cotton
+- Dạng thẳng
+- Khe trượt
+- Túi bên hông
+- Chiều dài: 92 / 110-94 / 112-94 / 112-95 / 112cm (XS / S / M / L) ','z3513562942819_7cda62e9734c85926b94dfabc3366590.jpg','Còn Hàng','z3513563002570_d20f02a05873f9566a112dde40cdcf4c.jpg', true, false, false,'Áo Gile croptop và quần ống đứng xẻ 2 bên'),
+(9,'Emery Puffy Sleeves Top and Emery Front Pleated Skirt',5600000,'- Loại sản phẩm: Áo dài tay
+- Chất liệu: Cotton, Silk
+- Áo dài tay
+- vai phồng
+- Cổ tròn
+- Chiều dài: 57-58-60-60cm (XS / S / M / L) ','z3513562592706_870a077242b501e73a933fdfea35da07.jpg','Còn Hàng','z3513562607876_9f19190e9eaad2b94fe74d539f08c500.jpg', true, false, true,'Áo kiểu tay dài cổ tròn và chân váy mini, dáng A, xếp li giữa'),
+(10,'Diggory Pleated Chest Top and Diggory Striped Mini Skirt',5300000,'- Loại sản phẩm: Áo dài tay
+- Chất liệu: Acetate, Silk
+- Áo dài tay
+- Cổ tròn
+- Thon gọn
+- Ngực xếp nếp
+- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+ - Loại sản phẩm: Váy
+- Chất liệu: Cotton
+- Váy chữ A
+- Chiều dài nhỏ
+- Vạt túi
+- Họa tiết sọc
+- Khe trước
+- Chiều dài: 40cm','z3513562552340_2495ff11f8ada1edf1ecb47638be7d78.jpg','Hết Hàng','z3513562576256_8a97c2cf37cdd50108008b915dee2185.jpg', true, true, true,'Áo tay dài xếp li ngực và chân váy in, lưng liền, nắp túi cách điệu'),
+(11,'Carylyn Button Pockets Dress',5200000,'- Loại sản phẩm: Đầm mini
+- Chất liệu: Cotton
+- Cổ tròn
+- Tay áo ngắn
+- Túi hai bên có nút
+- Váy chữ A
+- Chiều dài: 100cm ','z3513562522991_32f58e40494b1d2a79f11856dd70f7d7.jpg','Hết Hàng','z3513562537338_9d15fa2996222506ca59900b12eb1f9d.jpg', false, false, true,'Đầm mixi tay ngắn, đính nút ở túi'),
+(12,'Aster Short Sleeves Dress',5100000,'- Loại sản phẩm: Đầm Midi
+- Chất liệu: Poly, Cotton, Elastane
+- Tay áo ngắn
+- Cổ tròn
+- Tay áo thu thập
+- Thắt lưng co dãn
+- Đường viền ở ngực
+- Chiều dài: 135cm ','z3513562497881_f0ffea7ac9c99a1b77b4450bb0c92ffb.jpg','Còn Hàng','z3513562518330_0a5fce90befad056a93d661eea4ca2a9.jpg', true, false, false,'Đầm mixi tay rút, nhún eo - co dãn'),
+(13,'Radley Strappy Lace Top and Radley Wool Pants',7900000,'- Loại sản phẩm: Áo không tay
+- Chất liệu: Ren
+- Quai
+- Cổ vuông
+- Không tay
+- Hoa văn ren
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)
+ - Loại sản phẩm: Quần
+- Chất liệu: Len
+- Họa tiết caro
+- Dạng thẳng
+- Túi bên
+- Chiều dài: 92 / 110-94 / 112-94 / 112-95 / 112cm (XS / S / M / L)','z3513562448947_d9c4278dc384d4bfdf29c909459e48c2.jpg','Còn Hàng','z3513562485581_d70bbcd0ce80c2706f49578461f3a7e0.jpg', false, true, true,'Áo ren cổ vuông , không tay và quần tây ống đứng caro nâu');
 
 insert into don_hang(ID_NGUOI_DUNG, DIA_CHI_GIAO, TEN_NGUOI_NHAN, DIEN_THOAI_NGUOI_NHAN, TRANG_THAI) VALUES
 (1,'590 CMT8','Hoàng Minh','0902252888','Đang Giao'),
