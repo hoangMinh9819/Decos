@@ -9,7 +9,6 @@
                 <div class="panel-body">
                     @foreach ($sua_danh_muc as $key => $gia_tri)
                         <div class="position-center">
-
                             <form role="form" action="{{ URL::to('/cap_nhat_danh_muc/' . $gia_tri->ID_THE_LOAI) }}"
                                 method="post">
                                 {{ csrf_field() }}

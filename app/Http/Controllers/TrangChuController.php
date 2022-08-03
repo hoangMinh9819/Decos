@@ -114,7 +114,7 @@ class TrangChuController extends Controller
             ->where('TRANG_THAI', 'Hiển Thị')->get();
         $tat_ca_san_pham = DB::table('san_pham')
             ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
-            ->get();
+            ->paginate(6);
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $view = view('khach_hang.tat_ca_san_pham')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
@@ -176,7 +176,7 @@ class TrangChuController extends Controller
             ->where('TRANG_THAI', 'Hiển Thị')->get();
         $tat_ca_tin_tuc = DB::table('tin_tuc')
             ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'tin_tuc.ID_THE_LOAI')
-            ->get();
+            ->paginate(6);
         $view = view('khach_hang.tat_ca_tin_tuc')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
             ->with('liet_ke_tin_tuc', $tat_ca_tin_tuc)

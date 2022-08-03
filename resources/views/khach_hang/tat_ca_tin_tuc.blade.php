@@ -46,10 +46,7 @@
             <div class="col-sm-9"></div>
             <div class="col-sm-3">
                 <ul class="pagination">
-                    <li class="active"><a href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">&raquo;</a></li>
+                {{$liet_ke_tin_tuc->links("pagination::bootstrap-4")}}
                 </ul>
             </div>
         </div>

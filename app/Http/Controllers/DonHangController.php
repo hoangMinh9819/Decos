@@ -19,7 +19,6 @@ class DonHangController extends Controller
             ->orwhere('HO_TEN', 'like', '%' . $keyword . '%')
             ->orwhere('DIA_CHI_GIAO', 'like', '%' . $keyword . '%')
             ->get();
-
         return view('nhan_vien.quan_li_don_hang.search_don_hang')->with('search_don_hang', $search_don_hang);
     }
 

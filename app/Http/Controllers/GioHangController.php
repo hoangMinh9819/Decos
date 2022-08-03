@@ -13,7 +13,6 @@ session_start();
 
 class GioHangController extends Controller
 {
-    //
     public function luu_gio_hang(Request $request){
         $san_pham_id = $request->san_pham_id_an;
         $so_luong = $request->so_luong;
@@ -27,6 +26,7 @@ class GioHangController extends Controller
         $data['weight'] = '123';
         $data['options']['image'] = $thong_tin_san_pham->HINH_ANH;
         Cart::add($data);
+        Cart::setGlobalTax(1);
         return Redirect::to('/hien_thi_gio_hang#giua_trang');
     }
     public function hien_thi_gio_hang(){

@@ -132,10 +132,9 @@ $content = Cart::content();
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Thành Tiền <span>{{Cart::subtotal()}} VND</span></li>
-							<li>Thuế <span>{{Cart::tax()}} VND</span></li>
-							<li>Phí Vận Chuyển <span>Free</span></li>
-							<li>Tổng <span>{{Cart::total()}} VND</span></li>
+							<li>Thành Tiền <span>{{Cart::subtotal(0,',','.')}} VND</span></li>
+							<li>Phí Vận Chuyển <span>{{Cart::tax(0,',','.')}} VND</span></li>
+							<li>Tổng <span>{{Cart::total(0,',','.')}} VND</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> -->
 					</div>
