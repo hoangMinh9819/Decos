@@ -31,6 +31,11 @@ $hinh = Session::get('hinh');
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/khach_hang/images/ico/apple-touch-icon-114-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/khach_hang/images/ico/apple-touch-icon-72-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" href="/khach_hang/images/ico/apple-touch-icon-57-precomposed.png')}}">
+   <!-- an- hien mat khau -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+  <!-- font awesome 5.13.1 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+</head>
 </head>
 <!--/head-->
 
