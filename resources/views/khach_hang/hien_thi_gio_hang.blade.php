@@ -23,7 +23,7 @@ if (Cart::total() == 0) { ?>
 	if (Session('tin_nhan_don_hang') == null) {
 		echo '<h3 id="giua_trang" style="color: red;">Hiện tại giỏ hàng chưa có bất kỳ sản phẩm nào</h3>';
 	} else {
-		echo '<h3 id="giua_trang" style="color: green;">' . Session('tin_nhan_don_hang') . '</h3>';
+		echo '<h3 id="giua_trang" style="color: green;">' . Session::get('tin_nhan_don_hang') . '</h3>';
 		Session::put('tin_nhan_don_hang', null);
 	}
 }
@@ -133,7 +133,7 @@ $content = Cart::content();
 					<div class="total_area">
 						<ul>
 							<li>Thành Tiền <span>{{Cart::subtotal(0,',','.')}} VND</span></li>
-							<li>Phí Vận Chuyển <span>{{Cart::tax(0,',','.')}} VND</span></li>
+							<li>Phí Vận Chuyển <span>Free VND</span></li>
 							<li>Tổng <span>{{Cart::total(0,',','.')}} VND</span></li>
 						</ul>
 						<!-- <a class="btn btn-default update" href="">Update</a> -->

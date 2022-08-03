@@ -40,6 +40,7 @@
                 <h2>{{ $san_pham->TEN_SP }}</h2>
                 <p>Mã ID: {{ $san_pham->ID_SAN_PHAM }}</p>
                 <img src="images/product-details/rating.png" alt="" />
+                <?php if($san_pham->TRANG_THAI_SP == 'Còn Hàng'){?>
                 <form method="POST" action="{{URL::to('/luu_gio_hang')}}">
                     {{csrf_field()}}
                     <span>
@@ -53,6 +54,7 @@
                         </button>
                     </span>
                 </form>
+                <?php }?>
                 <p><b>Tình trạng: </b>{{ $san_pham->TRANG_THAI_SP }}</p>
                 <p><b>Bộ Sưu Tập:</b> {{ $san_pham->TEN_TL }}</p>
                 <p><b>Mô tả ngắn: </b>{{ $san_pham->MO_TA_NGAN }}</p>
@@ -100,7 +102,7 @@
                                             <img src="{{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}}" alt="" /></a>
                                         <h2>{{number_format($gia_tri->GIA)}} VND</h2>
                                         <p>{{$gia_tri->TEN_SP}}</p>
-                                        <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button>
+                                        <!-- <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button> -->
                                     </div>
                                 </div>
                             </div>
@@ -125,7 +127,7 @@
                                                 <img src="{{asset('uploads/san_pham/'.$gia_tri->HINH_ANH)}}" alt="" /></a>
                                             <h2>{{number_format($gia_tri->GIA)}} VND</h2>
                                             <p>{{$gia_tri->TEN_SP}}</p>
-                                            <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button>
+                                            <!-- <button type="button" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Thêm giỏ hàng</button> -->
                                         </div>
                                     </div>
                                 </div>
