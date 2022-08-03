@@ -46,7 +46,7 @@ class TrangChuController extends Controller
     public function kiem_tra_dang_nhap(Request $request)
     {
         $email = $request->email;
-        $mat_khau = md5($request->mat_khau);
+        $mat_khau = $request->mat_khau;
         $result = DB::table('nguoi_dung')
             ->where('EMAIL', $email)
             ->where('MAT_KHAU', $mat_khau)
