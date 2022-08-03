@@ -26,7 +26,7 @@ class GioHangController extends Controller
         $data['weight'] = '123';
         $data['options']['image'] = $thong_tin_san_pham->HINH_ANH;
         Cart::add($data);
-        Cart::setGlobalTax(1);
+        Cart::setGlobalTax(0);
         return Redirect::to('/hien_thi_gio_hang#giua_trang');
     }
     public function hien_thi_gio_hang(){

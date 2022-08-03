@@ -52,6 +52,7 @@ class ThanhToanController extends Controller
         });
         Session::put('id_don_hang', $id_don_hang);
         Session::put('tin_nhan_don_hang', 'Đặt hàng thành công! Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.');
+        Cart::destroy();
         if ($request->phuong_thuc == 'Tiền Mặt') {
             return Redirect::to('hien_thi_gio_hang#giuahang');
         }
