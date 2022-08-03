@@ -15,23 +15,24 @@
             ?>
             <div class="row w3-res-tb">
                 <div class="col-sm-5 m-b-xs">
-                    <select class="input-sm form-control w-sm inline v-middle">
+                    <!-- <select class="input-sm form-control w-sm inline v-middle">
                         <option value="0">Bulk action</option>
                         <option value="1">Delete selected</option>
                         <option value="2">Bulk edit</option>
                         <option value="3">Export</option>
                     </select>
-                    <button class="btn btn-sm btn-default">Apply</button>
+                    <button class="btn btn-sm btn-default">Apply</button> -->
                 </div>
                 <div class="col-sm-4">
                 </div>
-                <div class="col-sm-3">
-                    <div class="input-group">
-                        <input type="text" class="input-sm form-control" placeholder="Search">
-                        <span class="input-group-btn">
-                            <button class="btn btn-sm btn-default" type="button">Go!</button>
-                        </span>
-                    </div>
+                <div class="col-sm-5">
+                    <form role="form" action="{{ URL::to('/search_khach_hang') }}" method="POST">
+                        {{ csrf_field() }}
+                        <div class="search_box pull-right">
+                            <input type="text" name="keyword_submit" placeholder="Tìm kiếm đơn hàng">
+                            <input type="submit" name="search_khach_hang" class="btn btn-success btn-sm" value="Tìm kiếm">
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="table-responsive">
