@@ -213,4 +213,11 @@ class TrangChuController extends Controller
         ->with('liet_ke_slide', $tat_ca_slide);
         return $views;
     }
+    
+    public function bao_mat_cookie(){
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $views = view('khach_hang.bao_mat_cookie')
+        ->with('liet_ke_slide', $tat_ca_slide);
+        return $views;
+    }
 }
