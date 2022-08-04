@@ -3,29 +3,29 @@
     <div class="col-sm-3">
         <div class="left-sidebar">
             <h2>Các bộ phận</h2>
-            <div class="panel-group category-products" id="accordian">
+          <div class="panel-group category-products" id="accordian">
                 <!--category-productsr-->
                 <div class="panel panel-default">
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="" style="">Phòng vận hành</a>
+                        <a href="{{ URL::to('/apply_job_m') }}" style="">Phòng vận hành</a>
                     </div>
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="">IT</a>
+                        <a href="{{ URL::to('/apply_job_m') }}">IT</a>
                     </div>
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="">Marketing</a>
+                        <a href="{{ URL::to('/apply_job_m') }}">Marketing</a>
                     </div>
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="">Tài chính kế toán</a>
+                        <a href="{{ URL::to('/apply_job_m') }}">Tài chính kế toán</a>
                     </div>
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="">Quản lí của hàng (Store Managament) </a>
+                        <a href="{{ URL::to('/apply_job_m') }}">Quản lí của hàng (Store Managament) </a>
                     </div>
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="">Shift Leader (Trưởng ca)</a>
+                        <a href="{{ URL::to('/apply_job') }}">Shift Leader (Trưởng ca)</a>
                     </div>
                     <div class="panel-heading" style="font-size:160%">
-                        <a href="">Store Sales agent (Nhân viên bán hàng) </a>
+                        <a href="{{ URL::to('/apply_job') }}">Store Sales agent (Nhân viên bán hàng) </a>
                     </div>
                 </div>
             </div>
