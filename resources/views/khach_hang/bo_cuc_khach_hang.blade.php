@@ -88,8 +88,6 @@ $hinh = Session::get('hinh');
 								<?php } else { ?>
 									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
 									<li><a href="{{URL::to('/')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
-                                      <li><a href="{{ URL::to('talent') }}"><i class="glyphicon glyphicon-user"></i>
-                                        Tuyển Dụng</a></li>
 									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}})  </span></a></li>
 									<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
 									<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
@@ -125,8 +123,9 @@ $hinh = Session::get('hinh');
 										<li><a href="{{URL::to('/tat_ca_san_pham'.'#giua_trang')}}">Tất Cả Sản Phẩm</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc'.'#giua_trang')}}">Tin Tức</i></a></li>
-                                <li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</i></a>
+								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc'.'#giua_trang')}}">Tin Tức</a></li>
+                                <li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a>
+                                <li class="dropdown"><a href="{{ URL::to('talent') }}">Tuyển Dụng</a></li>
 								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
 								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
 							</ul>
