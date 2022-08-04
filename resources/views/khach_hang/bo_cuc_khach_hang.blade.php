@@ -254,7 +254,7 @@ $hinh = Session::get('hinh');
                             <ul class="nav nav-pills nav-stacked">
                                 <li><a href="#">Tư Vấn</a></li>
                                 <li><a href="#">Hỗ trợ khách hàng</a></li>
-                                <li><a href="#">Đặt lịch hẹn</a></li>
+                                <li><a href="{{ URL::to('/dat_lich_hen') }}">Đặt lịch hẹn</a></li>
                                 <li><a href="#">FAQs</a></li>
                                 <li><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a></li>
                             </ul>
@@ -280,7 +280,7 @@ $hinh = Session::get('hinh');
                         <div class="single-widget">
                             <h2>Chính Sách</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Đổi Trả</a></li>
+                                <li><a href="{{ URL::to('/chinh_sach_doi_tra') }}">Đổi Trả</a></li>
                                 <li><a href="#">Hỗ trợ tư vấn</a></li>
                                 <li><a href="#">Trả hàng & trao đổi</a></li>
                             </ul>
@@ -290,14 +290,28 @@ $hinh = Session::get('hinh');
                         <div class="single-widget">
                             <h2>Về Chúng Tôi</h2>
                             <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Thông tin liên hệ</a></li>
                                 <li><a href="#">Quy tắc</a></li>
                                 <li><a href="#">Thông báo pháp lý</a></li>
-                                <li><a href="#">Chính sách Bảo mật & Cookie</a></li>
-                                <li><a href="#">Thông Tin Công Ty</a></li>
+                                <li><a href="{{ URL::to('/bao_mat_cookie') }}">Chính sách Bảo mật & Cookie</a></li>
+                                <li><a href="{{ URL::to('/thong_tin_lien_he') }}">Thông Tin Công Ty</a></li>
                             </ul>
                         </div>
                     </div>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget">
+                            <h2>Ưu Đãi</h2>
+                            <form action="#" class="searchform">
+                                <input type="text" placeholder="Địa chỉ email của bạn" />
+                                <button type="submit" class="btn btn-default"><i
+                                        class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
                     <div class="col-sm-3 col-sm-offset-1">
                         <div class="single-widget">
                             <h2>Ưu Đãi</h2>
