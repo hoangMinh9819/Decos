@@ -131,11 +131,16 @@ $hinh = Session::get('hinh');
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-3">
-						<div class="search_box pull-right">
-							<input type="text" placeholder="Search" />
-						</div>
-					</div>
+					 <div class="col-sm-̀5">
+                        <div class="search_box pull-right"></div>
+                        <form action="{{ URL::to('/tim_kiem_san_pham') }}" method="POST" autocomplete="off">
+                            {{ csrf_field() }}
+                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm">
+                            <input type="submit" value="Tìm kiếm" name="tim_kiem_san_pham" class="btn btn-primary"
+                                style="margin-top:0">
+                        </form>
+
+                    </div>
 				</div>
 			</div>
 		</div>
