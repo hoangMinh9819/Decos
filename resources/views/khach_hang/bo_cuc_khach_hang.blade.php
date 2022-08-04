@@ -31,10 +31,10 @@ $hinh = Session::get('hinh');
 	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/khach_hang/images/ico/apple-touch-icon-114-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/khach_hang/images/ico/apple-touch-icon-72-precomposed.png')}}">
 	<link rel="apple-touch-icon-precomposed" href="/khach_hang/images/ico/apple-touch-icon-57-precomposed.png')}}">
-   <!-- an- hien mat khau -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
-  <!-- font awesome 5.13.1 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+	<!-- an- hien mat khau -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+	<!-- font awesome 5.13.1 -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
 </head>
 </head>
 <!--/head-->
@@ -83,14 +83,12 @@ $hinh = Session::get('hinh');
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php if ($ten == null) { ?>
-									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}})  </span></a></li>
+									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}}) </span></a></li>
 									<li><a href="{{ URL::to('/dang_nhap'.'#giua_trang') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
 									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
 									<li><a href="{{URL::to('/')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
-									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}})  </span></a></li>
-									<!-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> -->
-									<!-- <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li> -->
+									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}}) </span></a></li>
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
 									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40" style="border-radius: 15px;"></li>
 								<?php } ?>
@@ -124,32 +122,24 @@ $hinh = Session::get('hinh');
 									</ul>
 								</li>
 								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc'.'#giua_trang')}}">Tin Tức</a></li>
-                                <li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a>
-                                <li class="dropdown"><a href="{{ URL::to('talent') }}">Tuyển Dụng</a></li>
-								<!-- <li><a href="404.html">Giỏ Hàng</a></li> -->
-								<!-- <li><a href="contact-us.html">Liên Hệ</a></li> -->
+								<li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a>
+								<li class="dropdown"><a href="{{ URL::to('talent') }}">Tuyển Dụng</a></li>
 							</ul>
 						</div>
 					</div>
-					 <div class="col-sm-̀5">
-                        <div class="search_box pull-right"></div>
-                        <form action="{{ URL::to('/tim_kiem_san_pham') }}" method="POST" autocomplete="off">
-                            {{ csrf_field() }}
-                            <input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm">
-                            <input type="submit" value="Tìm kiếm" name="tim_kiem_san_pham" class="btn btn-primary"
-                                style="margin-top:0">
-                        </form>
-
-                    </div>
+					<div class="col-sm-̀5">
+						<div class="search_box pull-right"></div>
+						<form action="{{ URL::to('/tim_kiem_san_pham') }}" method="POST" autocomplete="off">
+							{{ csrf_field() }}
+							<input type="text" name="keywords_submit" placeholder="Tìm kiếm sản phẩm">
+							<input type="submit" value="Tìm kiếm" name="tim_kiem_san_pham" class="btn btn-primary" style="margin-top:0">
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
-		<!--/header-bottom-->
 	</header>
-	<!--/header-->
-
 	<section id="slider">
-		<!--slider-->
 		<div class="container">
 			<div class="row">
 				<div>
@@ -164,8 +154,7 @@ $hinh = Session::get('hinh');
 						<div class="carousel-inner">
 							<div class="item active">
 								<div class="col-sm-9">
-									<img src="{{asset('uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" 
-									style="border-style: outset; border-color: black; border-width: 10px"/>
+									<img src="{{asset('uploads/slide/z3513568049831_8b113a298ba7804e93a61b8ee14e7672.jpg')}}" class="girl img-responsive" alt="" style="border-style: outset; border-color: black; border-width: 10px" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -173,15 +162,13 @@ $hinh = Session::get('hinh');
 									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018
 										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang
 										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
-									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
 							</div>
 
 							@foreach($liet_ke_slide as $slide => $gia_tri)
 							<div class="item">
 								<div class="col-sm-9">
-									<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt=""
-									style="border-style: outset; border-color: black; border-width: 10px" />
+									<img src="{{asset('uploads/slide/'.$gia_tri->HINH_ANH)}}" class="girl img-responsive" alt="" style="border-style: outset; border-color: black; border-width: 10px" />
 								</div>
 								<div class="col-sm-3">
 									<h1><span>DECOS</span></h1>
@@ -189,7 +176,6 @@ $hinh = Session::get('hinh');
 									<p>DECOS là một thương hiệu thời trang thiết kế được có trụ sở tại Sài Gòn ra đời vào năm 2018
 										với mong muốn tạo ra những sản phẩm chất lượng cao, có khả năng mang đến cho các tín đồ thời trang
 										một diện mạo mới với tinh thần Delicate Choices Of Shopaholic.</p>
-									<!-- <button type="button" class="btn btn-default get">Sở Hữu Ngay</button> -->
 								</div>
 							</div>
 							@endforeach
@@ -207,7 +193,6 @@ $hinh = Session::get('hinh');
 			</div>
 		</div>
 	</section>
-	<!--/slider-->
 
 	<section>
 		<div class="container">
@@ -218,7 +203,6 @@ $hinh = Session::get('hinh');
 	</section>
 
 	<footer id="footer">
-		<!--Footer-->
 		<div class="footer-top">
 			<div class="container">
 				<div class="row">
@@ -246,88 +230,68 @@ $hinh = Session::get('hinh');
 		</div>
 
 		<div class="footer-widget">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Dịch Vụ</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Tư Vấn</a></li>
-                                <li><a href="#">Hỗ trợ khách hàng</a></li>
-                                <li><a href="{{ URL::to('/dat_lich_hen') }}">Đặt lịch hẹn</a></li>
-                                <li><a href="#">FAQs</a></li>
-                                <li><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Bộ Sưu Tập</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Fall Winter 2022</a></li>
-                                <li><a href="#">Fall Winter 2021</a></li>
-                                <li><a href="#">Fall Winter 2020</a></li>
-                                <li><a href="#">Spring Summer 2022</a></li>
-                                <li><a href="#">Spring Summer 2021</a></li>
-                                <li><a href="#">Spring Summer 2020</a></li>
-                                <li><a href="#">Resort 2022</a></li>
-                                <li><a href="#">Resort 2021</a></li>
-                                <li><a href="#">Resort 2020</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Chính Sách</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="{{ URL::to('/chinh_sach_doi_tra') }}">Đổi Trả</a></li>
-                                <li><a href="#">Hỗ trợ tư vấn</a></li>
-                                <li><a href="#">Trả hàng & trao đổi</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="single-widget">
-                            <h2>Về Chúng Tôi</h2>
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="#">Quy tắc</a></li>
-                                <li><a href="#">Thông báo pháp lý</a></li>
-                                <li><a href="{{ URL::to('/bao_mat_cookie') }}">Chính sách Bảo mật & Cookie</a></li>
-                                <li><a href="{{ URL::to('/thong_tin_lien_he') }}">Thông Tin Công Ty</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-sm-3 col-sm-offset-1">
-                        <div class="single-widget">
-                            <h2>Ưu Đãi</h2>
-                            <form action="#" class="searchform">
-                                <input type="text" placeholder="Địa chỉ email của bạn" />
-                                <button type="submit" class="btn btn-default"><i
-                                        class="fa fa-arrow-circle-o-right"></i></button>
-                                <p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-                    <div class="col-sm-3 col-sm-offset-1">
-                        <div class="single-widget">
-                            <h2>Ưu Đãi</h2>
-                            <form action="#" class="searchform">
-                                <input type="text" placeholder="Địa chỉ email của bạn" />
-                                <button type="submit" class="btn btn-default"><i
-                                        class="fa fa-arrow-circle-o-right"></i></button>
-                                <p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
-                            </form>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Dịch Vụ</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Dịch Vụ Tư Vấn</a></li>
+								<hr>
+								<li><a href="#">Hỗ trợ khách hàng</a></li>
+								<li><a href="{{ URL::to('/dat_lich_hen') }}">Dịch vụ đặt lịch hẹn.</a></li>
+								<li><a href="#">Dịch Vụ FAQs</a></li>
+								<li><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ với chúng tôi</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Bộ Sưu Tập</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Fall Winter 2022</a></li>
+								<li><a href="#">Fall Winter 2021</a></li>
+								<li><a href="#">Fall Winter 2020</a></li>
+								<li><a href="#">Spring Summer 2022</a></li>
+								<li><a href="#">Spring Summer 2021</a></li>
+								<li><a href="#">Spring Summer 2020</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Chính Sách</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="{{ URL::to('/chinh_sach_doi_tra') }}">Chính Sách Đổi Trả</a></li>
+								<li><a href="#">Hỗ trợ tư vấn</a></li>
+								<li><a href="#">Trả hàng & trao đổi</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div class="single-widget">
+							<h2>Về Chúng Tôi</h2>
+							<ul class="nav nav-pills nav-stacked">
+								<li><a href="#">Quy tắc công ty</a></li>
+								<li><a href="#">Thông báo pháp lý</a></li>
+								<li><a href="{{ URL::to('/bao_mat_cookie') }}">Chính sách Bảo mật & Cookie</a></li>
+								<li><a href="{{ URL::to('/thong_tin_lien_he') }}">Thông Tin Công Ty</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3 col-sm-offset-1">
+						<div class="single-widget">
+							<h2>Ưu Đãi</h2>
+							<form action="#" class="searchform">
+								<input type="text" placeholder="Địa chỉ email của bạn" />
+								<button type="submit" class="btn btn-default" style="margin: 1px">Gửi</button>
+							</form>
+							<p>Để nhận những tin tức và ưu đãi mới nhất của chúng tôi.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
