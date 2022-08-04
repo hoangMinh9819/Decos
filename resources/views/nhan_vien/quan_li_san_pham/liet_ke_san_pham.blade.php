@@ -41,6 +41,8 @@
                 <table class="table table-striped b-t b-light" id="myTable">
                     <thead>
                         <tr>
+                            <th>Hình Ảnh</th>
+                            <th>Hình Ảnh Hai</th>
                             <th>Bộ Sưu Tập</th>
                             <th>Mã sản phẩm</th>
                             <th>Tên</th>
@@ -54,6 +56,8 @@
                     <tbody>
                         @foreach ($liet_ke_san_pham as $chia_khoa => $san_pham)
                             <tr>
+                                <td><img src="{{URL::to('uploads/san_pham/'.$san_pham->HINH_ANH)}}" height="100"></td>
+                                <td><img src="{{URL::to('uploads/san_pham/'.$san_pham->HINH_ANH_HAI)}}" height="100"></td>
                                 <td>{{ $san_pham->TEN_TL }}</td>
                                 <td>{{ $san_pham->MA_SAN_PHAM }}</td>
                                 <td>{{ $san_pham->TEN_SP }}</td>
