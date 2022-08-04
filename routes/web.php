@@ -33,6 +33,10 @@ Route::get('/chi_tiet_tin_tuc/{id}',[TrangChuController::class, 'chi_tiet_tin_tu
 //Hiển thị tất cả tin tức
 Route::get('/tat_ca_tin_tuc',[TrangChuController::class, 'tat_ca_tin_tuc']);
 Route::get('/the_loai_tin_tuc/{id}',[TrangChuController::class, 'the_loai_tin_tuc']);
+Route::post('/tim_kiem_san_pham', [TrangChuController::class, 'tim_kiem_san_pham']);
+Route::get('talent', [TrangChuController::class, 'talent']);
+Route::get('apply_job', [TrangChuController::class, 'apply_job']);
+Route::get('apply_job_m', [TrangChuController::class, 'apply_job_m']);
 
 //Lưu vào giỏ hàng.
 Route::post('/luu_gio_hang',[GioHangController::class, 'luu_gio_hang']);
