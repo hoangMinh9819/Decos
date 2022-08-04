@@ -13,6 +13,16 @@
                                 method="post">
                                 {{ csrf_field() }}
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Hình Ảnh </label>
+                                    <input type="file" value="{{ $gia_tri->HINH_ANH }}" name="HINH_ANH"
+                                        class="form-control" placeholder="Hình Ảnh" id="hinhanh">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Hình Ảnh Hai</label>
+                                    <input type="file" value="{{ $gia_tri->HINH_ANH_HAI }}" name="HINH_ANH_HAI"
+                                        class="form-control" placeholder="Hình Ảnh" id="hinhanhhai">
+                                </div>
+                                <div class="form-group">
                                     <label for="exampleInputEmail1">Thể Loại</label>
                                     <input type="text" name="ID_THE_LOAI" class="form-control"
                                         value="{{ $gia_tri->ID_THE_LOAI }}" id="exampleInput">
@@ -36,6 +46,11 @@
                                     <label for="exampleInputPassword1">Mô tả sản phẩm</label>
                                     <textarea style="resize: none" rows="8" name="MO_TA" class="form-control" value="{{ $gia_tri->MO_TA_SP }}"
                                         id="exampleInputPassword1"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Ngày cập nhật</label>
+                                    <input type="date" name="NGAY_CAP_NHAT" class="form-control" value="{{ $gia_tri->NGAY_CAP_NHAT }}"
+                                        id="exampleInput">
                                 </div>
                                 <div class="form-group">
                                     <label>Hiển thị / Ẩn</label>
