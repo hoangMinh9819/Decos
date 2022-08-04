@@ -220,4 +220,46 @@ class TrangChuController extends Controller
         ->with('liet_ke_slide', $tat_ca_slide);
         return $views;
     }
+     public function talent()
+    {
+        $tat_ca_the_loai = DB::table('the_loai')
+            ->where('TRANG_THAI', 'Hiển Thị')->get();
+        $tat_ca_san_pham = DB::table('san_pham')
+            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
+            ->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.talent')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_san_pham', $tat_ca_san_pham)
+            ->with('liet_ke_slide', $tat_ca_slide);
+        return $view;
+    }
+    public function apply_job()
+    {
+        $tat_ca_the_loai = DB::table('the_loai')
+            ->where('TRANG_THAI', 'Hiển Thị')->get();
+        $tat_ca_san_pham = DB::table('san_pham')
+            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
+            ->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.apply_job')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_san_pham', $tat_ca_san_pham)
+            ->with('liet_ke_slide', $tat_ca_slide);
+        return $view;
+    }
+    public function apply_job_m()
+    {
+        $tat_ca_the_loai = DB::table('the_loai')
+            ->where('TRANG_THAI', 'Hiển Thị')->get();
+        $tat_ca_san_pham = DB::table('san_pham')
+            ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'san_pham.ID_THE_LOAI')
+            ->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.apply_job_m')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('liet_ke_san_pham', $tat_ca_san_pham)
+            ->with('liet_ke_slide', $tat_ca_slide);
+        return $view;
+    }
 }
