@@ -11,6 +11,16 @@
                     <form role="form" action="{{URL::to('/luu_san_pham')}}" method="post">
                         {{csrf_field()}}
                         <div class="form-group">
+                                <label for="hinhanh">Hình Ảnh</label>
+                                <input type="file" name="HINH_ANH" class="form-control" id="exampleInput"
+                                    placeholder="Hình Ảnh">
+                            </div>
+                            <div class="form-group">
+                                <label for="hinhanh">Hình Ảnh Hai</label>
+                                <input type="file" name="HINH_ANH_HAI" class="form-control" id="exampleInput"
+                                    placeholder="Hình Ảnh">
+                            </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1">Thể Loại</label>
                             <input type="text" name="ID_THE_LOAI" class="form-control" id="exampleInput" >
                         </div>
@@ -30,6 +40,10 @@
                             <label for="exampleInputPassword1">Mô tả sản phẩm</label>
                             <textarea style="resize: none" rows="8" name="MO_TA" class="form-control" id="exampleInputPassword1" ></textarea>
                         </div>
+                        <div class="form-group">
+                                <label for="exampleInputEmail1">Ngày tạo</label>
+                                <input type="datetime" name="NGAY_TAO" class="form-control" id="exampleInput">
+                            </div>
                         <div class="form-group">
                             <label>Hiển thị / Ẩn</label>
                             <select name="trang_thai_danh_muc" class="form-control input-sm m-bot15">
