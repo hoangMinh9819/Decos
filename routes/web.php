@@ -130,3 +130,8 @@ Route::get('/bao_mat_cookie',[TrangChuController::class, 'bao_mat_cookie']);
 Route::get('/ho_so_khach_hang',[TrangChuController::class, 'ho_so_khach_hang']);
 Route::post('/cap_nhat_ho_so_khach_hang/{id}',[TrangChuController::class, 'cap_nhat_ho_so_khach_hang']);
 
+
+//Góp ý
+Route::get('/gop_y',[TrangChuController::class, 'gop_y']);
+Route::post('/luu_gop_y',[TrangChuController::class, 'luu_gop_y']);
+Route::get('/liet_ke_gop_y', [GopYController::class, 'liet_ke_gop_y']);
