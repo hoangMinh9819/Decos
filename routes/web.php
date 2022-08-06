@@ -13,7 +13,7 @@ use App\Http\Controllers\KhachhangController;
 use App\Http\Controllers\GioHangController;
 use App\Http\Controllers\ThanhToanController;
 use App\Http\Controllers\AllTinTucController;
-
+use App\Http\Controllers\GopYController;
 
 //Khach Hang
 Route::get('/trang_chu',[TrangChuController::class, 'trang_chu']);
