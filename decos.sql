@@ -18,6 +18,8 @@ drop table if exists HINH_ANH_SLIDE;
 
 drop table if exists MA_GIAM_GIA;
 
+drop table if exists GOP_Y;
+
 drop table if exists NGUOI_DUNG;
 
 drop table if exists SAN_PHAM;
@@ -26,7 +28,6 @@ drop table if exists TIN_TUC;
 
 drop table if exists THE_LOAI;
 
-drop table if exists GOP_Y;
 
 /*==============================================================*/
 /* Table: GOP_Y                                     */
