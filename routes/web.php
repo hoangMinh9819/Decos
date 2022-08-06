@@ -37,6 +37,8 @@ Route::post('/tim_kiem_san_pham', [TrangChuController::class, 'tim_kiem_san_pham
 Route::get('talent', [TrangChuController::class, 'talent']);
 Route::get('apply_job', [TrangChuController::class, 'apply_job']);
 Route::get('apply_job_m', [TrangChuController::class, 'apply_job_m']);
+Route::post('/ung_tuyen',[TrangChuController::class, 'ung_tuyen']);
+Route::post('/ung_tuyen_m',[TrangChuController::class, 'ung_tuyen_m']);
 
 //Lưu vào giỏ hàng.
 Route::post('/luu_gio_hang',[GioHangController::class, 'luu_gio_hang']);
@@ -80,6 +82,8 @@ Route::get('/xoa_nhan_vien/{id}',[QuanTriVienController::class, 'xoa_nhan_vien']
 Route::post('/cap_nhat_nhan_vien/{id}',[QuanTriVienController::class, 'cap_nhat_nhan_vien']);
 Route::get('/liet_ke_nhan_vien',[QuanTriVienController::class, 'liet_ke_nhan_vien']);
 Route::get('/xem_doanh_thu',[QuanTriVienController::class, 'xem_doanh_thu']);
+Route::get('/tat_ca_don_ung_tuyen',[QuanTriVienController::class, 'tat_ca_don_ung_tuyen']);
+Route::get('/xoa_ung_tuyen/{id}',[QuanTriVienController::class, 'xoa_ung_tuyen']);
 
 //Quản Lí Tin Tức
 Route::get('/them_tin_tuc', [NewsController::class, 'them_tin_tuc']);
