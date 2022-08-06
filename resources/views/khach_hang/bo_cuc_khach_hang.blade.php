@@ -87,6 +87,7 @@ $hinh = Session::get('hinh');
 									<li><a href="{{ URL::to('/dang_nhap'.'#giua_trang') }}"><i class="fa fa-lock"></i> Đăng Nhập / Đăng Ký</a></li>
 								<?php } else { ?>
 									<li><a><i class="fa fa-user"></i> Xin Chào {{$ten}}</a></li>
+									<li><a href="{{URL::to('/gop_y#giua_trang')}}"><i class="fa fa-user"></i> Góp ý</a></li>
 									<li><a href="{{URL::to('/')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
 									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}}) </span></a></li>
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
