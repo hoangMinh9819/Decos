@@ -157,6 +157,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{ URL::to('liet_ke_slide') }}">Liệt Kê Slide</a></li>
                             </ul>
                         </li>
+                        <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-book"></i>
+                                <span>Góp Ý</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="{{ URL::to('liet_ke_gop_y') }}">Tất Cả Góp Ý</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar menu end-->
