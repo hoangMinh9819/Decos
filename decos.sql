@@ -26,6 +26,19 @@ drop table if exists TIN_TUC;
 
 drop table if exists THE_LOAI;
 
+drop table if exists GOP_Y;
+
+/*==============================================================*/
+/* Table: GOP_Y                                     */
+/*==============================================================*/
+create table GOP_Y
+(
+   ID_GOP_Y             int not null auto_increment,
+   ID_NGUOI_DUNG        int not null,
+   NOI_DUNG_GOP_Y       text,
+   primary key (ID_GOP_Y)
+);
+
 /*==============================================================*/
 /* Table: CHI_TIET_DON_HANG                                     */
 /*==============================================================*/
@@ -217,6 +230,9 @@ create table TIN_TUC
    primary key (ID_TIN_TUC)
 );
 
+alter table GOP_Y add constraint FK_NGUOI_DUNG_GOP_Y foreign key (ID_NGUOI_DUNG)
+      references NGUOI_DUNG (ID_NGUOI_DUNG) on delete restrict on update restrict;
+      
 alter table CHI_TIET_DON_HANG add constraint FK_DON_HANG_CHI_TIET foreign key (ID_DON_HANG)
       references DON_HANG (ID_DON_HANG) on delete restrict on update restrict;
 
