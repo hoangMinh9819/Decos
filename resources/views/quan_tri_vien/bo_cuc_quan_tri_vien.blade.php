@@ -110,6 +110,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{URL::to('xem_doanh_thu')}}">Xem Doanh Thu</a></li>
                             </ul>
                         </li>
+                         <li class="sub-menu">
+                            <a href="javascript:;">
+                                <i class="fa fa-book"></i>
+                                <span>Các đơn ứng tuyển</span>
+                            </a>
+                            <ul class="sub">
+                                <li><a href="{{URL::to('tat_ca_don_ung_tuyen')}}">Liệt kê các đơn ứng tuyển</a></li>
+                            </ul>
+
+                        </li>
                     </ul>
                 </div>
                 <!-- sidebar menu end-->
