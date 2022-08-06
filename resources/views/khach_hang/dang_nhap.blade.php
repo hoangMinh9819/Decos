@@ -52,7 +52,7 @@
 							@error('ten')
 							<p style="color: red;">{{$message}}</p> 
 							@enderror
-							<input type="text" name="email" placeholder="Email" value="{{old('email')}}" />
+							<input type="email" name="email" placeholder="Email" value="{{old('email')}}" />
 							@error('email')
 							<p style="color: red;">{{$message}}</p> 
 							@enderror
