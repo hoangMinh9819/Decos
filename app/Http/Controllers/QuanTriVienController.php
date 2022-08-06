@@ -97,4 +97,21 @@ class QuanTriVienController extends Controller
         Session::put('tin_nhan','Xóa thành công!');
         return Redirect::to('liet_ke_nhan_vien');
     }
+    public function tat_ca_don_ung_tuyen()
+    {
+        $tat_ca_don_ung_tuyen = DB::table('talent')
+            ->get();
+        $view = view('quan_tri_vien.quan_li_ung_tuyen.quan_li_ung_tuyen')->with('tat_ca_don_ung_tuyen', $tat_ca_don_ung_tuyen);
+        return $view;
+    }
+
+
+
+
+    public function xoa_ung_tuyen($id)
+    {
+        $sua_danh_muc = DB::table('talent')->where('id', $id)->delete();
+        Session::put('tin_nhan', 'Xóa thành công!');
+        return Redirect::to('tat_ca_don_ung_tuyen');
+    }
 }
