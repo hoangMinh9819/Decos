@@ -220,7 +220,7 @@ class TrangChuController extends Controller
         ->with('liet_ke_slide', $tat_ca_slide);
         return $views;
     }
-     public function talent()
+    public function talent()
     {
         $tat_ca_the_loai = DB::table('the_loai')
             ->where('TRANG_THAI', 'Hiển Thị')->get();
@@ -261,5 +261,49 @@ class TrangChuController extends Controller
             ->with('liet_ke_san_pham', $tat_ca_san_pham)
             ->with('liet_ke_slide', $tat_ca_slide);
         return $view;
+    }
+    public function ung_tuyen(Request $request)
+    {
+        $data = array();
+        // $data['id'] = $request->id;
+        $data['Name'] = $request->Name;
+        $data['Email'] = $request->Email;
+        $data['PhoneNumber'] = $request->PhoneNumber;
+        $data['dob'] = $request->dob;
+        $data['hocvan'] = $request->hocvan;
+        $data['diachi'] = $request->diachi;
+        $data['cccd'] = $request->cccd;
+        $data['kinhnghiem'] = $request->kinhnghiem;
+        $data['KhuVuc'] = $request->KhuVuc;
+
+        // if ($request->file('HINH_ANH')) {
+        //     $request->file('HINH_ANH')->move('uploads/tin_tuc', $request->file('HINH_ANH')->getClientOriginalName());
+        //     $data['HINH_ANH_TT'] = $request->file('HINH_ANH')->getClientOriginalName();
+        // }
+
+        DB::table('talent')->insert($data);
+        Session::put('tin_nhan', 'Ứng tuyển  thành công!');
+        return Redirect::to('trang_chu');
+    }
+    public function ung_tuyen_m(Request $request)
+    {
+        $data = array();
+        // $data['id'] = $request->id;
+        $data['Name'] = $request->Name;
+        $data['Email'] = $request->Email;
+        $data['PhoneNumber'] = $request->PhoneNumber;
+        $data['dob'] = $request->dob;
+        $data['diachi'] = $request->diachi;
+        $data['cccd'] = $request->cccd;
+        $data['KhuVuc'] = $request->KhuVuc;
+
+        if ($request->file('CV')) {
+            $request->file('CV')->move('uploads/talent', $request->file('CV')->getClientOriginalName());
+            $data['CV'] = $request->file('CV')->getClientOriginalName();
+        }
+
+        DB::table('talent')->insert($data);
+        Session::put('tin_nhan', 'Ứng tuyển  thành công!');
+        return Redirect::to('trang_chu');
     }
 }
