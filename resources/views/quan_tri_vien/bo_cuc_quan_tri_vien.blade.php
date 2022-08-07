@@ -1,7 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Session;
-    $ten = Session::get('ten');
-    $hinh = Session::get('hinh');
+$ten = Session::get('ten');
+$hinh = Session::get('hinh');
 ?>
 <!DOCTYPE html>
 
@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Session;
     <title>Trang Quản Trị</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="keywords" content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    <meta name="keywords"
+        content="Visitors Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript">
         addEventListener("load", function() {
@@ -20,24 +21,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
     </script>
     <!-- bootstrap-css -->
-    <link rel="stylesheet" href="{{asset('nhan_vien/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('nhan_vien/css/bootstrap.min.css') }}">
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
-    <link href="{{asset('nhan_vien/css/style.css')}}" rel='stylesheet' type='text/css' />
-    <link href="{{asset('nhan_vien/css/style-responsive.css')}}" rel="stylesheet" />
+    <link href="{{ asset('nhan_vien/css/style.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('nhan_vien/css/style-responsive.css') }}" rel="stylesheet" />
     <!-- font CSS -->
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link
+        href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
     <!-- font-awesome icons -->
-    <link rel="stylesheet" href="{{asset('nhan_vien/css/font.css')}}" type="text/css" />
-    <link href="{{asset('nhan_vien/css/font-awesome.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('nhan_vien/css/morris.css')}}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('nhan_vien/css/font.css') }}" type="text/css" />
+    <link href="{{ asset('nhan_vien/css/font-awesome.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('nhan_vien/css/morris.css') }}" type="text/css" />
     <!-- calendar -->
-    <link rel="stylesheet" href="{{asset('nhan_vien/css/monthly.css')}}">
+    <link rel="stylesheet" href="{{ asset('nhan_vien/css/monthly.css') }}">
     <!-- //calendar -->
     <!-- //font-awesome icons -->
-    <script src="{{asset('nhan_vien/js/jquery2.0.3.min.js')}}"></script>
-    <script src="{{asset('nhan_vien/js/raphael-min.js')}}"></script>
-    <script src="{{asset('nhan_vien/js/morris.js')}}"></script>
+    <script src="{{ asset('nhan_vien/js/jquery2.0.3.min.js') }}"></script>
+    <script src="{{ asset('nhan_vien/js/raphael-min.js') }}"></script>
+    <script src="{{ asset('nhan_vien/js/morris.js') }}"></script>
 </head>
 
 <body>
@@ -46,7 +49,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">Quản Lý</a>
+                <a href="{{ asset('ho_so_quan_tri_vien') }}" class="logo">Quản Lý</a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
                 </div>
@@ -62,18 +65,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}">
-                            <span class="username">{{$ten}}</span>
+                            <img alt="" src="{{ URL::to('uploads/nguoi_dung/' . $hinh) }}">
+                            <span class="username">{{ $ten }}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout">
-                            <li><a href="{{URL::to('/ho_so_quan_tri_vien')}}"><i class=" fa fa-suitcase"></i>Hồ Sơ</a></li>
+                            <li><a href="{{ URL::to('/ho_so_quan_tri_vien') }}"><i class=" fa fa-suitcase"></i>Hồ
+                                    Sơ</a></li>
                             <li><a href="#"><i class="fa fa-cog"></i> Cài Đặt</a></li>
-                            <li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
+                            <li><a href="{{ URL::to('/dang_xuat') }}"><i class="fa fa-key"></i> Đăng Xuất</a></li>
                         </ul>
                     </li>
                     <!-- user login dropdown end -->
- 
+
                 </ul>
                 <!--search & user info end-->
             </div>
@@ -85,20 +89,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- sidebar menu start-->
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
-                        <li>
-                            <a class="active" href="{{URL::to('/quan_tri_vien_trang_chu')}}">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Tổng Quan</span>
-                            </a>
-                        </li>
+
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
                                 <span>Nhân Viên</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('them_nhan_vien')}}">Thêm Nhân Viên</a></li>
-                                <li><a href="{{URL::to('liet_ke_nhan_vien')}}">Liệt Kê Nhân Viên</a></li>
+                                <li><a href="{{ URL::to('them_nhan_vien') }}">Thêm Nhân Viên</a></li>
+                                <li><a href="{{ URL::to('liet_ke_nhan_vien') }}">Liệt Kê Nhân Viên</a></li>
                             </ul>
                         </li>
                         <li class="sub-menu">
@@ -107,16 +106,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <span>Doanh Thu</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('xem_doanh_thu')}}">Xem Doanh Thu</a></li>
+                                <li><a href="{{ URL::to('xem_doanh_thu') }}">Xem Doanh Thu</a></li>
                             </ul>
                         </li>
-                         <li class="sub-menu">
+                        <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
                                 <span>Các đơn ứng tuyển</span>
                             </a>
                             <ul class="sub">
-                                <li><a href="{{URL::to('tat_ca_don_ung_tuyen')}}">Liệt kê các đơn ứng tuyển</a></li>
+                                <li><a href="{{ URL::to('tat_ca_don_ung_tuyen') }}">Liệt kê các đơn ứng tuyển</a></li>
                             </ul>
 
                         </li>
@@ -141,13 +140,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </section>
         <!--main content end-->
     </section>
-    <script src="{{asset('nhan_vien/js/bootstrap.js')}}"></script>
-    <script src="{{asset('nhan_vien/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-    <script src="{{asset('nhan_vien/js/scripts.js')}}"></script>
-    <script src="{{asset('nhan_vien/js/jquery.slimscroll.js')}}"></script>
-    <script src="{{asset('nhan_vien/js/jquery.nicescroll.js')}}"></script>
+    <script src="{{ asset('nhan_vien/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('nhan_vien/js/jquery.dcjqaccordion.2.7.js') }}"></script>
+    <script src="{{ asset('nhan_vien/js/scripts.js') }}"></script>
+    <script src="{{ asset('nhan_vien/js/jquery.slimscroll.js') }}"></script>
+    <script src="{{ asset('nhan_vien/js/jquery.nicescroll.js') }}"></script>
     <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/flot-chart/excanvas.min.js"></script><![endif]-->
-    <script src="{{asset('nhan_vien/js/jquery.scrollTo.js')}}"></script>
+    <script src="{{ asset('nhan_vien/js/jquery.scrollTo.js') }}"></script>
     <!-- morris JavaScript -->
     <script>
         $(document).ready(function() {
@@ -249,7 +248,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
     </script>
     <!-- calendar -->
-    <script type="text/javascript" src="{{asset('nhan_vien/js/monthly.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('nhan_vien/js/monthly.js') }}"></script>
     <script type="text/javascript">
         $(window).load(function() {
 
