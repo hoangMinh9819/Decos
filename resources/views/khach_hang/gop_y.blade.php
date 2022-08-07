@@ -29,7 +29,7 @@
             @csrf
             <h1 style="color: green;">Quý khách hãy nhập góp ý vào khung bên dưới</h1>
             <textarea name="gop_y" style="height: 250px;"></textarea>
-            <input type="submit" style="margin-top:20px; width: 200px; height: 30px; background-color: yellow;" value="Gửi">
+            <input type="submit" style="margin-top:20px; width: 200px; height: 30px; background-color: yellow;" value="Gửi" required>
         </form>
     <?php
     }
