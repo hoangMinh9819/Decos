@@ -480,7 +480,6 @@ insert into don_hang(ID_NGUOI_DUNG, DIA_CHI_GIAO, TEN_NGUOI_NHAN, DIEN_THOAI_NGU
 
 insert into tin_tuc(ID_THE_LOAI, TIEU_DE, NOI_DUNG) VALUES
 (1,'Tiêu đề 1 ','Nội dung bài viết'),
-(2,'Tiêu đề 2 ','Nội dung bài viết'),
 (3,'Tiêu đề 3 ','Nội dung bài viết'),
 (1,'Tiêu đề 4 ','Nội dung bài viết'),
 (2,'Tiêu đề 5 ','Nội dung bài viết');
