@@ -235,12 +235,11 @@ $hinh = Session::get('hinh');
 						<div class="single-widget">
 							<h2>Dịch Vụ</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="#">Dịch Vụ Tư Vấn</a></li>
-								<hr>
+								<li><a href="#">Tư Vấn</a></li>
 								<li><a href="#">Hỗ trợ khách hàng</a></li>
-								<li><a href="{{ URL::to('/dat_lich_hen') }}">Dịch vụ đặt lịch hẹn.</a></li>
-								<li><a href="#">Dịch Vụ FAQs</a></li>
-								<li><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ với chúng tôi</a></li>
+								<li><a href="{{ URL::to('/dat_lich_hen') }}">Đặt lịch hẹn.</a></li>
+								<li><a href="#">FAQs</a></li>
+								<li><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a></li>
 							</ul>
 						</div>
 					</div>
@@ -261,9 +260,8 @@ $hinh = Session::get('hinh');
 						<div class="single-widget">
 							<h2>Chính Sách</h2>
 							<ul class="nav nav-pills nav-stacked">
-								<li><a href="{{ URL::to('/chinh_sach_doi_tra') }}">Chính Sách Đổi Trả</a></li>
+								<li><a href="{{ URL::to('/chinh_sach_doi_tra') }}">Đổi & Trả</a></li>
 								<li><a href="#">Hỗ trợ tư vấn</a></li>
-								<li><a href="#">Trả hàng & trao đổi</a></li>
 							</ul>
 						</div>
 					</div>
@@ -272,7 +270,7 @@ $hinh = Session::get('hinh');
 							<h2>Về Chúng Tôi</h2>
 							<ul class="nav nav-pills nav-stacked">
 								<li><a href="#">Quy tắc công ty</a></li>
-								<li><a href="#">Thông báo pháp lý</a></li>
+								<li><a href="#">Pháp lý</a></li>
 								<li><a href="{{ URL::to('/bao_mat_cookie') }}">Chính sách Bảo mật & Cookie</a></li>
 								<li><a href="{{ URL::to('/thong_tin_lien_he') }}">Thông Tin Công Ty</a></li>
 							</ul>
