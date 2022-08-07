@@ -10,6 +10,7 @@ use App\Http\Requests;
 use PhpParser\Node\Expr\BinaryOp\Equal;
 use App\Http\Requests\DangKyRequest;
 use Illuminate\Support\Facades\Mail;
+
 session_start();
 
 class TrangChuController extends Controller
@@ -46,7 +47,7 @@ class TrangChuController extends Controller
     public function kiem_tra_dang_nhap(Request $request)
     {
         $email = $request->email;
-        $mat_khau = md5($request->mat_khau);
+        $mat_khau = $request->mat_khau;
         $result = DB::table('nguoi_dung')
             ->where('EMAIL', $email)
             ->where('MAT_KHAU', $mat_khau)
@@ -127,7 +128,7 @@ class TrangChuController extends Controller
     {
         $data['HO_TEN'] = $request->ten;
         $data['EMAIL'] = $request->email;
-        $data['MAT_KHAU'] = md5($request->mat_khau);
+        $data['MAT_KHAU'] = $request->mat_khau;
         $data['DIEN_THOAI'] = $request->dien_thoai;
         $data['DIA_CHI'] = $request->dia_chi;
         $data['PHAN_QUYEN'] = 'khach_hang';
@@ -188,40 +189,61 @@ class TrangChuController extends Controller
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $id = Session::get('id');
         $khach_hang = DB::table('nguoi_dung')
-            ->where('ID_NGUOI_DUNG',$id)
+            ->where('ID_NGUOI_DUNG', $id)
             ->first();
         $views = view('khach_hang.ho_so_khach_hang')
-        ->with('khach_hang',$khach_hang)
-        ->with('liet_ke_slide', $tat_ca_slide);
+            ->with('khach_hang', $khach_hang)
+            ->with('liet_ke_slide', $tat_ca_slide);
         return $views;
     }
-    public function cap_nhat_ho_so_khach_hang(Request $request, $id){
+    public function cap_nhat_ho_so_khach_hang(Request $request, $id)
+    {
         $data = array();
+        $data['HINH_ANH'] = $request->HINH_ANH;
+        if ($request->file('HINH_ANH')) {
+            $request->file('HINH_ANH')->move('uploads/nguoi_dung', $request->file('HINH_ANH')->getClientOriginalName());
+            $data['HINH_ANH'] = $request->file('HINH_ANH')->getClientOriginalName();
+        }
         $data['PHAN_QUYEN'] = 'khach_hang';
-        $data['HO_TEN'] = $request->ten;
-        $data['DIA_CHI'] = $request->dia_chi;
-        $data['EMAIL'] = $request->email;
-        $data['DIEN_THOAI'] = $request->dien_thoai;
-        DB::table('nguoi_dung')->where('ID_NGUOI_DUNG',$id)->update($data);
-        Session::put('tin_nhan','Cập nhật thành công!');
+        $data['HO_TEN'] = $request->HO_TEN;
+        $data['MAT_KHAU'] = $request->MAT_KHAU;
+        $data['DIA_CHI'] = $request->DIA_CHI;
+        $data['EMAIL'] = $request->EMAIL;
+        $data['DIEN_THOAI'] = $request->DIEN_THOAI;
+        DB::table('nguoi_dung')->where('ID_NGUOI_DUNG', $id)->update($data);
+        Session::put('tin_nhan', 'Cập nhật thành công!');
         return Redirect::to('ho_so_khach_hang');
     }
-    
-    public function thong_tin_lien_he(){
+    public function sua_ho_so_khach_hang($id)
+    {
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $sua_ho_so_khach_hang = DB::table('nguoi_dung')->where('ID_NGUOI_DUNG', $id)->first();
+        $view = view('khach_hang.sua_ho_so_khach_hang')
+            ->with('khach_hang', $sua_ho_so_khach_hang)
+            ->with('liet_ke_slide', $tat_ca_slide);
+        return $view;
+    }
+
+    public function thong_tin_lien_he()
+    {
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $views = view('khach_hang.thong_tin_lien_he')
-        ->with('liet_ke_slide', $tat_ca_slide);
+            ->with('liet_ke_slide', $tat_ca_slide);
         return $views;
     }
-    
-    public function bao_mat_cookie(){
+
+    public function bao_mat_cookie()
+    {
         $tat_ca_slide = DB::table('hinh_anh_slide')->get();
         $views = view('khach_hang.bao_mat_cookie')
-        ->with('liet_ke_slide', $tat_ca_slide);
+            ->with('liet_ke_slide', $tat_ca_slide);
         return $views;
     }
-    
-      public function tim_kiem_san_pham(Request $request)
+
+
+
+
+    public function tim_kiem_san_pham(Request $request)
     {
         $keyword = $request->keywords_submit;
 
