@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <header class="header fixed-top clearfix">
             <!--logo start-->
             <div class="brand">
-                <a href="index.html" class="logo">Nhân Viên</a>
+                <a href="{{asset('ho_so_nhan_vien')}}" class="logo">Nhân Viên</a>
                 <div class="sidebar-toggle-box">
                     <div class="fa fa-bars"></div>
                 </div>
@@ -92,12 +92,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <!-- sidebar menu start-->
                 <div class="leftside-navigation">
                     <ul class="sidebar-menu" id="nav-accordion">
-                        <li>
-                            <a class="active" href="{{ URL::to('/nhan_vien_trang_chu') }}">
-                                <i class="fa fa-dashboard"></i>
-                                <span>Tổng Quan</span>
-                            </a>
-                        </li>
 
                         <li class="sub-menu">
                             <a href="javascript:;">
