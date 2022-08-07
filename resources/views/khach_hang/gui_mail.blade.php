@@ -16,8 +16,8 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Test Send Mail {{$name}}</h1>
-        <p>bodayasdfasdfasdfalskdjhalksjhalkdhgklajsdhglkajsdghalkhrhth</p>
+        <h1>Thông báo đặt hàng thành công {{$name}}</h1>
+        <p>Bạn đã đặt hàng thành công, chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất</p>
         <script src="" async defer></script>
     </body>
 </html>
