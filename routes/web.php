@@ -39,6 +39,10 @@ Route::get('apply_job', [TrangChuController::class, 'apply_job']);
 Route::get('apply_job_m', [TrangChuController::class, 'apply_job_m']);
 Route::post('/ung_tuyen',[TrangChuController::class, 'ung_tuyen']);
 Route::post('/ung_tuyen_m',[TrangChuController::class, 'ung_tuyen_m']);
+Route::get('/ho_so_khach_hang',[TrangChuController::class, 'ho_so_khach_hang']);
+Route::get('/sua_ho_so_khach_hang/{id}',[TrangChuController::class, 'sua_ho_so_khach_hang']);
+Route::post('/cap_nhat_ho_so_khach_hang/{id}',[TrangChuController::class, 'cap_nhat_ho_so_khach_hang']);
+
 
 //Lưu vào giỏ hàng.
 Route::post('/luu_gio_hang',[GioHangController::class, 'luu_gio_hang']);
@@ -130,9 +134,6 @@ Route::get('/thong_tin_lien_he',[TrangChuController::class, 'thong_tin_lien_he']
 Route::get('/bao_mat_cookie',[TrangChuController::class, 'bao_mat_cookie']);
 
 
-// ho sơ khach hang
-Route::get('/ho_so_khach_hang',[TrangChuController::class, 'ho_so_khach_hang']);
-Route::post('/cap_nhat_ho_so_khach_hang/{id}',[TrangChuController::class, 'cap_nhat_ho_so_khach_hang']);
 
 //Góp ý
 Route::get('/gop_y',[GopYController::class, 'gop_y']);
