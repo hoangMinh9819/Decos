@@ -43,7 +43,7 @@ class QuanTriVienController extends Controller
         $chuoi = array();
         $data['PHAN_QUYEN'] = 'nhan_vien';
         $data['HO_TEN'] = $request->ten;
-        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIA_CHI'] = $request->dia_chi;
         $data['EMAIL'] = $request->email;
         $data['DIEN_THOAI'] = $request->dien_thoai;
@@ -74,7 +74,7 @@ class QuanTriVienController extends Controller
         $chuoi = array();
         $data['PHAN_QUYEN'] = 'nhan_vien';
         $data['HO_TEN'] = $request->ten;
-        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIA_CHI'] = $request->dia_chi;
         $data['EMAIL'] = $request->email;
         $data['DIEN_THOAI'] = $request->dien_thoai;
