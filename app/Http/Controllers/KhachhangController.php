@@ -14,17 +14,17 @@ class KhachhangController extends Controller
     {
         $keyword = $request->keyword_submit;
         $id = Session::get('id');
-        $khach_hang = DB::table('nguoi_dung')
-            ->where('PHAN_QUYEN', $id)
-            ->first();;
-        $search_khach_hang = DB::table('nguoi_dung')->where('DIA_CHI', 'like', '%' . $keyword . '%')
-            ->orwhere('HO_TEN', 'like', '%' . $keyword . '%')
-            ->orwhere('EMAIL', 'like', '%' . $keyword . '%')
-            ->orwhere('DIEN_THOAI', 'like', '%' . $keyword . '%')
+        $search_khach_hang =DB::table('nguoi_dung')
+        ->where('PHAN_QUYEN', 'khach_hang')
+            //  ->where('DIA_CHI', 'like', '%' . $keyword . '%')
+             ->where('HO_TEN', 'like', '%' . $keyword . '%')
+            //  ->orwhere('EMAIL', 'like', '%' . $keyword . '%')
+            //  ->orwhere('DIEN_THOAI', 'like', '%' . $keyword . '%')
             ->get();
 
-        return view('nhan_vien.quan_li_khach_hang.search_khach_hang')->with('search_khach_hang', $search_khach_hang)
-            ->with('khach_hang', $khach_hang);
+        return view('nhan_vien.quan_li_khach_hang.search_khach_hang')
+            ->with('search_khach_hang', $search_khach_hang);
+        // ->with('khach_hang', $khach_hang);
     }
     public function ho_so_khach_hang()
     {
@@ -55,14 +55,14 @@ class KhachhangController extends Controller
         $data['DIA_CHI'] = $request->dia_chi;
         $data['EMAIL'] = $request->email;
         $data['DIEN_THOAI'] = $request->dien_thoai;
-//         $data['HINH_ANH'] = null;
+        //         $data['HINH_ANH'] = null;
         $data['TRANG_THAI'] = 'hoat_dong';
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
 
-//         if ($request->file('hinh_anh')) {
-//             $request->file('hinh_anh')->move('public/uploads/nguoi_dung', $request->file('hinh_anh')->getClientOriginalName());
-//             $data['HINH_ANH'] = $request->file('hinh_anh')->getClientOriginalName();
-//         }
+        //         if ($request->file('hinh_anh')) {
+        //             $request->file('hinh_anh')->move('public/uploads/nguoi_dung', $request->file('hinh_anh')->getClientOriginalName());
+        //             $data['HINH_ANH'] = $request->file('hinh_anh')->getClientOriginalName();
+        //         }
 
         DB::table('nguoi_dung')->insert($data);
         Session::put('tin_nhan', 'Thêm khách hàng thành công!');
@@ -85,14 +85,14 @@ class KhachhangController extends Controller
         $data['DIA_CHI'] = $request->dia_chi;
         $data['EMAIL'] = $request->email;
         $data['DIEN_THOAI'] = $request->dien_thoai;
-//         $data['HINH_ANH'] = null;
+        //         $data['HINH_ANH'] = null;
         $data['TRANG_THAI'] = $request->trang_thai;
         $data['NGAY_CAP_NHAT'] = date('y/m/d H:i:s');
-//         if ($request->file('hinh_anh')) {
-//             $file_name = $request->file('hinh_anh')->getClientOriginalName();
-//             $request->file('hinh_anh')->move('public/uploads/nguoi_dung', $file_name);
-//             $data['HINH_ANH'] = $file_name;
-//         }
+        //         if ($request->file('hinh_anh')) {
+        //             $file_name = $request->file('hinh_anh')->getClientOriginalName();
+        //             $request->file('hinh_anh')->move('public/uploads/nguoi_dung', $file_name);
+        //             $data['HINH_ANH'] = $file_name;
+        //         }
         DB::table('nguoi_dung')->where('ID_NGUOI_DUNG', $id)->update($data);
         Session::put('tin_nhan', 'Cập nhật thành công!');
         return Redirect::to('liet_ke_khach_hang');
