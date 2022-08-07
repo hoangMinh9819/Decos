@@ -176,7 +176,7 @@ class TrangChuController extends Controller
             ->where('TRANG_THAI', 'Hiển Thị')->get();
         $tat_ca_tin_tuc = DB::table('tin_tuc')
             ->join('the_loai', 'the_loai.ID_THE_LOAI', '=', 'tin_tuc.ID_THE_LOAI')
-            ->paginate(6);
+            ->paginate(8);
         $view = view('khach_hang.tat_ca_tin_tuc')
             ->with('liet_ke_the_loai', $tat_ca_the_loai)
             ->with('liet_ke_tin_tuc', $tat_ca_tin_tuc)
