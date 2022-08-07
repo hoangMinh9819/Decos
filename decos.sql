@@ -3,7 +3,7 @@
 /* Created on:     7/6/2022 4:55:13 PM                          */
 /*==============================================================*/
 
-
+drop table if exists talent;
 drop table if exists CHI_TIET_DON_HANG;
 
 drop table if exists DANH_GIA;
