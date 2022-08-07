@@ -258,27 +258,10 @@ alter table SAN_PHAM add constraint FK_THUOC foreign key (ID_THE_LOAI)
 alter table TIN_TUC add constraint FK_CUA foreign key (ID_THE_LOAI)
       references THE_LOAI (ID_THE_LOAI) on delete restrict on update restrict;
 
-insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, TRANG_THAI, HINH_ANH) VALUES
-('Hoàng Minh', 'minhquantrivien@gmail.com', 'hoangminh', '0909999999', 'quan_tri_vien', 'bi_chan', 'hoangminh.jpg'),
-('Minh Anh', 'anhquantrivien@gmail.com', 'minhanh', '0909999999', 'quan_tri_vien', 'hoat_dong', 'minhanh.png'),
-('Cẩm Tú', 'tuquantrivien@gmail.com', 'camtu', '0909999999', 'quan_tri_vien', 'hoat_dong', 'camtu.png'),
-('Thanh Sang', 'sangquantrivien@gmail.com', 'thanhsang', '0909999999', 'quan_tri_vien', 'hoat_dong', 'thanhsang.png'),
-('Quốc Thái', 'thaiquantrivien@gmail.com', 'quocthai', '0909999999', 'quan_tri_vien', 'hoat_dong', 'quocthai.png');
-
-insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, TRANG_THAI, HINH_ANH) VALUES
-('Hoàng Minh', 'minhnhanvien@gmail.com', 'hoangminh', '0909999999', 'nhan_vien', 'bi_chan', 'hoangminh.jpg'),
-('Minh Anh', 'anhnhanvien@gmail.com', 'minhanh', '0909999999', 'nhan_vien', 'hoat_dong', 'minhanh.png'),
-('Cẩm Tú', 'tunhanvien@gmail.com', 'camtu', '0909999999', 'nhan_vien', 'hoat_dong', 'camtu.png'),
-('Thanh Sang', 'sangnhanvien@gmail.com', 'thanhsang', '0909999999', 'nhan_vien', 'hoat_dong', 'thanhsang.png'),
-('Quốc Thái', 'thainhanvien@gmail.com', 'quocthai', '0909999999', 'nhan_vien', 'hoat_dong', 'quocthai.png');
-
-insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, DIA_CHI, TRANG_THAI, HINH_ANH) VALUES
-('Hoàng Minh', 'minhkhachhang@gmail.com', 'hoangminh', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'bi_chan', 'hoangminh.jpg'),
-('Minh Anh', 'anhkhachhang@gmail.com', 'minhanh', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'minhanh.png'),
-('Cẩm Tú', 'tukhachhang@gmail.com', 'camtu', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'camtu.png'),
-('Thanh Sang', 'sangkhachhang@gmail.com', 'thanhsang', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'thanhsang.png'),
-('Quốc Thái', 'thaikhachhang@gmail.com', 'quocthai', '0909999999', 'khach_hang', '590 CMT8 P11 Q3 TPHCM', 'hoat_dong', 'quocthai.png');
-
+insert into NGUOI_DUNG(HO_TEN, EMAIL, MAT_KHAU, DIEN_THOAI, PHAN_QUYEN, TRANG_THAI) VALUES
+('Tên Quản Trị Viên', 'quantrivien@gmail.com', '202cb962ac59075b964b07152d234b70', '0902252888', 'quan_tri_vien', 'hoat_dong'),
+('Tên Nhân Viên', 'nhanvien@gmail.com', '202cb962ac59075b964b07152d234b70', '0902252999', 'nhan_vien', 'hoat_dong'),
+('Tên Khách Hàng', 'khachhang@gmail.com', '202cb962ac59075b964b07152d234b70', '0902252777', 'khach_hang', 'hoat_dong');
 
 insert into the_loai(TEN_TL, HINH_ANH_TL, MO_TA_TL, TRANG_THAI) VALUES
 ('FALL WINTER 2020','z3513568000557_1b666463358e51c8eaef51a696314ff0.jpg','Bộ Sưu Tập Mùa Xuân' ,'Hiển Thị'),
