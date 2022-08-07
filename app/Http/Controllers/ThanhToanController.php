@@ -51,9 +51,9 @@ class ThanhToanController extends Controller
             $email->to($email_dat_hang, $name);
         });
         Session::put('id_don_hang', $id_don_hang);
-        Session::put('tin_nhan_don_hang', 'Đặt hàng thành công! Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.');
-        Cart::destroy();
-        if ($request->phuong_thuc == 'Tiền Mặt') {
+        Session::put('tin_nhan_don_hang', 'Đặt hàng thành công! Chúng tôi sẽ liên lạc với bạn trong thời gian sớm nhất.');        
+        if ($request->phuong_thuc == 'Tiền Mặt') {            
+		    Cart::destroy();
             return Redirect::to('hien_thi_gio_hang#giuahang');
         }
 
@@ -63,11 +63,11 @@ class ThanhToanController extends Controller
             $vnp_TmnCode = "OYDI2DG8"; //Mã website tại VNPAY 
             $vnp_HashSecret = "KXZHAQVRWUYJUACCPINIBCZWWHJSSBUH"; //Chuỗi bí mật
 
-            $code_cart = rand(00, 9999);
+            $code_cart = rand(0, 9999);
             $vnp_TxnRef = $code_cart; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
             $vnp_OrderInfo = 'Test thanh toán';
             $vnp_OrderType = 'billpayment';
-            $vnp_Amount = Cart::total(0, 0, 0);
+            $vnp_Amount = Cart::subtotal(0,0,0);
             $vnp_Locale = 'vn';
             $vnp_BankCode = 'NCB';
             $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
