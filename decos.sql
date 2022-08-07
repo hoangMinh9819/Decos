@@ -233,7 +233,7 @@ create table TIN_TUC
 
 alter table GOP_Y add constraint FK_NGUOI_DUNG_GOP_Y foreign key (ID_NGUOI_DUNG)
       references NGUOI_DUNG (ID_NGUOI_DUNG) on delete restrict on update restrict;
-      
+
 alter table CHI_TIET_DON_HANG add constraint FK_DON_HANG_CHI_TIET foreign key (ID_DON_HANG)
       references DON_HANG (ID_DON_HANG) on delete restrict on update restrict;
 
@@ -322,7 +322,7 @@ insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THA
 - Gân
 - Vạt túi
 - Thiết kế peplum
-- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)
  - Loại sản phẩm: Quần
 - Chất liệu: Cotton
 - Dạng thẳng
@@ -366,7 +366,7 @@ insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THA
 - Tay áo dài phồng
 - Cổ tay áo xù xì
 - Cổ tròn
-- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)
  - Loại sản phẩm: Váy
 - Chất liệu: Cotton
 - Váy chữ A
@@ -414,7 +414,7 @@ insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THA
 - Không tay
 - Cổ tròn
 - Dạng cắt
-- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)
  - Loại sản phẩm: Quần
 - Chất liệu: Cotton
 - Dạng thẳng
@@ -433,7 +433,7 @@ insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THA
 - Cổ tròn
 - Thon gọn
 - Ngực xếp nếp
-- Chiều dài: 57-58-60-60cm (XS / S / M / L) 
+- Chiều dài: 57-58-60-60cm (XS / S / M / L)
  - Loại sản phẩm: Váy
 - Chất liệu: Cotton
 - Váy chữ A
@@ -480,6 +480,7 @@ insert into don_hang(ID_NGUOI_DUNG, DIA_CHI_GIAO, TEN_NGUOI_NHAN, DIEN_THOAI_NGU
 
 insert into tin_tuc(ID_THE_LOAI, TIEU_DE, NOI_DUNG) VALUES
 (1,'Tiêu đề 1 ','Nội dung bài viết'),
+(2,'Tiêu đề 2 ','Nội dung bài viết'),
 (3,'Tiêu đề 3 ','Nội dung bài viết'),
 (1,'Tiêu đề 4 ','Nội dung bài viết'),
 (2,'Tiêu đề 5 ','Nội dung bài viết');
@@ -496,7 +497,7 @@ UPDATE `tin_tuc` SET `TIEU_DE` = 'DECOS FW20 - BST Những Cánh Hoa.' WHERE 
 UPDATE `tin_tuc` SET `NOI_DUNG` = 'Nghĩ về mùa Đông người ta không thường nghĩ đến Hoa bởi chúng không nhiều và không quá rực rỡ. Hoa của mùa Đông dường như chỉ xuất hiện khi ai đó lắng tâm hồn một chút để kiếm tìm. Chọn Hoa làm nguồn cảm hứng chủ đạo cho BST DECOS Thu Đông 2020, NTK Nguyễn Phương Đông và đội ngũ sáng tạo DECOS muốn mang đến cho các cô gái của mình một mùa đông tươi mới và khác biệt.\nKhông chọn một loài hoa cụ thể nào cho BST ”The Flowers”, nhưng có thế thấy sự hiện diện xuyên suốt của hoa trong các thiết kế Thu Đông lần này của DECOS. Từ hình dáng cách điệu của các cánh hoa trên cổ hay line áo, các đường cắt cúp mềm mại mô phỏng đường nét của những cánh hoa, đến các chi tiết hoa cỏ và cả các chú ong nho nhỏ được đính kết và thêu hoàn toàn thủ công trên thân áo.
 Vẫn là hoa nhưng không rực rỡ, phô thương. “The Flowers” của DECOS mang đến cảm giác nhẹ nhàng với gam màu chủ đạo đen, kem, xanh navy, hồng pastel... Sử dụng chất liệu chính là light wool, tweed, cotton, lụa và ren nổi 3D… cùng sự kết hợp khéo léo các form dáng quen thuộc với hình dáng bông hoa cách điệu, các đường dập li cá tính, các chi tiết thêu đính thủ công tỉ mỉ, DECOS thổi một luồng gió mới vào các mẫu thiết kế của mình. Chọn các thiết kế nhẹ nhàng nữ tính cho bộ sưu tập lần này, đội ngũ sáng tạo DECOS mong muốn các cô gái trở thành một bông hoa nhẹ nhàng khoe sắc theo cách riêng của mình.'
 WHERE `tin_tuc`.`ID_TIN_TUC` = 1;
-UPDATE `tin_tuc` SET `HINH_ANH_TT` = '41.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 1;
+UPDATE `tin_tuc` SET `HINH_ANH_TT` = '42.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 1;
 UPDATE `tin_tuc` SET `TIEU_DE` = 'DECOS PRE-FALL 2020 - PINK GIRLS COLLECTION' WHERE `tin_tuc`.`ID_TIN_TUC` = 3;
 UPDATE `tin_tuc` SET `NOI_DUNG` = 'BST Decos PreFall 2020 Pink Girls Collection\nPink Girls là sự đan xen giữa thực tại và chút mơ mộng của các cô gái thành thị. Với sắc hồng pastel chủ đạo, các thiết kế điệu đà nhưng không quá cầu kỳ với chất liệu chính của BST là: cotton 100%, thun 3D và ren cao cấp nhập khẩu. Đặc biệt lần này Decos sử Dụng chất tweet, một chất liệu vốn được yêu thích của giới thượng lưu.\nMong rằng những cô gái của DECOS sẽ trở thành nàng thơ của chính mình trong một phiên bản nữ tính và ngọt ngào hơn.' WHERE `tin_tuc`.`ID_TIN_TUC` = 3;
 UPDATE `tin_tuc` SET `HINH_ANH_TT` = '46.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 3;
@@ -513,6 +514,12 @@ INSERT INTO `tin_tuc` (`ID_TIN_TUC`, `ID_THE_LOAI`, `TIEU_DE`, `NOI_DUNG`, `NGAY
 INSERT INTO `tin_tuc` (`ID_TIN_TUC`, `ID_THE_LOAI`, `TIEU_DE`, `NOI_DUNG`, `NGAY_TAO`, `NGAY_CAP_NHAT`, `TRANG_THAI`, `THE_LOAI`, `HINH_ANH_TT`) VALUES (NULL, '9', 'DECOS RESORT21 COLLECTION LOOKBOOK', 'Xuất phát từ mong muốn mang đến cho các cô gái những mẫu thiết kế đơn giản và gần gũi nhất cho tủ đồ của mình trong nhiều dịp khác nhau, “Back to basic”- BST Resort 2021 là một câu chuyện không mới nhưng được kể với ngôn ngữ riêng đậm chất DECOS trong thế giới thời trang vốn nhanh thay đổi. \r\nĐơn giản về màu sắc với tone chủ đạo là trắng và đen. Thanh lịch nhưng mạnh mẽ, sắc thái trắng đen luôn mang lại cảm giác thoải mái và tự tin cho người mặc ở bất cứ độ tuổi, hoàn cảnh hay thời điểm nào.\r\nXuyên suốt BST là các mẫu thiết kế với form dáng hoàn toàn quen thuộc nhưng khác biệt với các đường cut-out cá tính cùng kỹ thuật xử lý chất liệu độc đáo vốn là thế mạnh của DECOS như: đắp ren, dập ly đều hay xếp ly thủ công… Các chất liệu được chọn lọc và xử lý kỹ càng như lưới, oganza, đũi, chiffon… ngay cả bố chất liệu tưởng chừng không thích hợp cho trang phục hè cũng được sử dụng một cách khéo léo. Không thể không kể đến những chi tiết thêu, đột chỉ thủ công, hay những chiếc nơ nữ tính với nhiều kiểu dáng khác nhau được lựa chọn để đưa vào BST.\r\n“Back to basic\" là tổng hòa của sự đơn giản, thanh lịch đúng với tinh thần đẹp không cần cố gắng mà DECOS đang hướng đến.', NULL, NULL, NULL, NULL, '91.jpg');
 INSERT INTO `tin_tuc` (`ID_TIN_TUC`, `ID_THE_LOAI`, `TIEU_DE`, `NOI_DUNG`, `NGAY_TAO`, `NGAY_CAP_NHAT`, `TRANG_THAI`, `THE_LOAI`, `HINH_ANH_TT`) VALUES (NULL, '10', 'Decos Resort20 Limited Collection ', 'Khi nhắc đến phái đẹp, lẽ thường người ta sẽ nghĩ đến sự dịu dàng và quyến rũ. Và để tôn vinh đặc quyền ấy, đội ngũ thiết kế của DECOS đã tìm tòi và cho ra đời bộ sưu tập Resort 2020. \r\nVới chất liệu chủ đạo là voan, lụa, lưới và ren, những chất liệu vốn dành riêng cho phái đẹp, DECOS mong muốn đem đến cho các cô gái nguồn cảm hứng sáng tạo của mình, một chút quyến rũ nhưng không kém phần thanh lịch.', NULL, NULL, NULL, NULL, '101.jpg');
 INSERT INTO `tin_tuc` (`ID_TIN_TUC`, `ID_THE_LOAI`, `TIEU_DE`, `NOI_DUNG`, `NGAY_TAO`, `NGAY_CAP_NHAT`, `TRANG_THAI`, `THE_LOAI`, `HINH_ANH_TT`) VALUES (NULL, '12', 'DECOS BRIDAL FALL 2020-ELLE WEDDING ART GALLERY 2020', 'Lấy cảm hứng từ sự tối giản và thanh lịch trong những chiếc váy cưới của quý cô nước Pháp. BST là câu chuyện kể về những cô gái hiện đại và phóng khoáng, không gò ép mình vào những mẫu váy cưới mang tính khuôn mẫu.\r\nCác mẫu váy nhẹ nhàng thanh lịch với chất liệu chính là ren, lụa, voan lưới và đặc biệt là tweed, một chất liệu còn khá mới mẻ với trang phục cưới… BST là sự kết hợp các chi tiết đơn giản được xử lý khéo léo bằng những nếp gấp, đường dập li tinh tế, cùng với các họa tiết được xử lý hoàn toàn thủ công với pha lê, cườm và lông vũ...\r\nĐược trình diễn ra mắt vào 20:30 ngày 4/10/2020 trong khuôn khổ Elle Wedding Art Gallery tại White Palace Hoàng Văn Thụ, Tp HCM, hy vọng các cô gái sẽ chọn được trang phục cưới phù hợp nhất cho ngày trọng đại và hạnh phúc nhất của mình!', NULL, NULL, NULL, NULL, '121.jpg');
+UPDATE `tin_tuc` SET `HINH_ANH_TT` = '55.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 6;
+UPDATE `tin_tuc` SET `HINH_ANH_TT` = '60.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 7;
+UPDATE `tin_tuc` SET `HINH_ANH_TT` = '91.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 8;
+UPDATE `tin_tuc` SET `HINH_ANH_TT` = '101.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 9;
+UPDATE `tin_tuc` SET `HINH_ANH_TT` = '122.jpg' WHERE `tin_tuc`.`ID_TIN_TUC` = 10;
+
 
 
 
