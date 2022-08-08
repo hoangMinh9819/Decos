@@ -14,7 +14,7 @@ Team members include:
 4)Lê Thị Minh Anh - Student1333965 - Dev
 
 Documetation included on the main folder: 
-1) Intallation guide : 
+1) Intallation guide : guide.rar
 2) Database source : 'decos.sql'
 3) Documentation : 'ReviewDecosStore.DOCX'
 4) Link to video demonstration: 
