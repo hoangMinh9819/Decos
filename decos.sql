@@ -102,7 +102,7 @@ create table DON_HANG
    GIAM_GIA             float,
    PHI_VAN_CHUYEN       float,
    TONG_CONG_CUOI_CUNG  float,
-   TRANG_THAI           varchar(50),
+   TRANG_THAI_DH           varchar(50),
    GHI_CHU              text,
    primary key (ID_DON_HANG)
 );
