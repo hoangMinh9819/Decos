@@ -7,9 +7,7 @@
                 Cập nhật Đơn Hàng
             </header>
             <div class="panel-body">
-                @foreach($sua_don_hang as $key => $gia_tri)
                 <div class="position-center">
-
                     <form role="form" action="{{URL::to('/cap_nhat_don_hang/'.$gia_tri->ID_DON_HANG)}}" method="post">
                         {{csrf_field()}}
                         <div class="form-group">
@@ -41,11 +39,9 @@
                                 <option value="Đã Giao">Đã Giao</option>
                             </select>
                         </div>
-
                         <button type="submit" name="them_don_hang" class="btn btn-info">Cập Nhật Đơn Hàng</button>
                     </form>
                 </div>
-                @endforeach
             </div>
         </section>
 
