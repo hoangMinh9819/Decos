@@ -47,7 +47,7 @@ class TrangChuController extends Controller
     public function kiem_tra_dang_nhap(Request $request)
     {
         $email = $request->email;
-        $mat_khau = $request->mat_khau;
+        $mat_khau = md5($request->mat_khau);
         $result = DB::table('nguoi_dung')
             ->where('EMAIL', $email)
             ->where('MAT_KHAU', $mat_khau)
@@ -128,7 +128,7 @@ class TrangChuController extends Controller
     {
         $data['HO_TEN'] = $request->ten;
         $data['EMAIL'] = $request->email;
-        $data['MAT_KHAU'] = $request->mat_khau;
+        $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIEN_THOAI'] = $request->dien_thoai;
         $data['DIA_CHI'] = $request->dia_chi;
         $data['PHAN_QUYEN'] = 'khach_hang';
@@ -206,7 +206,7 @@ class TrangChuController extends Controller
         }
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['HO_TEN'] = $request->HO_TEN;
-        $data['MAT_KHAU'] = $request->MAT_KHAU;
+        $data['MAT_KHAU'] = md5($request->MAT_KHAU);
         $data['DIA_CHI'] = $request->DIA_CHI;
         $data['EMAIL'] = $request->EMAIL;
         $data['DIEN_THOAI'] = $request->DIEN_THOAI;
