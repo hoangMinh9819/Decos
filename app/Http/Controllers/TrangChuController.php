@@ -131,6 +131,7 @@ class TrangChuController extends Controller
         $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIEN_THOAI'] = $request->dien_thoai;
         $data['DIA_CHI'] = $request->dia_chi;
+        $data['TRANG_THAI'] = 'hoat_dong';
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
         DB::table('nguoi_dung')->insert($data);
@@ -206,7 +207,7 @@ class TrangChuController extends Controller
         }
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['HO_TEN'] = $request->HO_TEN;
-        $data['MAT_KHAU'] = $request->MAT_KHAU;
+        $data['MAT_KHAU'] = md5($request->MAT_KHAU);
         $data['DIA_CHI'] = $request->DIA_CHI;
         $data['EMAIL'] = $request->EMAIL;
         $data['DIEN_THOAI'] = $request->DIEN_THOAI;
