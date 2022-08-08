@@ -28,7 +28,7 @@ class ThanhToanController extends Controller
         $data['DIEN_THOAI_NGUOI_NHAN'] = $request->dien_thoai;
         $data['GHI_CHU'] = $request->ghi_chu;
         $data['PHUONG_THUC_THANH_TOAN'] = $request->phuong_thuc;
-        $data['TRANG_THAI'] = 'Chờ Xác Nhận';
+        $data['TRANG_THAI_DH'] = 'Chờ Xác Nhận';
         $data['TONG_CONG'] = Cart::subtotal(0, 0, 0);
         $data['PHI_VAN_CHUYEN'] = 0;
         $data['TONG_CONG_CUOI_CUNG'] = Cart::total(0, 0, 0);
