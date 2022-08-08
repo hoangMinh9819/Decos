@@ -100,7 +100,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <li><a href="{{ URL::to('liet_ke_nhan_vien') }}">Liệt Kê Nhân Viên</a></li>
                             </ul>
                         </li>
-                        <li class="sub-menu">
+                        <!--<li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
                                 <span>Doanh Thu</span>
@@ -108,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <ul class="sub">
                                 <li><a href="{{ URL::to('xem_doanh_thu') }}">Xem Doanh Thu</a></li>
                             </ul>
-                        </li>
+                        </li>-->
                         <li class="sub-menu">
                             <a href="javascript:;">
                                 <i class="fa fa-book"></i>
