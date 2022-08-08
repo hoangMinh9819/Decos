@@ -33,14 +33,12 @@
                             <input type="text" value="{{$gia_tri->PHUONG_THUC_THANH_TOAN}}" name="phuong_thuc_thanh_toan" class="form-control" id="exampleInput" placeholder="Phương Thức Thanh Toán">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Trạng Thái</label>
-                            <textarea style="resize: none" rows="8" name="trang_thai" class="form-control" id="exampleInputPassword1" placeholder="Trạng Thái">{{$gia_tri->TRANG_THAI}}</textarea>
-                        </div>
-                        <div class="form-group">
                             <label>Trạng Thái</label>
-                            <select name="trang_thai_danh_muc" class="form-control input-sm m-bot15">
-                                <option value="Ẩn">Ẩn</option>
-                                <option value="Hiển Thị">Hiển thị</option>
+                            <select name="trang_thai_don_hang" class="form-control input-sm m-bot15">
+                                <option value="Chờ Xác Nhận">Chờ Xác Nhận</option>
+                                <option value="Đã Xác Nhận">Đã Xác Nhận</option>
+                                <option value="Đang Giao">Đang Giao</option>
+                                <option value="Đã Giao">Đã Giao</option>
                             </select>
                         </div>
 

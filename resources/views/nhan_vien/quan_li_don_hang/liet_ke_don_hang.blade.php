@@ -59,7 +59,7 @@
                                 <td>{{ $don_hang->DIA_CHI_GIAO }}</td>
                                 <td>{{ $don_hang->DIEN_THOAI_NGUOI_NHAN }}</td>
                                 <td>{{ $don_hang->TONG_CONG_CUOI_CUNG }}</td>
-                                <td>{{ $don_hang->TRANG_THAI }}</td>
+                                <td>{{ $don_hang->TRANG_THAI_DH }}</td>
                                 <td><a href="{{ URL::to('/sua_don_hang/' . $don_hang->ID_DON_HANG) }}" class="active"
                                         ui-toggle-class="">
                                         Sửa
