@@ -1,6 +1,6 @@
 @extends('khach_hang.bo_cuc_khach_hang')
 @section('noi_dung')
-    <div class="container">
+    <div class="container" id="giua_trang">
         <h2 class="title text-center">Contact US</h2>
         <p>Chọn phương thức Liên hệ mà bạn ưa thích để liên kết đến dịch vụ chăm sóc khách hàng của chúng tôi hoặc tìm hiểu
             thêm thông tin thông qua trang Câu hỏi thường gặp của chúng tôi.</p>

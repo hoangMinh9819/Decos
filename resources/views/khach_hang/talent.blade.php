@@ -31,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-8 padding-right">
+    <div class="col-sm-8 padding-right" id="giua_trang">
         <div class="features_items">
             <!--features_items-->
             <h2 class="title text-center">Cơ hội nghề nghiệp</h2>

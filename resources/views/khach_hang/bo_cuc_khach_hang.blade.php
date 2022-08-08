@@ -120,9 +120,9 @@ $hinh = Session::get('hinh');
 										<li><a href="{{URL::to('/tat_ca_san_pham'.'#giua_trang')}}">Tất Cả Sản Phẩm</a></li>
 									</ul>
 								</li>
-								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc'.'#giua_trang')}}">Tin Tức</a></li>
-								<li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he') }}">Liên Hệ</a>
-								<li class="dropdown"><a href="{{ URL::to('talent') }}">Tuyển Dụng</a></li>
+								<li class="dropdown"><a href="{{URL::to('/tat_ca_tin_tuc#giua_trang')}}">Tin Tức</a></li>
+								<li class="dropdown"><a href="{{ URL::to('/thong_tin_lien_he#giua_trang') }}">Liên Hệ</a>
+								<li class="dropdown"><a href="{{ URL::to('talent#giua_trang') }}">Tuyển Dụng</a></li>
 							</ul>
 						</div>
 					</div>

@@ -16,12 +16,12 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-10 padding-right">
+    <div class="col-sm-10 padding-right" id="giua_trang">
         <div class="features_items">
             <!--features_items-->
             <h2 class="title text-center">Tin tức</h2>
             @foreach ($liet_ke_tin_tuc as $tin_tuc => $gia_tri)
-                <div class="col-sm-3">
+                <div class="col-sm-4">
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
