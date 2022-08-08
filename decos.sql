@@ -454,13 +454,6 @@ insert into san_pham(ID_THE_LOAI, TEN_SP, GIA, MO_TA_SP, HINH_ANH_HAI, TRANG_THA
 - Túi bên
 - Chiều dài: 92 / 110-94 / 112-94 / 112-95 / 112cm (XS / S / M / L)','z3513562448947_d9c4278dc384d4bfdf29c909459e48c2.jpg','Còn Hàng','z3513562485581_d70bbcd0ce80c2706f49578461f3a7e0.jpg', false, true, true,'Áo ren cổ vuông , không tay và quần tây ống đứng caro nâu');
 
-insert into don_hang(ID_NGUOI_DUNG, DIA_CHI_GIAO, TEN_NGUOI_NHAN, DIEN_THOAI_NGUOI_NHAN, TRANG_THAI) VALUES
-(3,'590 CMT8','Hoàng Minh','0902252888','Đang Giao'),
-(3,'590 CMT8','Hoàng Minh','0902252888','Chờ Xác Nhận'),
-(3,'590 CMT8','Hoàng Minh','0902252888','Đã Giao'),
-(3,'590 CMT8','Hoàng Minh','0902252888','Đã Xác Nhận'),
-(3,'590 CMT8','Hoàng Minh','0902252888','Đang Giao');
-
 insert into tin_tuc(ID_THE_LOAI, TIEU_DE, NOI_DUNG) VALUES
 (1,'Tiêu đề 1 ','Nội dung bài viết'),
 (2,'Tiêu đề 2 ','Nội dung bài viết'),
