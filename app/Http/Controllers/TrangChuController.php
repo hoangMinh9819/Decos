@@ -131,13 +131,18 @@ class TrangChuController extends Controller
         $data['MAT_KHAU'] = md5($request->mat_khau);
         $data['DIEN_THOAI'] = $request->dien_thoai;
         $data['DIA_CHI'] = $request->dia_chi;
-        $data['TRANG_THAI'] = 'hoat_dong';
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['NGAY_TAO'] = date('y/m/d H:i:s');
-        DB::table('nguoi_dung')->insert($data);
+        if (DB::table('nguoi_dung')->where('email', $data['EMAIL'])->first()) {
+            Session::put('tin_nhan_dang_ky', 'Email đã có người sử dụng, vui lòng nhập lại email!');
+            return Redirect::to('dang_nhap');
+        } else {
+            DB::table('nguoi_dung')->insert($data);
+        }
         Session::put('tin_nhan_dang_ky', 'Đăng ký thành công! Vui lòng đăng nhập');
         return Redirect::to('dang_nhap');
     }
+    
     public function the_loai_tin_tuc($id)
     {
         $tat_ca_the_loai = DB::table('the_loai')
