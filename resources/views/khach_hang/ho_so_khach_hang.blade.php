@@ -32,12 +32,12 @@
                                 <input type="password" value="{{ $khach_hang->MAT_KHAU }}" name="mat_khau"
                                     style="width: 700px;" class="input form-control" id="matkhau" placeholder="matkhau"
                                     required="true" aria-label="password" aria-describedby="basic-addon1" readonly>
-                                <div class="input-group-append">
+                                <!-- <div class="input-group-append">
                                     <span class="input-group-text" onclick="password_show_hide();">
-                                        <i class="fas fa-eye" id="show_eye"></i>
-                                        <i class="fas fa-eye-slash d-none" id="hide_eye"></i>
+                                        <i id="show_eye">Ẩn </i>
+                                        <i id="hide_eye">Hiện </i>
                                     </span>
-                                </div>
+                                </div> -->
 
                                 <script>
                                     function password_show_hide() {

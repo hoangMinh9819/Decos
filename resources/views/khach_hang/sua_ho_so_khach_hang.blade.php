@@ -14,18 +14,18 @@
                             <label for="HINH_ANH">Chân Dung</label><br>
                             <img src="{{ URL::to('/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}" width="300" style="text-align:center">
                             <hr>
-                            <input type="file" name="HINH_ANH" id="HINH_ANH" required>
+                            <input type="file" name="HINH_ANH" id="HINH_ANH">
                         </div>
                         <div class="form-group">
                             <label for="HO_TEN">Tên khách hàng</label>
                             <input type="text" value="{{ $khach_hang->HO_TEN }}" name="HO_TEN" class="form-control"
                                 id="HO_TEN" placeholder="Tên danh mục">
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label for="MAT_KHAU">Mật Khẩu</label>
                             <input type="text" value="{{ $khach_hang->MAT_KHAU }}" name="MAT_KHAU" class="form-control"
                                 id="MAT_KHAU" placeholder="Mật khẩu" required>
-                        </div>
+                        </div> -->
                         <div class="form-group">
                             <label for="DIA_CHI">Địa Chỉ</label>
                             <input type="text" value="{{ $khach_hang->DIA_CHI }}" name="DIA_CHI" class="form-control"
