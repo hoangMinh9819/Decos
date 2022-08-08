@@ -22,12 +22,6 @@
 							{{csrf_field()}}
 							<input type="text" name="email" placeholder="Email" required />
 							<input type="password" name="mat_khau" placeholder="Mật Khẩu" required />
-							<span>
-								<input type="checkbox" class="checkbox">
-								Nhớ đăng nhập
-							</span>
-							<!-- <span><input type="checkbox" /> Ghi nhớ</span> -->
-							<h6><a href="#">Quên mật khẩu?</a></h6>
 							<button type="submit" class="btn btn-default">Đăng Nhập</button>
 						</form>
 					</div>
