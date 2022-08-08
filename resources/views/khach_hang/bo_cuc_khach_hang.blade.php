@@ -89,7 +89,7 @@ $hinh = Session::get('hinh');
 									<li><a href="{{URL::to('/ho_so_khach_hang')}}"><i class="fa fa-user"></i> Tài Khoản</a></li>
 									<li><a href="{{URL::to('hien_thi_gio_hang'.'#giua_trang')}}"><i class="fa fa-shopping-cart"></i> Giỏ Hàng <span style="color: red;">({{Cart::count()}}) </span></a></li>
 									<li><a href="{{URL::to('/dang_xuat')}}"><i class="fa fa-lock"></i> Đăng Xuất</a></li>
-									<li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40" style="border-radius: 15px;"></li>
+									<!-- <li><img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}" width="40" style="border-radius: 15px;"></li> -->
 								<?php } ?>
 							</ul>
 						</div>
