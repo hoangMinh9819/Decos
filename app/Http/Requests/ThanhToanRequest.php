@@ -26,7 +26,7 @@ class ThanhToanRequest extends FormRequest
         return [            
             'ten' => 'required|min:6',
             'dia_chi' => 'required|min:10',
-            'dien_thoai' => 'required|min:9|max:12',
+            'dien_thoai' => 'required|regex:/(0)[0-9]{9,10}/',
         ];
     }
     public function messages()
@@ -36,6 +36,7 @@ class ThanhToanRequest extends FormRequest
             'min' => ':attribute phải lơn hơn :min ký tự',
             'max' => ':attribute phải nhỏ hơn :max ký tự',
             'integer' => ':attribute phải là số',
+            'regex' => ':attribute không hợp lệ',
         ];
     }
     public function attributes()
