@@ -65,12 +65,12 @@
                                         Sửa
                                         <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                                     </a>
-                                    <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
+                                    <!-- <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
                                         href="{{ URL::to('/xoa_don_hang/' . $don_hang->ID_DON_HANG) }}" class="active"
                                         ui-toggle-class="">
                                         Xóa
-                                        <!-- <i class="fa fa-times text-danger text"></i> -->
-                                    </a>
+                                        <i class="fa fa-times text-danger text"></i>
+                                    </a> -->
                                 </td>
                             </tr>
                         @endforeach
