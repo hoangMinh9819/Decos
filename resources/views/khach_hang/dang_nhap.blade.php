@@ -25,14 +25,12 @@
 							<button type="submit" class="btn btn-default">Đăng Nhập</button>
 						</form>
 					</div>
-					<!--/login form-->
 				</div>
 				<div class="col-sm-1">
 					<h2 class="or">HOẶC</h2>
 				</div>
 				<div class="col-sm-4">
 					<div class="signup-form">
-						<!--sign up form-->
 						<h2>Đăng Ký Tài Khoản Mới</h2>
 						<?php
 						if (Session::get('tin_nhan_dang_ky')) {
@@ -65,7 +63,6 @@
 							<button type="submit" class="btn btn-default">Đăng Ký</button>
 						</form>
 					</div>
-					<!--/sign up form-->
 				</div>
 			</div>
 		</div>
