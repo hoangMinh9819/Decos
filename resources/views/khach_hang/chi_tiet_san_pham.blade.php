@@ -46,7 +46,7 @@
                     <span>
                         <span>{{ number_format($san_pham->GIA) }} VND</span>
                         <label>Số lượng: </label>
-                        <input type="number" name="so_luong" min="1" value="1" />
+                        <input type="number" name="so_luong" min="1" max="5" value="1" />
                         <input type="hidden" name="san_pham_id_an" value="{{$san_pham->ID_SAN_PHAM}}" />
                         <button type="submit" class="btn btn-fefault cart">
                             <i class="fa fa-shopping-cart"></i>

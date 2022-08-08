@@ -71,10 +71,10 @@ $content = Cart::content();
 									<form action="{{URL::to('cap_nhat_so_luong')}}" method="POST">
 										{{csrf_field()}}
 										<!-- <a class="cart_quantity_up" href=""> + </a> -->
-										<input class="cart_quantity_input" type="text" name="so_luong" value="{{$gia_tri->qty}}" size="2">
+										<input class="cart_quantity_input" type="text" name="so_luong" value="{{$gia_tri->qty}}" size="2" readonly>
 										<!-- <a class="cart_quantity_down" href=""> - </a> -->
 										<input type="hidden" value="{{$gia_tri->rowId}}" name="rowId_gio_hang" class="form-control" />
-										<input type="submit" value="Cập nhật" name="cap_nhat_so_luong" class="btn btn-default btn-sm" />
+										<!-- <input type="submit" value="Cập nhật" name="cap_nhat_so_luong" class="btn btn-default btn-sm" /> -->
 									</form>
 								</div>
 							</td>
