@@ -206,7 +206,7 @@ class TrangChuController extends Controller
         }
         $data['PHAN_QUYEN'] = 'khach_hang';
         $data['HO_TEN'] = $request->HO_TEN;
-        $data['MAT_KHAU'] = md5($request->MAT_KHAU);
+        $data['MAT_KHAU'] = $request->MAT_KHAU;
         $data['DIA_CHI'] = $request->DIA_CHI;
         $data['EMAIL'] = $request->EMAIL;
         $data['DIEN_THOAI'] = $request->DIEN_THOAI;
