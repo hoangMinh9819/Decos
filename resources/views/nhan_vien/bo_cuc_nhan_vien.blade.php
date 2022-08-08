@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- user login dropdown start-->
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}">
+                            <!--<img alt="" src="{{URL::to('uploads/nguoi_dung/'.$hinh)}}">-->
                             <span class="username">{{$ten}}</span>
                             <b class="caret"></b>
                         </a>
