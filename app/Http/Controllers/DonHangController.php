@@ -63,4 +63,36 @@ class DonHangController extends Controller
         Session::put('tin_nhan','Xóa thành công!');
         return Redirect::to('liet_ke_don_hang');
     }
+    
+    public function lich_su_don_hang(){
+        // $danh_sach_don_hang = DB::table('don_hang')
+        // ->join('nguoi_dung', 'don_hang.ID_NGUOI_DUNG', '=', 'nguoi_dung.ID_NGUOI_DUNG')
+        // ->paginate(3);
+        
+        $tat_ca_the_loai = DB::table('the_loai')
+            ->where('TRANG_THAI', 'Hiển Thị')->get();
+        $tat_ca_don_hang = DB::table('don_hang')->where('ID_NGUOI_DUNG',Session('id'))->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.lich_su_don_hang')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('tat_ca_don_hang', $tat_ca_don_hang)
+            ->with('liet_ke_slide', $tat_ca_slide);
+        return $view;
+    }
+
+    public function xem_chi_tiet_don_hang($id){   
+        $don_hang = DB::table('don_hang')->where('ID_DON_HANG',$id)->first();
+        $chi_tiet_don_hang = DB::table('chi_tiet_don_hang')->where('ID_DON_HANG',$id)
+        ->join('san_pham', 'san_pham.ID_SAN_PHAM', '=', 'chi_tiet_don_hang.ID_SAN_PHAM')
+        ->get();     
+        $tat_ca_the_loai = DB::table('the_loai')
+            ->where('TRANG_THAI', 'Hiển Thị')->get();
+        $tat_ca_slide = DB::table('hinh_anh_slide')->get();
+        $view = view('khach_hang.chi_tiet_don_hang')
+            ->with('liet_ke_the_loai', $tat_ca_the_loai)
+            ->with('chi_tiet_don_hang', $chi_tiet_don_hang)
+            ->with('liet_ke_slide', $tat_ca_slide)
+            ->with('don_hang', $don_hang);
+        return $view;
+    }
 }
