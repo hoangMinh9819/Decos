@@ -32,23 +32,7 @@
                                 <button type="submit" name="them_danh_muc" class="btn btn-info">Cập Nhật Danh Mục</button>
                             </form>
                         </div>
-<<<<<<< HEAD
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Mô tả danh mục</label>
-                            <textarea style="resize: none" rows="8" name="mo_ta_danh_muc" class="form-control" id="exampleInputPassword1" placeholder="Mô tả danh mục">{{$gia_tri->MO_TA_TL}}</textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Trạng Thái</label>
-                            <select name="trang_thai_danh_muc" class="form-control input-sm m-bot15">
-                                <option value="Ẩn">Ẩn</option>
-                                <option value="Hiển Thị">Hiển thị</option>
-                            </select>
-                        </div>
-                        <button type="submit" name="them_danh_muc" class="btn btn-info">Cập Nhật Danh Mục</button>
-                    </form>
-=======
                     @endforeach
->>>>>>> c921f83165d8e178898c26875630feec341ccc93
                 </div>
             </section>
 
