@@ -11,7 +11,7 @@
                     <form role="form" action="{{URL::to('/cap_nhat_don_hang/'.$gia_tri->ID_DON_HANG)}}" method="post">
                         {{csrf_field()}}
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Đơn Hàng</label>
+                            <label for="exampleInputEmail1">Đơn Hàng ID</label>
                             <input type="text" value="{{$gia_tri->ID_NGUOI_DUNG}}" name="don_hang" class="form-control" id="exampleInput" placeholder="Đơn hàng">
                         </div>
                         <div class="form-group">
@@ -31,12 +31,21 @@
                             <input type="text" value="{{$gia_tri->PHUONG_THUC_THANH_TOAN}}" name="phuong_thuc_thanh_toan" class="form-control" id="exampleInput" placeholder="Phương Thức Thanh Toán">
                         </div>
                         <div class="form-group">
+                            <h4>Chi Tiết Đơn Hàng:</h4>
+                            <ul>                         
+                            @foreach ($chi_tiet as $chia_khoa => $don_hang)
+                            <li>{{$don_hang->TEN_SP}} - Đơn Giá: {{ $don_hang->GIA}} VND - Số lượng: {{$don_hang->SO_LUONG}}</li>
+                            @endforeach
+                            </ul> 
+                        </div>
+                        <div class="form-group">
                             <label>Trạng Thái</label>
                             <select name="trang_thai_don_hang" class="form-control input-sm m-bot15">
                                 <option value="Chờ Xác Nhận">Chờ Xác Nhận</option>
                                 <option value="Đã Xác Nhận">Đã Xác Nhận</option>
                                 <option value="Đang Giao">Đang Giao</option>
                                 <option value="Đã Giao">Đã Giao</option>
+                                <option value="Đã Hủy">Đã Hủy</option>
                             </select>
                         </div>
                         <button type="submit" name="them_don_hang" class="btn btn-info">Cập Nhật Đơn Hàng</button>
