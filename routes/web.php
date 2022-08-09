@@ -125,6 +125,8 @@ Route::get('/liet_ke_don_hang', [DonHangController::class, 'liet_ke_don_hang']);
 Route::post('/luu_don_hang', [DonHangController::class, 'luu_don_hang']);
 Route::post('/cap_nhat_don_hang/{id}', [DonHangController::class, 'cap_nhat_don_hang']);
 Route::post('/search_don_hang', [DonHangController::class, 'search_don_hang']);
+Route::get('/lich_su_don_hang', [DonHangController::class, 'lich_su_don_hang']);
+Route::get('/chi_tiet_don_hang/{id}', [DonHangController::class, 'xem_chi_tiet_don_hang']);
 
 // Gửi Mail
 Route::get('/gui_mail',[TrangChuController::class,'gui_mail']);
