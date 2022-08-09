@@ -10,12 +10,6 @@
                     <form role="form" action="{{ URL::to('/cap_nhat_ho_so_khach_hang/' . $khach_hang->ID_NGUOI_DUNG) }}"
                         method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
-                        <div class="form-group" style="text-align:center;display: inline-block;">
-                            <label for="HINH_ANH">Chân Dung</label><br>
-                            <img src="{{ URL::to('/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}" width="300" style="text-align:center">
-                            <hr>
-                            <input type="file" name="HINH_ANH" id="HINH_ANH">
-                        </div>
                         <div class="form-group">
                             <label for="HO_TEN">Tên khách hàng</label>
                             <input type="text" value="{{ $khach_hang->HO_TEN }}" name="HO_TEN" class="form-control"
