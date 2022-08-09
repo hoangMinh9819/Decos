@@ -1,3 +1,13 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $errors = [];
+    if (empty(trim($_POST['Name']))) {
+        $errors['Name']['required'] = 'Họ và tên không được để trống';
+    } else {
+        $Name = $_POST['Name'];
+    }
+}
+?>
 @extends('khach_hang.bo_cuc_khach_hang')
 @section('noi_dung')
     <div class="col-sm-3">
@@ -100,7 +110,8 @@
 
 
         </form> --}}
-        <form role="form" action="{{ URL::to('/ung_tuyen') }}" method="post" enctype="multipart/form-data">
+        <form role="form" action="{{ URL::to('/ung_tuyen') }}" method="post" enctype="multipart/form-data"
+            onsubmit="alert('Cảm ơn bạn đã ứng tuyển . Chung tôi sẽ liên hệ lại bạn sớm nhất có thể!!!!!!')">
             {{ csrf_field() }}
             <div style="margin: 10px auto">
                 <label for="Name">Họ và Tên:</label> <br>
@@ -109,7 +120,8 @@
 
             <div style="margin: 10px auto">
                 <label for="Email">Email:</label> <br>
-                <input type="Email" name="Email" id="Email" placeholder="example@gmail.com" required> <br>
+                <input type="Email" name="Email" id="Email" placeholder="example@gmail.com" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <br>
             </div>
 
             <div style="margin: 10px auto">
@@ -134,7 +146,7 @@
                 </select>
             </div>
             <div style="margin: 10px auto">
-                <label for="diachi">Địa chỉ</label> <br>
+                <label for="diachi">Địa chỉ </label> <br>
                 <input type="text" name="diachi" id="diachi" placeholder="Địa chỉ cụ thể" required> <br>
             </div>
 
@@ -160,8 +172,7 @@
             </div>
 
             <div class="" style="margin: 10px auto">
-                <button type="submit" name="keywwords" class="btn btn-success"
-                    onclick="alert('Cảm ơn bạn đã ứng tuyển vào công ty tôi... !!!! Chúng tôi sẽ phản hồi kết quả ứng tuyển của bạn sớm nhất');">Apply</button>
+                <button type="submit" name="keywwords" class="btn btn-success">Apply</button>
             </div>
         </form>
     </div>
@@ -200,3 +211,13 @@
         box-sizing: border-box;
     }
 </style>
+<?php
+
+function Form($message)
+{
+    echo "<script>alert('$message');</script>";
+}
+
+Form('Bạn có muốn ứng tuyển vào công ty chúng tôi!!!!!');
+
+?>
