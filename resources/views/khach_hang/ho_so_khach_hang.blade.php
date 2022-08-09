@@ -9,10 +9,6 @@
                         <form role="form" action="" method="get">
                             {{ csrf_field() }}
                             <div class="form-group">
-                                <label for="hinhanh">Chân Dung</label><br>
-                                <img src="{{ URL::to('/uploads/nguoi_dung/' . $khach_hang->HINH_ANH) }}" width="300">
-                            </div>
-                            <div class="form-group">
                                 <label for="ten">Tên khách hàng</label> <br>
                                 <input type="text" value="{{ $khach_hang->HO_TEN }}" name="ten" class="form-control"
                                     id="ten" placeholder="Tên danh mục" style="width: 700px;" readonly>
