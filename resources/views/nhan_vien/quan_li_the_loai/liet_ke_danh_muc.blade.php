@@ -56,11 +56,7 @@
                                 Sửa
                                 <!--<i class="fa fa-pencil-square-o text-success text-active"></i>-->
                             </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')"
-                            href="{{URL::to('/xoa_danh_muc/'.$danh_muc->ID_THE_LOAI)}}" class="active" ui-toggle-class="">
-                                Xóa
-                                <!-- <i class="fa fa-times text-danger text"></i> -->
-                            </a>
+                            
                         </td>
                     </tr>
                     @endforeach
