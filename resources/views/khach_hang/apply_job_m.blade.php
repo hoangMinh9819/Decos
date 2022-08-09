@@ -85,7 +85,8 @@
 
 
         </form> --}}
-        <form role="form" action="{{ URL::to('/ung_tuyen_m') }}" method="post" enctype="multipart/form-data">
+        <form role="form" action="{{ URL::to('/ung_tuyen_m') }}" method="post" enctype="multipart/form-data"
+            onsubmit="alert('Cảm ơn bạn đã ứng tuyển . Chung tôi sẽ liên hệ lại bạn sớm nhất có thể!!!!!!')">
             {{ csrf_field() }}
             <div style="margin: 10px auto">
                 <label for="Name">Họ và Tên:</label> <br>
@@ -129,8 +130,7 @@
             </div>
 
             <div class="" style="margin: 10px auto">
-                <button type="submit" name="keywwords" class="btn btn-success"
-                    onclick="alert('Cảm ơn bạn đã ứng tuyển vào công ty tôi... !!!! Chúng tôi sẽ phản hồi kết quả ứng tuyển của bạn sớm nhất');">Apply</button>
+                <button type="submit" name="keywwords" class="btn btn-success">Apply</button>
             </div>
         </form>
     </div>
@@ -179,3 +179,13 @@
       box-sizing: border-box;
     } */
 </style>
+<?php
+
+function Form($message)
+{
+    echo "<script>alert('$message');</script>";
+}
+
+Form('Bạn có muốn ứng tuyển vào công ty chúng tôi!!!!!');
+
+?>
