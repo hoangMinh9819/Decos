@@ -8,7 +8,7 @@
             </header>
             <div class="panel-body">
                 <div class="position-center">
-                    <form role="form" action="{{URL::to('/luu_san_pham')}}" method="post">
+                    <form role="form" action="{{URL::to('/luu_san_pham')}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="form-group">
                                 <label for="hinhanh">Hình Ảnh</label>
