@@ -95,7 +95,8 @@
 
             <div style="margin: 10px auto">
                 <label for="Email">Email:</label> <br>
-                <input type="Email" name="Email" id="Email" placeholder="example@gmail.com" required> <br>
+                <input type="Email" name="Email" id="Email" placeholder="example@gmail.com" required
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"> <br>
             </div>
 
             <div style="margin: 10px auto">
@@ -118,7 +119,7 @@
             </div>
             <div style="margin: 10px auto">
                 <label for="CV">CV</label> <br>
-                <input type="file" name="CV" id="CV" required> <br>
+                <input type="file" name="CV" id="CV" required accept="image/x-png,image/gif,image/jpeg"> <br>
             </div>
             <div style="margin: 10px auto">
                 <label for="KhuVuc">Khu vực làm việc bạn mong muốn</label> <br>
