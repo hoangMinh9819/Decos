@@ -36,8 +36,8 @@ class QuanlisanphamController extends Controller
     }
 
     public function luu_san_pham(Request $request){
-        $data['HINH_ANH'] = null;
-        $data['HINH_ANH_HAI'] = null;
+        $data['HINH_ANH'] = $request->HINH_ANH;
+        $data['HINH_ANH_HAI'] = $request->HINH_ANH_HAI;
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
         $data['TEN_SP'] = $request->TEN_SP;
@@ -49,7 +49,11 @@ class QuanlisanphamController extends Controller
             $request->file('HINH_ANH')->move('uploads/san_pham', $request->file('HINH_ANH')->getClientOriginalName());
             $data['HINH_ANH'] = $request->file('HINH_ANH')->getClientOriginalName();
         }
-        
+
+        if ($request->file('HINH_ANH_HAI')) {
+            $request->file('HINH_ANH_HAI')->move('uploads/san_pham', $request->file('HINH_ANH_HAI')->getClientOriginalName());
+            $data['HINH_ANH_HAI'] = $request->file('HINH_ANH_HAI')->getClientOriginalName();
+        }
         DB::table('san_pham')->insert($data);
         Session::put('tin_nhan','Thêm sản phẩm thành công!');
         return Redirect::to('liet_ke_san_pham');
@@ -63,8 +67,8 @@ class QuanlisanphamController extends Controller
 
     public function cap_nhat_san_pham(Request $request, $id){
         $data = array();
-        $data['HINH_ANH'] = null;
-        $data['HINH_ANH_HAI'] = null;
+        $data['HINH_ANH'] = $request->HINH_ANH;
+        $data['HINH_ANH_HAI'] = $request->HINH_ANH_HAI;
         $data['ID_THE_LOAI'] = $request->ID_THE_LOAI;
         $data['MA_SAN_PHAM'] = $request->MA_SAN_PHAM;
         $data['TEN_SP'] = $request->TEN_SP;
@@ -75,7 +79,10 @@ class QuanlisanphamController extends Controller
             $request->file('HINH_ANH')->move('uploads/san_pham', $request->file('HINH_ANH')->getClientOriginalName());
             $data['HINH_ANH'] = $request->file('HINH_ANH')->getClientOriginalName();
         }
-
+        if ($request->file('HINH_ANH_HAI')) {
+            $request->file('HINH_ANH_HAI')->move('uploads/san_pham', $request->file('HINH_ANH_HAI')->getClientOriginalName());
+            $data['HINH_ANH'] = $request->file('HINH_ANH_HAI')->getClientOriginalName();
+        }
         DB::table('san_pham')->where('ID_SAN_PHAM',$id)->update($data);
         Session::put('tin_nhan','Cập nhật thành công!');
         return Redirect::to('liet_ke_san_pham');
